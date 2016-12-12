@@ -1,9 +1,6 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by liyun on 10/12/16.
@@ -16,6 +13,7 @@ public class Medication {
     private Double quantity;
     private String collection;
     private String remarks;
+    private ConsultationRecord consultationByConsultationId;
 
     @Id
     @Column(name = "consultationid", nullable = false)
@@ -103,5 +101,15 @@ public class Medication {
         result = 31 * result + (collection != null ? collection.hashCode() : 0);
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "consultationid", referencedColumnName = "consultationId", nullable = false)
+    public ConsultationRecord getConsultationByConsultationId() {
+        return consultationByConsultationId;
+    }
+
+    public void setConsultationByConsultationId(ConsultationRecord consultationByConsultationId) {
+        this.consultationByConsultationId = consultationByConsultationId;
     }
 }

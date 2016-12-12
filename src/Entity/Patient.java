@@ -1,14 +1,13 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.awt.geom.Path2D;
 import java.sql.Timestamp;
 import java.util.Arrays;
+import java.util.Collection;
 
 /**
- * Created by liyun on 11/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class Patient extends Person{
@@ -32,6 +31,11 @@ public class Patient extends Person{
     private String nokRelation;
     private String nokEmail;
     private byte[] profileImage;
+    private Collection<ConsultationRecord> consultationrecordsByPatientId;
+    private Collection<Device> devicesByPatientId;
+    private Collection<FamilyMedicalBackground> familyMedicalBackgroundListByPatientId;
+    private Collection<Appointment> appointmentListByPatientId;
+    private Collection<VitalSigns> vitalSignListByPatientId;
 
     @Id
     @Column(name = "patientId", nullable = false, length = 10)
@@ -289,5 +293,50 @@ public class Patient extends Person{
         result = 31 * result + (nokEmail != null ? nokEmail.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(profileImage);
         return result;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<ConsultationRecord> getConsultationrecordsByPatientId() {
+        return consultationrecordsByPatientId;
+    }
+
+    public void setConsultationrecordsByPatientId(Collection<ConsultationRecord> consultationrecordsByPatientId) {
+        this.consultationrecordsByPatientId = consultationrecordsByPatientId;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<Device> getDevicesByPatientId() {
+        return devicesByPatientId;
+    }
+
+    public void setDevicesByPatientId(Collection<Device> devicesByPatientId) {
+        this.devicesByPatientId = devicesByPatientId;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<FamilyMedicalBackground> getFamilyMedicalBackgroundListByPatientId() {
+        return familyMedicalBackgroundListByPatientId;
+    }
+
+    public void setFamilyMedicalBackgroundListByPatientId(Collection<FamilyMedicalBackground> familyMedicalBackgroundListByPatientId) {
+        this.familyMedicalBackgroundListByPatientId = familyMedicalBackgroundListByPatientId;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<Appointment> getAppointmentListByPatientId() {
+        return appointmentListByPatientId;
+    }
+
+    public void setAppointmentListByPatientId(Collection<Appointment> appointmentListByPatientId) {
+        this.appointmentListByPatientId = appointmentListByPatientId;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<VitalSigns> getVitalSignListByPatientId() {
+        return vitalSignListByPatientId;
+    }
+
+    public void setVitalSignListByPatientId(Collection<VitalSigns> vitalSignListByPatientId) {
+        this.vitalSignListByPatientId = vitalSignListByPatientId;
     }
 }

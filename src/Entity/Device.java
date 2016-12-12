@@ -1,18 +1,16 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liyun on 11/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class Device {
     private String deviceId;
     private Timestamp lastSyncDateTime;
+    private Patient patientByPatientId;
 
     @Id
     @Column(name = "deviceId", nullable = false, length = 45)
@@ -53,5 +51,15 @@ public class Device {
         int result = deviceId != null ? deviceId.hashCode() : 0;
         result = 31 * result + (lastSyncDateTime != null ? lastSyncDateTime.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId", nullable = false)
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
     }
 }
