@@ -17,7 +17,7 @@
 <div class="wrapper">
 
     <%--Navigation - please copy paste this file and edit to ur content--%>
-    <%@include file="common/html/nurseNavigation.jsp" %>
+    <%@include file="common/html/patientNavigation.jsp" %>
 
     <%--Content Wrapper    --%>
     <div class="content-wrapper">

@@ -1,21 +1,18 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liyun on 10/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class Appointment {
     private int appointmentId;
-    private Integer patientId;
-    private Integer doctorInCharge;
     private Timestamp dateTime;
     private String cancelReason;
+    private Patient patientByPatientId;
+    private Staff doctorByStaffId;
 
     @Id
     @Column(name = "appointmentId", nullable = false)
@@ -25,26 +22,6 @@ public class Appointment {
 
     public void setAppointmentId(int appointmentId) {
         this.appointmentId = appointmentId;
-    }
-
-    @Basic
-    @Column(name = "patientId", nullable = true)
-    public Integer getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
-    }
-
-    @Basic
-    @Column(name = "doctorInCharge", nullable = true)
-    public Integer getDoctorInCharge() {
-        return doctorInCharge;
-    }
-
-    public void setDoctorInCharge(Integer doctorInCharge) {
-        this.doctorInCharge = doctorInCharge;
     }
 
     @Basic
@@ -75,9 +52,6 @@ public class Appointment {
         Appointment that = (Appointment) o;
 
         if (appointmentId != that.appointmentId) return false;
-        if (patientId != null ? !patientId.equals(that.patientId) : that.patientId != null) return false;
-        if (doctorInCharge != null ? !doctorInCharge.equals(that.doctorInCharge) : that.doctorInCharge != null)
-            return false;
         if (dateTime != null ? !dateTime.equals(that.dateTime) : that.dateTime != null) return false;
         if (cancelReason != null ? !cancelReason.equals(that.cancelReason) : that.cancelReason != null) return false;
 
@@ -87,10 +61,28 @@ public class Appointment {
     @Override
     public int hashCode() {
         int result = appointmentId;
-        result = 31 * result + (patientId != null ? patientId.hashCode() : 0);
-        result = 31 * result + (doctorInCharge != null ? doctorInCharge.hashCode() : 0);
         result = 31 * result + (dateTime != null ? dateTime.hashCode() : 0);
         result = 31 * result + (cancelReason != null ? cancelReason.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId")
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "doctorInCharge", referencedColumnName = "staffId")
+    public Staff getDoctorByStaffId() {
+        return doctorByStaffId;
+    }
+
+    public void setDoctorByStaffId(Staff doctorByStaffId) {
+        this.doctorByStaffId = doctorByStaffId;
     }
 }

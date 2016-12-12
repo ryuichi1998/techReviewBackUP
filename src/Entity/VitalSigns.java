@@ -1,31 +1,18 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by liyun on 10/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class VitalSigns {
-    private int patientId;
     private Double data;
     private String type;
     private Timestamp dataTime;
     private String remarks;
-
-    @Id
-    @Column(name = "patientId", nullable = false)
-    public int getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
-    }
+    private Patient patientByPatientId;
 
     @Basic
     @Column(name = "data", nullable = true, precision = 0)
@@ -74,7 +61,6 @@ public class VitalSigns {
 
         VitalSigns that = (VitalSigns) o;
 
-        if (patientId != that.patientId) return false;
         if (data != null ? !data.equals(that.data) : that.data != null) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (dataTime != null ? !dataTime.equals(that.dataTime) : that.dataTime != null) return false;
@@ -85,11 +71,20 @@ public class VitalSigns {
 
     @Override
     public int hashCode() {
-        int result = patientId;
-        result = 31 * result + (data != null ? data.hashCode() : 0);
+        int result = data != null ? data.hashCode() : 0;
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (dataTime != null ? dataTime.hashCode() : 0);
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId", nullable = false)
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
     }
 }
