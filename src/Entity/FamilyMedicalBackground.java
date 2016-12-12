@@ -1,26 +1,24 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by liyun on 10/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class FamilyMedicalBackground {
-    private int patientId;
+    private String patientId;
     private String relative;
     private String condition;
+    private Patient patientByPatientId;
 
     @Id
-    @Column(name = "patientId", nullable = false)
-    public int getPatientId() {
+    @Column(name = "patientId", nullable = false, length = 10)
+    public String getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(int patientId) {
+    public void setPatientId(String patientId) {
         this.patientId = patientId;
     }
 
@@ -51,7 +49,7 @@ public class FamilyMedicalBackground {
 
         FamilyMedicalBackground that = (FamilyMedicalBackground) o;
 
-        if (patientId != that.patientId) return false;
+        if (patientId != null ? !patientId.equals(that.patientId) : that.patientId != null) return false;
         if (relative != null ? !relative.equals(that.relative) : that.relative != null) return false;
         if (condition != null ? !condition.equals(that.condition) : that.condition != null) return false;
 
@@ -60,9 +58,19 @@ public class FamilyMedicalBackground {
 
     @Override
     public int hashCode() {
-        int result = patientId;
+        int result = patientId != null ? patientId.hashCode() : 0;
         result = 31 * result + (relative != null ? relative.hashCode() : 0);
         result = 31 * result + (condition != null ? condition.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId", nullable = false)
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
     }
 }

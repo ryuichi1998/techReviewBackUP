@@ -1,13 +1,11 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
- * Created by liyun on 11/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class Staff extends Person{
@@ -23,6 +21,8 @@ public class Staff extends Person{
     private String language;
     private String type;
     private Integer profileImage;
+    private Collection<ConsultationRecord> consultationrecordsByStaffId;
+    private Collection<Appointment> appointmentByStaffId;
 
     @Id
     @Column(name = "staffId", nullable = false, length = 10)
@@ -182,5 +182,23 @@ public class Staff extends Person{
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (profileImage != null ? profileImage.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "staffByDoctorInCharge")
+    public Collection<ConsultationRecord> getConsultationrecordsByStaffId() {
+        return consultationrecordsByStaffId;
+    }
+
+    public void setConsultationrecordsByStaffId(Collection<ConsultationRecord> consultationrecordsByStaffId) {
+        this.consultationrecordsByStaffId = consultationrecordsByStaffId;
+    }
+
+    @OneToMany(mappedBy = "doctorByStaffId")
+    public Collection<Appointment> getAppointmentByStaffId() {
+        return appointmentByStaffId;
+    }
+
+    public void setAppointmentByStaffId(Collection<Appointment> appointmentByStaffId) {
+        this.appointmentByStaffId = appointmentByStaffId;
     }
 }

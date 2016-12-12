@@ -1,21 +1,21 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
- * Created by liyun on 10/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class ConsultationRecord {
     private int consultationId;
-    private Integer patientId;
-    private Integer doctorInCharge;
     private Timestamp dateTime;
     private String illness;
+    private String diagnosis;
+    private Patient patientByPatientId;
+    private Staff staffByDoctorInCharge;
+    private Collection<Medication> medicationListByConsultationId;
 
     @Id
     @Column(name = "consultationId", nullable = false)
@@ -25,26 +25,6 @@ public class ConsultationRecord {
 
     public void setConsultationId(int consultationId) {
         this.consultationId = consultationId;
-    }
-
-    @Basic
-    @Column(name = "patientId", nullable = true)
-    public Integer getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
-    }
-
-    @Basic
-    @Column(name = "doctorInCharge", nullable = true)
-    public Integer getDoctorInCharge() {
-        return doctorInCharge;
-    }
-
-    public void setDoctorInCharge(Integer doctorInCharge) {
-        this.doctorInCharge = doctorInCharge;
     }
 
     @Basic
@@ -67,6 +47,16 @@ public class ConsultationRecord {
         this.illness = illness;
     }
 
+    @Basic
+    @Column(name = "diagnosis", nullable = true, length = 100)
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,11 +65,9 @@ public class ConsultationRecord {
         ConsultationRecord that = (ConsultationRecord) o;
 
         if (consultationId != that.consultationId) return false;
-        if (patientId != null ? !patientId.equals(that.patientId) : that.patientId != null) return false;
-        if (doctorInCharge != null ? !doctorInCharge.equals(that.doctorInCharge) : that.doctorInCharge != null)
-            return false;
         if (dateTime != null ? !dateTime.equals(that.dateTime) : that.dateTime != null) return false;
         if (illness != null ? !illness.equals(that.illness) : that.illness != null) return false;
+        if (diagnosis != null ? !diagnosis.equals(that.diagnosis) : that.diagnosis != null) return false;
 
         return true;
     }
@@ -87,10 +75,38 @@ public class ConsultationRecord {
     @Override
     public int hashCode() {
         int result = consultationId;
-        result = 31 * result + (patientId != null ? patientId.hashCode() : 0);
-        result = 31 * result + (doctorInCharge != null ? doctorInCharge.hashCode() : 0);
         result = 31 * result + (dateTime != null ? dateTime.hashCode() : 0);
         result = 31 * result + (illness != null ? illness.hashCode() : 0);
+        result = 31 * result + (diagnosis != null ? diagnosis.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId")
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "doctorInCharge", referencedColumnName = "staffId")
+    public Staff getStaffByDoctorInCharge() {
+        return staffByDoctorInCharge;
+    }
+
+    public void setStaffByDoctorInCharge(Staff staffByDoctorInCharge) {
+        this.staffByDoctorInCharge = staffByDoctorInCharge;
+    }
+
+    @OneToMany(mappedBy = "consultationByConsultationId")
+    public Collection<Medication> getMedicationListByConsultationId() {
+        return medicationListByConsultationId;
+    }
+
+    public void setMedicationListByConsultationId(Collection<Medication> medicationListByConsultationId) {
+        this.medicationListByConsultationId = medicationListByConsultationId;
     }
 }
