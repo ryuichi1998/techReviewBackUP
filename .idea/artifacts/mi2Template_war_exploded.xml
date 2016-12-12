@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="mi2Template:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/mi2Template_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="mi2Template/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="mi2Template" />
+          <element id="jpa-descriptors" facet="mi2Template/jpa/JPA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="jax-rs-jersey-1.12" />
+          <element id="library" level="project" name="org.eclipse.persistence:eclipselink:2.6.2" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.40" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

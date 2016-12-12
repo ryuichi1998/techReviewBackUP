@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="mi2Template:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/mi2Template_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="mi2Template/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>
