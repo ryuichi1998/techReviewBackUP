@@ -42,8 +42,8 @@
     <orderEntry type="library" name="jax-rs-jersey-1.12" level="project" />
     <orderEntry type="library" name="org.eclipse.persistence:eclipselink:2.6.2" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:5.1.40" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="raphael" level="application" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="morris-0.4.1" level="application" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="jquery-ui" level="application" />
+    <orderEntry type="library" exported="" name="raphael" level="application" />
+    <orderEntry type="library" exported="" name="morris-0.4.1" level="application" />
+    <orderEntry type="library" exported="" name="jquery-ui" level="application" />
   </component>
 </module>
