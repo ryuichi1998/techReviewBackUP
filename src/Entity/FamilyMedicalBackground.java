@@ -7,20 +7,10 @@ import javax.persistence.*;
  */
 @Entity
 public class FamilyMedicalBackground {
-    private String patientId;
     private String relative;
     private String condition;
+    private int familyMedicalBackgroundId;
     private Patient patientByPatientId;
-
-    @Id
-    @Column(name = "patientId", nullable = false, length = 10)
-    public String getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
 
     @Basic
     @Column(name = "relative", nullable = true, length = 45)
@@ -42,6 +32,16 @@ public class FamilyMedicalBackground {
         this.condition = condition;
     }
 
+    @Id
+    @Column(name = "familyMedicalBackgroundId", nullable = false)
+    public int getFamilyMedicalBackgroundId() {
+        return familyMedicalBackgroundId;
+    }
+
+    public void setFamilyMedicalBackgroundId(int familyMedicalBackgroundId) {
+        this.familyMedicalBackgroundId = familyMedicalBackgroundId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,7 +49,7 @@ public class FamilyMedicalBackground {
 
         FamilyMedicalBackground that = (FamilyMedicalBackground) o;
 
-        if (patientId != null ? !patientId.equals(that.patientId) : that.patientId != null) return false;
+        if (familyMedicalBackgroundId != that.familyMedicalBackgroundId) return false;
         if (relative != null ? !relative.equals(that.relative) : that.relative != null) return false;
         if (condition != null ? !condition.equals(that.condition) : that.condition != null) return false;
 
@@ -58,9 +58,9 @@ public class FamilyMedicalBackground {
 
     @Override
     public int hashCode() {
-        int result = patientId != null ? patientId.hashCode() : 0;
-        result = 31 * result + (relative != null ? relative.hashCode() : 0);
+        int result = relative != null ? relative.hashCode() : 0;
         result = 31 * result + (condition != null ? condition.hashCode() : 0);
+        result = 31 * result + familyMedicalBackgroundId;
         return result;
     }
 

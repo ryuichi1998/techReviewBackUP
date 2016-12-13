@@ -208,11 +208,11 @@
             <!-- Second link -->
             <li class="treeview">
                 <a href="/medicationDashboard">
-                    <i class="fa fa-dashboard"></i><span>Medication</span>
+                    <i class="fa fa-dashboard"></i> <span>Medication</span>
+                </a>
                 <!-- sub menu for links -->
                 <ul class="treeview-menu">
-                    <li><a href="/medicationDashboard.jsp">Dashboard</a></li>
-                    <li><a href="/addMedications.jsp">Add new products</a></li>
+                    <li><a href="/">Add new products</a></li>
                     <li><a href="/">View all products</a></li>
                 </ul>
             </li>
