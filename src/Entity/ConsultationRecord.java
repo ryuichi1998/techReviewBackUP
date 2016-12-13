@@ -15,7 +15,7 @@ public class ConsultationRecord {
     private String diagnosis;
     private Patient patientByPatientId;
     private Staff staffByDoctorInCharge;
-    private Collection<Medication> medicationListByConsultationId;
+    private Collection<Medication> medicationsByConsultationId;
 
     @Id
     @Column(name = "consultationId", nullable = false)
@@ -101,12 +101,12 @@ public class ConsultationRecord {
         this.staffByDoctorInCharge = staffByDoctorInCharge;
     }
 
-    @OneToMany(mappedBy = "consultationByConsultationId")
-    public Collection<Medication> getMedicationListByConsultationId() {
-        return medicationListByConsultationId;
+    @OneToMany(mappedBy = "consultationrecordByConsultationid")
+    public Collection<Medication> getMedicationsByConsultationId() {
+        return medicationsByConsultationId;
     }
 
-    public void setMedicationListByConsultationId(Collection<Medication> medicationListByConsultationId) {
-        this.medicationListByConsultationId = medicationListByConsultationId;
+    public void setMedicationsByConsultationId(Collection<Medication> medicationsByConsultationId) {
+        this.medicationsByConsultationId = medicationsByConsultationId;
     }
 }

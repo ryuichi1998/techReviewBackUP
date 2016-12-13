@@ -3,27 +3,17 @@ package Entity;
 import javax.persistence.*;
 
 /**
- * Created by liyun on 10/12/16.
+ * Created by liyun on 13/12/16.
  */
 @Entity
 public class Medication {
-    private int consultationid;
     private Integer productid;
     private String frequency;
     private Double quantity;
     private String collection;
     private String remarks;
-    private ConsultationRecord consultationByConsultationId;
-
-    @Id
-    @Column(name = "consultationid", nullable = false)
-    public int getConsultationid() {
-        return consultationid;
-    }
-
-    public void setConsultationid(int consultationid) {
-        this.consultationid = consultationid;
-    }
+    private int medicationId;
+    private ConsultationRecord consultationrecordByConsultationid;
 
     @Basic
     @Column(name = "productid", nullable = true)
@@ -75,6 +65,16 @@ public class Medication {
         this.remarks = remarks;
     }
 
+    @Id
+    @Column(name = "medicationId", nullable = false)
+    public int getMedicationId() {
+        return medicationId;
+    }
+
+    public void setMedicationId(int medicationId) {
+        this.medicationId = medicationId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,7 +82,7 @@ public class Medication {
 
         Medication that = (Medication) o;
 
-        if (consultationid != that.consultationid) return false;
+        if (medicationId != that.medicationId) return false;
         if (productid != null ? !productid.equals(that.productid) : that.productid != null) return false;
         if (frequency != null ? !frequency.equals(that.frequency) : that.frequency != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
@@ -94,22 +94,22 @@ public class Medication {
 
     @Override
     public int hashCode() {
-        int result = consultationid;
-        result = 31 * result + (productid != null ? productid.hashCode() : 0);
+        int result = productid != null ? productid.hashCode() : 0;
         result = 31 * result + (frequency != null ? frequency.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         result = 31 * result + (collection != null ? collection.hashCode() : 0);
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
+        result = 31 * result + medicationId;
         return result;
     }
 
     @ManyToOne
     @JoinColumn(name = "consultationid", referencedColumnName = "consultationId", nullable = false)
-    public ConsultationRecord getConsultationByConsultationId() {
-        return consultationByConsultationId;
+    public ConsultationRecord getConsultationrecordByConsultationid() {
+        return consultationrecordByConsultationid;
     }
 
-    public void setConsultationByConsultationId(ConsultationRecord consultationByConsultationId) {
-        this.consultationByConsultationId = consultationByConsultationId;
+    public void setConsultationrecordByConsultationid(ConsultationRecord consultationrecordByConsultationid) {
+        this.consultationrecordByConsultationid = consultationrecordByConsultationid;
     }
 }
