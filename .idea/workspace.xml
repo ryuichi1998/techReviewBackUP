@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f2e6801-e7d1-44fc-8176-6b9d4f0599d9" name="Default" comment="try">
+    <list default="true" id="4f2e6801-e7d1-44fc-8176-6b9d4f0599d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/12d3b31e-9af6-4072-9e01-3d2f5827b610.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/12d3b31e-9af6-4072-9e01-3d2f5827b610.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_eclipse_persistence_eclipselink_2_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_eclipse_persistence_eclipselink_2_6_2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mi2Template.iml" afterPath="$PROJECT_DIR$/mi2Template.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/homepage/doctors.jsp" afterPath="$PROJECT_DIR$/web/homepage/doctors.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/homepage/index.jsp" afterPath="$PROJECT_DIR$/web/homepage/index.jsp" />
     </list>
     <ignored path="mi2UserStories.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -731,12 +726,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481603243082</updated>
-      <workItem from="1481603245504" duration="3500000" />
+      <workItem from="1481603245504" duration="3550000" />
     </task>
+    <task id="LOCAL-00001" summary="try">
+      <created>1481611241236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481611241236</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3500000" />
+    <option name="totallyTimeSpent" value="3550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
