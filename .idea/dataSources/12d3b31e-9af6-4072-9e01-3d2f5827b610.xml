@@ -8,200 +8,516 @@
     <schema id="3" name="mysql"/>
     <schema id="4" name="performance_schema"/>
     <schema id="5" name="sys"/>
-    <schema id="6" name="ooadp"/>
-    <schema id="7" name="sakila"/>
-    <schema id="8" name="test"/>
-    <schema id="9" name="world"/>
-    <table id="10" parent="1" name="allocatedbed"/>
-    <table id="11" parent="1" name="appointment"/>
-    <table id="12" parent="1" name="bed"/>
-    <table id="13" parent="1" name="billinvoice"/>
-    <table id="14" parent="1" name="clinics"/>
-    <table id="15" parent="1" name="consultationrecord"/>
-    <table id="16" parent="1" name="productrecord"/>
-    <column id="17" parent="10" name="bedId">
+    <table id="6" parent="1" name="allocatedbed"/>
+    <table id="7" parent="1" name="appointment"/>
+    <table id="8" parent="1" name="bed"/>
+    <table id="9" parent="1" name="billinvoice"/>
+    <table id="10" parent="1" name="clinics"/>
+    <table id="11" parent="1" name="consultationrecord"/>
+    <table id="12" parent="1" name="device"/>
+    <table id="13" parent="1" name="familymedicalbackground"/>
+    <table id="14" parent="1" name="hospitallocation"/>
+    <table id="15" parent="1" name="medication"/>
+    <table id="16" parent="1" name="medisave"/>
+    <table id="17" parent="1" name="patient"/>
+    <table id="18" parent="1" name="product"/>
+    <table id="19" parent="1" name="productrecord"/>
+    <table id="20" parent="1" name="servicedescription"/>
+    <table id="21" parent="1" name="staff"/>
+    <table id="22" parent="1" name="vitalsigns"/>
+    <table id="23" parent="1" name="ward"/>
+    <column id="24" parent="6" name="bedId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="18" parent="10" name="startDate">
+    <column id="25" parent="6" name="startDate">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="19" parent="10" name="endDate">
+    <column id="26" parent="6" name="endDate">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="20" parent="10" name="wardNo">
+    <column id="27" parent="6" name="wardNo">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="21" parent="10" name="patientId">
+    <column id="28" parent="6" name="patientId">
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="22" parent="10" name="PRIMARY">
+    <key id="29" parent="6" name="PRIMARY">
       <columns>bedId</columns>
       <primary>1</primary>
     </key>
-    <column id="23" parent="11" name="appointmentId">
+    <column id="30" parent="7" name="appointmentId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="24" parent="11" name="patientId">
+    <column id="31" parent="7" name="patientId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="25" parent="11" name="doctorInCharge">
+    <column id="32" parent="7" name="doctorInCharge">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="26" parent="11" name="dateTime">
+    <column id="33" parent="7" name="dateTime">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="27" parent="11" name="cancelReason">
+    <column id="34" parent="7" name="cancelReason">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <key id="28" parent="11" name="PRIMARY">
+    <key id="35" parent="7" name="PRIMARY">
       <columns>appointmentId</columns>
       <primary>1</primary>
     </key>
-    <column id="29" parent="12" name="bedId">
+    <column id="36" parent="8" name="bedId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="30" parent="12" name="availability">
+    <column id="37" parent="8" name="availability">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="31" parent="12" name="wardNo">
+    <column id="38" parent="8" name="wardNo">
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="32" parent="12" name="PRIMARY">
+    <key id="39" parent="8" name="PRIMARY">
       <columns>bedId</columns>
       <primary>1</primary>
     </key>
-    <column id="33" parent="13" name="invoiceId">
+    <column id="40" parent="9" name="invoiceId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="34" parent="13" name="patientId">
+    <column id="41" parent="9" name="patientId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="35" parent="13" name="billDate">
+    <column id="42" parent="9" name="billDate">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="36" parent="13" name="payType">
+    <column id="43" parent="9" name="payType">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="37" parent="13" name="bedId">
+    <column id="44" parent="9" name="bedId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="38" parent="13" name="servId">
+    <column id="45" parent="9" name="servId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="39" parent="13" name="consultationId">
+    <column id="46" parent="9" name="consultationId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="40" parent="13" name="productId">
+    <column id="47" parent="9" name="productId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="41" parent="13" name="wardNo">
+    <column id="48" parent="9" name="wardNo">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="42" parent="13" name="amtPayBeforeGovt">
+    <column id="49" parent="9" name="amtPayBeforeGovt">
       <data-type>double|0</data-type>
     </column>
-    <column id="43" parent="13" name="amtPay">
+    <column id="50" parent="9" name="amtPay">
       <data-type>double|0</data-type>
     </column>
-    <column id="44" parent="13" name="gst">
+    <column id="51" parent="9" name="gst">
       <data-type>double|0</data-type>
     </column>
-    <column id="45" parent="13" name="subsidy">
+    <column id="52" parent="9" name="subsidy">
       <data-type>double|0</data-type>
     </column>
-    <column id="46" parent="13" name="totalAmtPayable">
+    <column id="53" parent="9" name="totalAmtPayable">
       <data-type>double|0</data-type>
     </column>
-    <column id="47" parent="13" name="status">
+    <column id="54" parent="9" name="status">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <index id="48" parent="13" name="bedId_idx">
+    <index id="55" parent="9" name="bedId_idx">
       <columns>bedId</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="49" parent="13" name="consultationId_idx">
+    <index id="56" parent="9" name="consultationId_idx">
       <columns>consultationId</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="50" parent="13" name="patientId_idx">
+    <index id="57" parent="9" name="patientId_idx">
       <columns>patientId</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="51" parent="13" name="productId_idx">
+    <index id="58" parent="9" name="productId_idx">
       <columns>productId</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="52" parent="13" name="servId_idx">
+    <index id="59" parent="9" name="servId_idx">
       <columns>servId</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="53" parent="13" name="wardNo_idx">
+    <index id="60" parent="9" name="wardNo_idx">
       <columns>wardNo</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="54" parent="13" name="PRIMARY">
+    <key id="61" parent="9" name="PRIMARY">
       <columns>invoiceId</columns>
       <primary>1</primary>
     </key>
-    <column id="55" parent="14" name="unitnumber">
+    <column id="62" parent="10" name="unitnumber">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="56" parent="14" name="name">
+    <column id="63" parent="10" name="name">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="57" parent="14" name="block">
+    <column id="64" parent="10" name="block">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="58" parent="14" name="address">
+    <column id="65" parent="10" name="address">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="59" parent="14" name="postalcode">
+    <column id="66" parent="10" name="postalcode">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <key id="60" parent="14" name="PRIMARY">
+    <key id="67" parent="10" name="PRIMARY">
       <columns>unitnumber</columns>
       <primary>1</primary>
     </key>
-    <column id="61" parent="15" name="consultationId">
+    <column id="68" parent="11" name="consultationId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="62" parent="15" name="patientId">
+    <column id="69" parent="11" name="patientId">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="63" parent="15" name="doctorInCharge">
+    <column id="70" parent="11" name="doctorInCharge">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="64" parent="15" name="dateTime">
+    <column id="71" parent="11" name="dateTime">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="65" parent="15" name="illness">
+    <column id="72" parent="11" name="illness">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <key id="66" parent="15" name="PRIMARY">
+    <key id="73" parent="11" name="PRIMARY">
       <columns>consultationId</columns>
       <primary>1</primary>
     </key>
-    <column id="67" parent="16" name="productId">
+    <column id="74" parent="12" name="patientId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="75" parent="12" name="deviceId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="76" parent="12" name="lastSyncDateTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="77" parent="12" name="patientId_idx">
+      <columns>patientId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="78" parent="12" name="PRIMARY">
+      <columns>deviceId</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="79" parent="12" name="patientId">
+      <columns>patientId</columns>
+      <ref-key>~.patient.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="80" parent="13" name="patientId">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="68" parent="16" name="quantity">
+    <column id="81" parent="13" name="relative">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="69" parent="16" name="type">
+    <column id="82" parent="13" name="condition">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="70" parent="16" name="importedDate">
+    <key id="83" parent="13" name="PRIMARY">
+      <columns>patientId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="84" parent="14" name="address">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="85" parent="14" name="postalcode">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="86" parent="14" name="locationId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <index id="87" parent="14" name="hospitallocation_locationId_uindex">
+      <columns>locationId</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="88" parent="14" name="PRIMARY">
+      <columns>locationId</columns>
+      <primary>1</primary>
+    </key>
+    <key id="89" parent="14" name="hospitallocation_locationId_uindex">
+      <columns>locationId</columns>
+      <underlying-index>hospitallocation_locationId_uindex</underlying-index>
+    </key>
+    <column id="90" parent="15" name="consultationid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="91" parent="15" name="productid">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="92" parent="15" name="frequency">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="93" parent="15" name="quantity">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="94" parent="15" name="collection">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="95" parent="15" name="remarks">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="96" parent="15" name="PRIMARY">
+      <columns>consultationid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="97" parent="16" name="patientId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="98" parent="16" name="nric">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="99" parent="16" name="balance">
+      <data-type>double|0</data-type>
+    </column>
+    <key id="100" parent="16" name="PRIMARY">
+      <columns>patientId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="101" parent="17" name="patientId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="102" parent="17" name="name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="103" parent="17" name="nric">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="104" parent="17" name="address">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="105" parent="17" name="gender">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="106" parent="17" name="dateOfBirth">
       <data-type>datetime|0</data-type>
     </column>
-    <key id="71" parent="16" name="PRIMARY">
+    <column id="107" parent="17" name="phoneNumber">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="108" parent="17" name="email">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="109" parent="17" name="race">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="110" parent="17" name="citizenship">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="111" parent="17" name="language">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="112" parent="17" name="weight">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="113" parent="17" name="height">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="114" parent="17" name="bloodType">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="115" parent="17" name="registrationDate">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="116" parent="17" name="nokName">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="117" parent="17" name="nokPhoneNumber">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="118" parent="17" name="nokRelation">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="119" parent="17" name="nokEmail">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="120" parent="17" name="profileImage">
+      <data-type>longblob|0</data-type>
+    </column>
+    <key id="121" parent="17" name="PRIMARY">
+      <columns>patientId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="122" parent="18" name="productId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="123" parent="18" name="productName">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="124" parent="18" name="productType">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="125" parent="18" name="productUnit">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="126" parent="18" name="productQuantity">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="127" parent="18" name="productPrice">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="128" parent="18" name="productDetails">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="129" parent="18" name="supplierName">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="130" parent="18" name="supplierPartNo">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="131" parent="18" name="supplierPrice">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="132" parent="18" name="importedDate">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="133" parent="18" name="productCode">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="134" parent="18" name="PRIMARY">
       <columns>productId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="135" parent="19" name="productId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="136" parent="19" name="quantity">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="137" parent="19" name="type">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="138" parent="19" name="importedDate">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="139" parent="19" name="PRIMARY">
+      <columns>productId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="140" parent="20" name="servId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="141" parent="20" name="servDesc">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="142" parent="20" name="servFee">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="143" parent="20" name="servDate">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="144" parent="20" name="PRIMARY">
+      <columns>servId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="145" parent="21" name="staffId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="146" parent="21" name="name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="147" parent="21" name="nric">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="148" parent="21" name="address">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="149" parent="21" name="gender">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="150" parent="21" name="dateOfBirth">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="151" parent="21" name="phoneNumber">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="152" parent="21" name="email">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="153" parent="21" name="citizenship">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="154" parent="21" name="language">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="155" parent="21" name="type">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="156" parent="21" name="profileImage">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="157" parent="21" name="PRIMARY">
+      <columns>staffId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="158" parent="22" name="patientId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="159" parent="22" name="data">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="160" parent="22" name="type">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="161" parent="22" name="dataTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="162" parent="22" name="remarks">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="163" parent="22" name="PRIMARY">
+      <columns>patientId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="164" parent="23" name="wardNo">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="165" parent="23" name="classType">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="166" parent="23" name="bedTotalCapacity">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="167" parent="23" name="bedAllocatedCapacity">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="168" parent="23" name="wardFees">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="169" parent="23" name="Gender">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="170" parent="23" name="PRIMARY">
+      <columns>wardNo</columns>
       <primary>1</primary>
     </key>
   </database-model>
