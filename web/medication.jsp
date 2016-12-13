@@ -25,7 +25,7 @@
         <%--Content Header--%>
         <section class="content-header">
             <h1>
-                Dashboard
+                Medication Management
                 <small>This is the dashboard</small>
             </h1>
             <ol class="breadcrumb">
