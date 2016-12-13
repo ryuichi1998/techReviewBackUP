@@ -9,8 +9,7 @@
 <html>
 <head>
     <title>Mi2 - Add new medication</title>
-    <!-- Date picker style -->
-    <link rel="stylesheet" href="common/plugins/datepicker/datepicker3.css">
+    <!-- Common links-->
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
@@ -54,7 +53,7 @@
                     <%--/. Box  --%>
                 </div>
 
-
+        <form action="/addNewMedication" method="post">
                 <%--/.1.1 Start col md 12  --%>
                 <div class="col col-md-12">
 
@@ -84,12 +83,12 @@
 
                                         <div class="form-group">
                                             <label>Product name</label>
-                                            <input type="text" class="form-control" placeholder="Enter name">
+                                            <input type="text" class="form-control" placeholder="Enter name" name="productname">
                                         </div>
 
                                         <div class="form-group">
                                             <label>Product type</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="producttype">
                                                 <option>Capsule</option>
                                                 <option>Liquid</option>
                                                 <option>Ointment</option>
@@ -98,7 +97,7 @@
 
                                         <div class="form-group">
                                             <label>Product unit</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="productunit">
                                                 <option>Grams (gm)</option>
                                                 <option>Piece (pc)</option>
                                                 <option>Litres (l®®®¡)</option>
@@ -107,7 +106,12 @@
 
                                     <div class="form-group">
                                         <label>Product quantity</label>
-                                        <input type="text" class="form-control" placeholder="Enter quantity">
+                                        <input type="text" class="form-control" placeholder="Enter quantity" name="productquantity">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Product details</label>
+                                        <textarea class="form-control" placeholder="Enter details" name="productdetails"></textarea>
                                     </div>
 
 
@@ -118,20 +122,25 @@
                                 <div class="col col-md-6">
                                     <div class="form-group">
                                         <label>Supplier name</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier name">
+                                        <input type="text" class="form-control" placeholder="Enter supplier name" name="suppliername">
                                     </div>
                                     <div class="form-group">
                                         <label>Supplier part number</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier part no">
+                                        <input type="text" class="form-control" placeholder="Enter supplier part no" name="supplierpartno">
                                     </div>
                                     <div class="form-group">
                                         <label>Supplier Price</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier price">
+                                        <input type="text" class="form-control" placeholder="Enter supplier price" name="supplierprice">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Product code</label>
-                                        <input type="text" class="form-control" placeholder="Enter product code">
+                                        <input type="text" class="form-control" placeholder="Enter product code" name="productcode">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Product price</label>
+                                        <input type="text" class="form-control" placeholder="Enter price" name="supplierprice">
                                     </div>
 
 
@@ -156,7 +165,7 @@
                 </div>
                 <%--/. 1.1 End Col md 12  --%>
 
-
+        </form>
 
 
 
@@ -170,6 +179,18 @@
 
     <%--Footer--%>
     <%@include file="common/html/footer.html" %>
+
+     <!-- Script -->
+        <script>
+            $(function() {
+                //Date picker
+                $('#datepicker').datepicker({
+                    autoclose: true
+                });
+                    }
+                );
+
+        </script>
 
     <!-- Add the sidebar's background. This div must be placed
    immediately after the control sidebar -->

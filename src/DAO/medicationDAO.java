@@ -5,6 +5,7 @@ import Model.EMF;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.List;
 
 
 /**
@@ -19,21 +20,42 @@ public class medicationDAO {
     }
 
 
-    public void addNewMedications(Product product) {
+    public boolean addNewMedications(Product product) {
+        boolean isValid = false;
+
         try {
 
             em.getTransaction().begin();
             em.persist(product);
             em.getTransaction().commit();
 
+            isValid = true;
+
         } catch(Exception e) {
             e.printStackTrace();
         }
+
+        return isValid;
     }
 
 
-    public void retrieveAllMedications() {
+    public List<Product> retrieveAllMedications() {
+            List<Product> product = null;
 
+                try {
+                    Query query = em.createQuery("SELECT p from Product p");
+                    product = query.getResultList();
+
+                } catch(Exception e) {
+
+                }
+    return product;
+    }
+
+
+    public Product retrieveBook() {
+
+        return null;
     }
 
 
