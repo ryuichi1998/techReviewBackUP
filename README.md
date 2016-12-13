@@ -4,7 +4,7 @@ Mi2 Hospital Solution
 ## Problem Statement:
 "Hospital needs a way to increase productivity and efficiency in their work because there is a lack of resources"
 
-Therefore we aim to help improve online e-services for patients to have a quick glance of their health status thereby only making necessary trips to the hospitals and an easy monitoring system for doctors to keep track of patient's health status that could bring efficiency in their work
+Therefore we aim to help improve online e-services for patients to have a quick glance of their health status thereby only making necessary trips to the hospitals and an easy monitoring system for doctors to keep track of patient's health status that could bring efficiency in their work.
 
 ## Features:
 1. Home Page
