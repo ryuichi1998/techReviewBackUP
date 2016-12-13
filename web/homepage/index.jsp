@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/>
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/fountain-blue-theme.css" rel="stylesheet">
+    <!--Slick Theme-->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
 
     <!-- Main Style -->
     <link href="style.css" rel="stylesheet">
@@ -27,10 +29,10 @@
     <!-- Fonts -->
 
     <!-- Open Sans for body font -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <!-- Lato for Title -->
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
+    <%--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--%>
+    <%--<!-- Lato for Title -->--%>
+    <%--<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -163,7 +165,7 @@
                 </button>
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
-                <a class="navbar-brand" href="index.html">Mi² Healthcare</a>
+                <a class="navbar-brand" href="index.html">Mi² HealthCare</a>
                 <!-- IMG BASED LOGO  -->
                 <!--            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
             </div>
@@ -392,16 +394,14 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="footer-left">
-                    <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+                    <p>Designed by <a href="http://www.markups.io/">Nanyang Polytechnic <i class="fa fa-copyright"></i>2016</a></p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="footer-right">
-                    <a href="index.html"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                    <a href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a href="http://www.instagram.com/"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
         </div>
