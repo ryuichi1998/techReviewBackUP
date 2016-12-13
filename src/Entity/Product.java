@@ -25,6 +25,9 @@ public class Product {
     private String productCode;
 
 
+    public Product() {
+    }
+
     public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
         this.productName = productName;
         this.productType = productType;

@@ -8,9 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>Mi2 - View all medications</title>
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
+<%@ page import="DAO.medicationDAO" %>
+<%@ page import="java.util.List" %>
+<%
+    medicationDAO db = new medicationDAO();
+    //Product medications =  db.retrieveMedications();
+    List<Product> products = db.retrieveAllMedications();
+
+
+%>
+
+
 
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
 
@@ -25,8 +37,8 @@
         <%--Content Header--%>
         <section class="content-header">
             <h1>
-                Dashboard
-                <small>This is the dashboard</small>
+                Medications
+                <small>view all medications</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -36,36 +48,13 @@
         <%--/.content-header--%>
 
         <section class="content">
-            <div class="row">
-
-                <div class="col col-md-12">
-
-                    <%--/. Box header --%>
-                    <div class="box box-solid box-default">
-
-                        <div class="box-header"><h3 class="box-title">Medication</h3></div>
-
-                        <%--/. Body header --%>
-                        <div class="box-body">
-
-
-
-                        </div>
-
-                        <%--/. Body  --%>
-                    </div>
-                    <%--/. Box  --%>
-                </div>
-                <%--/. Col md 12  --%>
-            </div>
-
 
             <!-- /.row -->
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Responsive Hover Table</h3>
+                            <h3 class="box-title">View all medications</h3>
 
                             <div class="box-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -80,21 +69,37 @@
                         <!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
+                                <tbody>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>User</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Reason</th>
-                                </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="label label-success">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
+                                    <th>Product Code</th>
+                                    <th>Product Name</th>
+                                    <th>Type</th>
+                                    <th>Unit</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Details</th>
+                                    <th>Imported Date</th>
 
+                                </tr>
+                                <%
+                                    for(Product medications : products) {
+                                %>
+                                <tr>
+                                    <td><a href="viewMedications?productcode=<%= medications.getProductCode() %>"><%= medications.getProductCode() %></a></td>
+                                    <td><%= medications.getProductName() %></td>
+                                    <td><%= medications.getProductType() %></td>
+                                    <td><%= medications.getProductUnit() %></td>
+                                    <td><span class="label label-default"><%= medications.getProductQuantity() %></span></td>
+                                    <td><%= medications.getProductPrice() %></td>
+                                    <td><%= medications.getProductDetails() %></td>
+                                    <td><%= medications.getImportedDate() %></td>
+
+                                </tr>
+                                <%
+                                    }
+                                %>
+
+                                </tbody>
                             </table>
                         </div>
                         <!-- /.box-body -->
