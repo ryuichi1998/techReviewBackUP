@@ -20,8 +20,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/>
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/fountain-blue-theme.css" rel="stylesheet">
-    <!--Slick Theme-->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
 
     <!-- Main Style -->
     <link href="style.css" rel="stylesheet">
@@ -29,10 +27,10 @@
     <!-- Fonts -->
 
     <!-- Open Sans for body font -->
-    <%--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>--%>
-    <%--<!-- Lato for Title -->--%>
-    <%--<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>--%>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -81,6 +79,7 @@
                     <div class="header-login">
                         <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Login / Sign Up</a>
                         <a class="login modal-form" href="faq.jsp">FAQ</a>
+                        <a class="login modal-form" href="contact.jsp">Mail Us</a>
                     </div>
 
                 </div>
@@ -165,16 +164,15 @@
                 </button>
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
-                <a class="navbar-brand" href="index.html">Mi² HealthCare</a>
+                <a class="navbar-brand" href="index.html">Mi² Healthcare</a>
                 <!-- IMG BASED LOGO  -->
                 <!--            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
                     <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href ="aboutus.jsp">About us</a></li>
                     <li><a href="doctors.jsp">Our Doctors</a></li>
-                    <li><a href="service.html">Chat with us</a></li>
-                    <li><a href="career.jsp">Career Opportunities</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clinics<span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -182,16 +180,15 @@
                             <li><a href="cliniclocations.jsp">Locations of Clinics</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href ="about.jsp">About us</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="career.jsp">Career Opportunities</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
 </section>
 <!-- END MENU -->
+
+<!-- END OF NAVBAR, HEADER AND RESOURCES-->
 
 <!-- Start slider -->
 <section id="slider">

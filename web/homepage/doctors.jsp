@@ -79,6 +79,7 @@
                     <div class="header-login">
                         <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Login / Sign Up</a>
                         <a class="login modal-form" href="faq.jsp">FAQ</a>
+                        <a class="login modal-form" href="contact.jsp">Mail Us</a>
                     </div>
 
                 </div>
@@ -169,10 +170,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li class="active"><a href="doctors.jsp">Our Doctors</a></li>
-                    <li><a href="service.html">Chat with us</a></li>
-                    <li><a href="career.jsp">Career Opportunities</a></li>
+                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href ="aboutus.jsp">About us</a></li>
+                    <li><a href="doctors.jsp">Our Doctors</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clinics<span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -180,16 +180,15 @@
                             <li><a href="cliniclocations.jsp">Locations of Clinics</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href ="about.jsp">About us</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="career.jsp">Career Opportunities</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
 </section>
 <!-- END MENU -->
+
+<!-- END OF NAVBAR, HEADER AND RESOURCES-->
 
 <!-- Start latest news -->
 <section id="latest-news">
