@@ -24,6 +24,21 @@ public class Product {
     private Date importedDate;
     private String productCode;
 
+
+    public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
+        this.productName = productName;
+        this.productType = productType;
+        this.productUnit = productUnit;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+        this.productDetails = productDetails;
+        this.supplierName = supplierName;
+        this.supplierPartNo = supplierPartNo;
+        this.supplierPrice = supplierPrice;
+        this.importedDate = importedDate;
+        this.productCode = productCode;
+    }
+
     @Id
     @Column(name = "productId", nullable = false)
     public int getProductId() {

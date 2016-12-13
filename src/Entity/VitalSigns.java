@@ -12,6 +12,7 @@ public class VitalSigns {
     private String type;
     private Timestamp dataTime;
     private String remarks;
+    private int vitalSignId;
     private Patient patientByPatientId;
 
     @Basic
@@ -54,6 +55,16 @@ public class VitalSigns {
         this.remarks = remarks;
     }
 
+    @Id
+    @Column(name = "vitalSignId", nullable = false)
+    public int getVitalSignId() {
+        return vitalSignId;
+    }
+
+    public void setVitalSignId(int vitalSignId) {
+        this.vitalSignId = vitalSignId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,6 +72,7 @@ public class VitalSigns {
 
         VitalSigns that = (VitalSigns) o;
 
+        if (vitalSignId != that.vitalSignId) return false;
         if (data != null ? !data.equals(that.data) : that.data != null) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (dataTime != null ? !dataTime.equals(that.dataTime) : that.dataTime != null) return false;
@@ -75,6 +87,7 @@ public class VitalSigns {
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (dataTime != null ? dataTime.hashCode() : 0);
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
+        result = 31 * result + vitalSignId;
         return result;
     }
 
