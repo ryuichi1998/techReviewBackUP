@@ -166,8 +166,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
-                    <li><a href="feature.html">Our Doctors</a></li>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li class="active"><a href="feature.html">Our Doctors</a></li>
                     <li><a href="service.html">Chat with us</a></li>
                     <li><a href="portfolio.html">Career Opportunities</a></li>
                     <li class="dropdown">
@@ -203,15 +203,15 @@
                         <div class="col-md-4">
                             <article class="blog-news-single">
                                 <div class="blog-news-img">
-                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-2.jpg" alt="image"></a>
+                                    <img src="assets/images/doctor.jpg" alt="image">
                                 </div>
                                 <div class="blog-news-title">
-                                    <h2><a href="blog-single-with-right-sidebar.html">Mandell House</a></h2>
+                                    <h2>Mandell House</h2>
                                     <p><span class="blog-date">PhD in Medicine</span></p>
                                 </div>
                                 <div class="blog-news-details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Working Hours: <br> Monday - Friday: 9am - 6pm </a>
+                                        Working Hours: <br> Monday - Friday: 9am - 6pm
                                 </div>
                             </article>
                         </div>
@@ -219,15 +219,15 @@
                         <div class="col-md-4">
                             <article class="blog-news-single">
                                 <div class="blog-news-img">
-                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-2.jpg" alt="image"></a>
+                                    <img src="assets/images/doctor.jpg" alt="image">
                                 </div>
                                 <div class="blog-news-title">
-                                    <h2><a href="blog-single-with-right-sidebar.html">Mandell House</a></h2>
+                                    <h2>Mandell House</h2>
                                     <p><span class="blog-date">PhD in Medicine</span></p>
                                 </div>
                                 <div class="blog-news-details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Working Hours: <br> Monday - Friday: 9am - 6pm </a>
+                                    Working Hours: <br> Monday - Friday: 9am - 6pm
                                 </div>
                             </article>
                         </div>
@@ -235,15 +235,15 @@
                         <div class="col-md-4">
                             <article class="blog-news-single">
                                 <div class="blog-news-img">
-                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-2.jpg" alt="image"></a>
+                                    <img src="assets/images/doctor.jpg" alt="image">
                                 </div>
                                 <div class="blog-news-title">
-                                    <h2><a href="blog-single-with-right-sidebar.html">Mandell House</a></h2>
+                                    <h2>Mandell House</h2>
                                     <p><span class="blog-date">PhD in Medicine</span></p>
                                 </div>
                                 <div class="blog-news-details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Working Hours: <br> Monday - Friday: 9am - 6pm </a>
+                                    Working Hours: <br> Monday - Friday: 9am - 6pm
                                 </div>
                             </article>
                         </div>

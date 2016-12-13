@@ -17,7 +17,7 @@
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
           <factory-entry name="NewPersistenceUnit" value="12d3b31e-9af6-4072-9e01-3d2f5827b610" />
-          <factory-entry name="mi2" value="12d3b31e-9af6-4072-9e01-3d2f5827b610" />
+          <factory-entry name="mi2" value="06abc38b-1024-4699-91ee-f033533fdaca" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
@@ -37,13 +37,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.38" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.0.38" level="application_server_libraries" />
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
     <orderEntry type="library" name="jax-rs-jersey-1.12" level="project" />
     <orderEntry type="library" name="org.eclipse.persistence:eclipselink:2.6.2" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:5.1.40" level="project" />
-    <orderEntry type="library" exported="" name="raphael" level="application" />
-    <orderEntry type="library" exported="" name="morris-0.4.1" level="application" />
-    <orderEntry type="library" exported="" name="jquery-ui" level="application" />
+    <orderEntry type="library" name="raphael" level="application" />
+    <orderEntry type="library" name="morris-0.4.1" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
   </component>
 </module>
