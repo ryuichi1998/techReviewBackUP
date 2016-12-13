@@ -7,18 +7,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e4df3f-079b-4791-99cd-3844174ecf3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ViewMedicationServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/common/template/dist/css/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/productDetails.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/12d3b31e-9af6-4072-9e01-3d2f5827b610.xml" afterPath="" />
+    <list default="true" id="51e4df3f-079b-4791-99cd-3844174ecf3a" name="Default" comment="Created viewMedications&#10;Updated addMedications.jsp - not working - &#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/NewMedicationServlet.java" afterPath="$PROJECT_DIR$/src/Controller/NewMedicationServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/medicationDAO.java" afterPath="$PROJECT_DIR$/src/DAO/medicationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Product.java" afterPath="$PROJECT_DIR$/src/Entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/common/html/commonLinks.html" afterPath="$PROJECT_DIR$/web/common/html/commonLinks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/common/html/nurseNavigation.jsp" afterPath="$PROJECT_DIR$/web/common/html/nurseNavigation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/viewMedications.jsp" afterPath="$PROJECT_DIR$/web/viewMedications.jsp" />
     </list>
     <ignored path="mi2Template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -879,12 +869,20 @@
       <workItem from="1481642265370" duration="6290000" />
       <workItem from="1481651237275" duration="8066000" />
       <workItem from="1481663325923" duration="459000" />
-      <workItem from="1481666082862" duration="141000" />
+      <workItem from="1481666082862" duration="308000" />
     </task>
+    <task id="LOCAL-00001" summary="Created viewMedications&#10;Updated addMedications.jsp - not working - &#10;">
+      <created>1481666321497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481666321497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106539000" />
+    <option name="totallyTimeSpent" value="106706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -953,6 +951,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created viewMedications&#10;Updated addMedications.jsp - not working - &#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created viewMedications&#10;Updated addMedications.jsp - not working - &#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1045,6 +1047,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,6 +1091,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-840">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481642256000" expanded="true" signature="6087:6165" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
