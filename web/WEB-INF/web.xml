@@ -15,7 +15,7 @@
 
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>Controller</param-value>
+            <param-value>Model</param-value>
         </init-param>
 
         <init-param>
@@ -26,7 +26,7 @@
 
     <servlet-mapping>
         <servlet-name>RestServlet</servlet-name>
-        <url-pattern>/consultation/*</url-pattern>
+        <url-pattern>/services/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
