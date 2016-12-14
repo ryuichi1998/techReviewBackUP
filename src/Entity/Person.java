@@ -14,7 +14,7 @@ public class Person {
     private String address;
     private String gender;
     private Timestamp dateOfBirth;
-    private Double phoneNumber;
+    private String phoneNumber;
     private String email;
     private String citizenship;
     private String language;
@@ -63,11 +63,11 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Double getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Double phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
