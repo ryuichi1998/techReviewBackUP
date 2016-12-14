@@ -107,7 +107,7 @@
                         <input type="password" placeholder="Password" class="form-control">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="button">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit" formaction="/medicationDashboard.jsp">SIGN IN</button>
                     </div>
                 </form>
             </div>
@@ -256,7 +256,10 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h4><a class="blog-news-details" href="alldoctors.jsp"> Click here to see list of all doctors</a></h4>
     </div>
+
 </section>
 <!-- End latest news -->
 

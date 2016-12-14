@@ -107,7 +107,7 @@
                         <input type="password" placeholder="Password" class="form-control">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="button">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit" formaction="/medicationDashboard.jsp">SIGN IN</button>
                     </div>
                 </form>
             </div>
@@ -189,6 +189,70 @@
 <!-- END MENU -->
 
 <!-- END OF NAVBAR, HEADER AND RESOURCES-->
+<!-- Start Feature -->
+<section id="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-area">
+                    <h2 class="title">Features</h2>
+                    <span class="line"></span>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                    <div class="col-md-12">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-leaf feature-icon"></i>
+                                        <h4 class="feat-title">Innovative</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-mobile feature-icon"></i>
+                                        <h4 class="feat-title">Integrated healthcare</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-thumbs-o-up feature-icon"></i>
+                                        <h4 class="feat-title">Health Monitoring</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-gears feature-icon"></i>
+                                        <h4 class="feat-title">Multiple Options</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-code feature-icon"></i>
+                                        <h4 class="feat-title">Easily Accesible</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-smile-o feature-icon"></i>
+                                        <h4 class="feat-title">Awesome Support</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</section>
+
+<!-- End Feature -->
 
 <!-- Start footer -->
 <footer id="footer">

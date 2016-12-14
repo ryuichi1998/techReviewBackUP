@@ -626,7 +626,7 @@ img{
 /*--------------------*/
 
 #feature{
-	background-color: #fff;
+	background-color: #777;
 	display: inline;
 	float: left;
 	padding: 70px 0;
@@ -635,6 +635,7 @@ img{
 
 .title-area {
   display: inline;
+    background-color: gray;
   float: left;
   padding: 0 150px;
   text-align: center;
