@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e4df3f-079b-4791-99cd-3844174ecf3a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entity/BillInvoice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entity/ServiceDescription.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="mi2Template.iws" />
@@ -946,12 +943,20 @@
       <workItem from="1481667256233" duration="84000" />
       <workItem from="1481699671466" duration="295000" />
       <workItem from="1481722262093" duration="12867000" />
-      <workItem from="1481735237229" duration="2720000" />
+      <workItem from="1481735237229" duration="2757000" />
     </task>
+    <task id="LOCAL-00001" summary="updated">
+      <created>1481738524063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481738524063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109746000" />
+    <option name="totallyTimeSpent" value="109783000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1061,7 +1066,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
