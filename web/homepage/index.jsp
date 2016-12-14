@@ -107,7 +107,9 @@
                         <input type="password" placeholder="Password" class="form-control" name="nric">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="submit">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit">Patient</button>
+                        <button class="btn signin-btn" type="submit">Doctor</button>
+                        <button class="btn signin-btn" type="submit">Nurse</button>
                     </div>
                 </form>
             </div>
