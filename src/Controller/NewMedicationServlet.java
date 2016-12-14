@@ -1,5 +1,6 @@
 package Controller;
 
+
 import DAO.medicationDAO;
 import Entity.Product;
 
@@ -18,9 +19,7 @@ import java.sql.Date;
 public class NewMedicationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         medicationDAO medication = new medicationDAO();
-        boolean isExecuted = false;
 
 
         String productName = request.getParameter("productname");
@@ -35,15 +34,17 @@ public class NewMedicationServlet extends HttpServlet {
         Date importedDate = Date.valueOf(request.getParameter("importeddate"));
         String productCode = request.getParameter("productcode");
 
-        Product p = new Product(productName,productType, productUnit, productQuantity, productPrice, productDetails, supplierName, supplierPartNo, supplierPrice, importedDate, productCode);
+        boolean isCreated = medication.addNewMedications(productName, productType, productUnit, productQuantity, productPrice, productDetails, supplierName, supplierPartNo, supplierPrice, importedDate, productCode);
+        //request.setAttribute("products" , p);
 
-        isExecuted = medication.addNewMedications(p);
-
-        if(isExecuted == true) {
+        if(isCreated == true) {
+            getServletContext().getRequestDispatcher("/viewMedication.jsp").forward(request, response);
 
         } else {
-
+            getServletContext().getRequestDispatcher("/addMedications.jsp").forward(request,response);
         }
+
+
 
 
     }

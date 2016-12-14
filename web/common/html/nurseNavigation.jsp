@@ -213,7 +213,7 @@
                 <ul class="treeview-menu">
                     <li><a href="/medicationDashboard.jsp">Dashboard</a></li>
                     <li><a href="/addMedications.jsp">Add new products</a></li>
-                    <li><a href="/">View all products</a></li>
+                    <li><a href="/viewMedications.jsp">View all products</a></li>
                 </ul>
             </li>
 
