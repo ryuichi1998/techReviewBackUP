@@ -11,7 +11,7 @@ import java.util.Collection;
 public class ConsultationRecord {
     private int consultationId;
     private Timestamp dateTime;
-    private String illness;
+    private String comment;
     private String diagnosis;
     private Patient patientByPatientId;
     private Staff staffByDoctorInCharge;
@@ -38,17 +38,17 @@ public class ConsultationRecord {
     }
 
     @Basic
-    @Column(name = "illness", nullable = true, length = 45)
-    public String getIllness() {
-        return illness;
+    @Column(name = "comment", nullable = true, length = 100)
+    public String getComment() {
+        return comment;
     }
 
-    public void setIllness(String illness) {
-        this.illness = illness;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     @Basic
-    @Column(name = "diagnosis", nullable = true, length = 100)
+    @Column(name = "diagnosis", nullable = true, length = 45)
     public String getDiagnosis() {
         return diagnosis;
     }
@@ -66,7 +66,7 @@ public class ConsultationRecord {
 
         if (consultationId != that.consultationId) return false;
         if (dateTime != null ? !dateTime.equals(that.dateTime) : that.dateTime != null) return false;
-        if (illness != null ? !illness.equals(that.illness) : that.illness != null) return false;
+        if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
         if (diagnosis != null ? !diagnosis.equals(that.diagnosis) : that.diagnosis != null) return false;
 
         return true;
@@ -76,7 +76,7 @@ public class ConsultationRecord {
     public int hashCode() {
         int result = consultationId;
         result = 31 * result + (dateTime != null ? dateTime.hashCode() : 0);
-        result = 31 * result + (illness != null ? illness.hashCode() : 0);
+        result = 31 * result + (comment != null ? comment.hashCode() : 0);
         result = 31 * result + (diagnosis != null ? diagnosis.hashCode() : 0);
         return result;
     }
