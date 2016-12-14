@@ -8,7 +8,7 @@
 
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="DAO.medicationDAO" %>
+<%@ page import="DAO.productDAO" %>
 <%
     Product medications = (Product) request.getAttribute("product");
 %>
