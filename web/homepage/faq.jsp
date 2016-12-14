@@ -78,7 +78,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="header-login">
                         <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Login / Sign Up</a>
-                        <a class="login modal-form" href="faq.jsp">FAQ</a>
+                        <a  class="active" class="login modal-form" href="faq.jsp">FAQ</a>
                         <a class="login modal-form" href="contact.jsp">Mail Us</a>
                     </div>
 
@@ -170,7 +170,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href ="aboutus.jsp">About us</a></li>
                     <li><a href="doctors.jsp">Our Doctors</a></li>
                     <li class="dropdown">

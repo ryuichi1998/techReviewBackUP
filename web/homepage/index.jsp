@@ -99,15 +99,15 @@
                 <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Login</h4>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="${pageContext.request.contextPath}/login" method="post">
                     <div class="form-group">
-                        <input type="text" placeholder="Patient ID" class="form-control">
+                        <input type="text" placeholder="Patient ID" class="form-control" name="name">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input type="password" placeholder="Password" class="form-control" name="nric">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="submit" formaction="/medicationDashboard.jsp">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit">SIGN IN</button>
                     </div>
                 </form>
             </div>
@@ -140,7 +140,6 @@
                         <span>Already got account? <a id="login-btn" href="#">Sign In.</a></span>
                     </div>
                     <div class="loginbox">
-                        <label><input type="checkbox"><span>Remember me</span><i class="fa"></i></label>
                         <button class="btn signin-btn" type="button">SIGN UP</button>
                     </div>
                 </form>

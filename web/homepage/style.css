@@ -626,7 +626,6 @@ img{
 /*--------------------*/
 
 #feature{
-	background-color: #777;
 	display: inline;
 	float: left;
 	padding: 70px 0;
@@ -1790,6 +1789,10 @@ display: flex;
 
 .portfolio-popup-inner-show{
 	margin-left: 0;
+}
+
+#map{
+    paddi
 }
 
 
