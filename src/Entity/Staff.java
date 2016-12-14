@@ -15,7 +15,7 @@ public class Staff extends Person{
     private String address;
     private String gender;
     private Timestamp dateOfBirth;
-    private Double phoneNumber;
+    private String phoneNumber;
     private String email;
     private String citizenship;
     private String language;
@@ -86,11 +86,11 @@ public class Staff extends Person{
 
     @Basic
     @Column(name = "phoneNumber", nullable = true, precision = 0)
-    public Double getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Double phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
