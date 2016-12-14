@@ -23,7 +23,7 @@ public class PaymentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             ServiceDAO db = new ServiceDAO();
-            List<Service> list = db.retrieveAllService("P001", "false");
+            List<Service> list = db.retrieveAllService("P001");
             request.setAttribute("services", list);
             getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
         } catch (Exception e) {

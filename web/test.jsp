@@ -13,8 +13,9 @@
     <title>Title</title>
 </head>
 <%
-    List<Service> services = (List<Service>)request.getAttribute("services");
-    Service s = services.get(0);
+    ServiceDAO db = new ServiceDAO();
+    db.updateInvoiceId(21, "P001");
+    db.updateStatus("P001");
 %>
 <body>
 
