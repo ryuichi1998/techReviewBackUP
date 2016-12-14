@@ -1,10 +1,8 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 
 /**
  * Created by liyun on 10/12/16.
@@ -23,9 +21,10 @@ public class Product {
     private Double supplierPrice;
     private Date importedDate;
     private String productCode;
-
+    private Collection<Medication> medicationListByProductList;
 
     public Product() {
+
     }
 
     public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
@@ -207,5 +206,14 @@ public class Product {
         result = 31 * result + (importedDate != null ? importedDate.hashCode() : 0);
         result = 31 * result + (productCode != null ? productCode.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "productByProductId")
+    public Collection<Medication> getMedicationListByProductList() {
+        return medicationListByProductList;
+    }
+
+    public void setMedicationListByProductList(Collection<Medication> medicationListByProductList) {
+        this.medicationListByProductList = medicationListByProductList;
     }
 }

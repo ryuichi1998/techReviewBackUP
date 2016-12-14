@@ -107,7 +107,7 @@
                         <input type="password" placeholder="Password" class="form-control">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="button">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit" formaction="/medicationDashboard.jsp">SIGN IN</button>
                     </div>
                 </form>
             </div>

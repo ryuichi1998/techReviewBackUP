@@ -107,7 +107,7 @@
                         <input type="password" placeholder="Password" class="form-control">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="button">SIGN IN</button>
+                        <button class="btn signin-btn" type="submit" formaction="/medicationDashboard.jsp">SIGN IN</button>
                     </div>
                 </form>
             </div>
@@ -326,48 +326,94 @@
             <!-- End counter -->
 
             <div class="col-md-12">
-                <div class="feature-content">
+                <div class="about-content">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-leaf feature-icon"></i>
-                                <h4 class="feat-title">Innovative</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <div class="col-md-6">
+                            <div class="our-skill">
+                                <h3>Our Skills</h3>
+                                <div class="our-skill-content">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                            <span class="progress-title">Html5</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="85">
+                                            <span class="progress-title">Css3</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="70">
+                                            <span class="progress-title">JQuery</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="60">
+                                            <span class="progress-title">wordPress</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="40">
+                                            <span class="progress-title">Php</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="25">
+                                            <span class="progress-title">Java</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-mobile feature-icon"></i>
-                                <h4 class="feat-title">Integrated healthcare</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-thumbs-o-up feature-icon"></i>
-                                <h4 class="feat-title">Health Monitoring</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-gears feature-icon"></i>
-                                <h4 class="feat-title">Multiple Options</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-code feature-icon"></i>
-                                <h4 class="feat-title">Easily Accesible</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="single-feature wow zoomIn">
-                                <i class="fa fa-smile-o feature-icon"></i>
-                                <h4 class="feat-title">Awesome Support</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <div class="col-md-6">
+                            <div class="why-choose-us">
+                                <h3>Why Choose Us?</h3>
+                                <div class="panel-group why-choose-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                    Awesome Design Layout <span class="fa fa-minus-square"></span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <img class="why-choose-img" src="assets/images/testi1.jpg" alt="img">
+                                                <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default ">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                                    Quality Coding <span class="fa fa-plus-square"></span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                    Great Support <span class="fa fa-plus-square"></span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -376,7 +422,9 @@
         </div>
     </div>
 </section>
-<!-- End Feature -->
+<!-- end about -->
+
+
 
 
 

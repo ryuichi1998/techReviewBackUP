@@ -1,29 +1,22 @@
 package Entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by liyun on 13/12/16.
  */
 @Entity
 public class Medication {
-    private Integer productid;
     private String frequency;
-    private Double quantity;
+    private String quantity;
     private String collection;
     private String remarks;
+    private String dosage;
     private int medicationId;
     private ConsultationRecord consultationrecordByConsultationid;
+    private Product productByProductId;
 
-    @Basic
-    @Column(name = "productid", nullable = true)
-    public Integer getProductid() {
-        return productid;
-    }
-
-    public void setProductid(Integer productid) {
-        this.productid = productid;
-    }
 
     @Basic
     @Column(name = "frequency", nullable = true, length = 45)
@@ -37,11 +30,11 @@ public class Medication {
 
     @Basic
     @Column(name = "quantity", nullable = true, precision = 0)
-    public Double getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Double quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
@@ -65,6 +58,16 @@ public class Medication {
         this.remarks = remarks;
     }
 
+    @Basic
+    @Column(name = "dosage", nullable = true, length = 50)
+    public String getDosage() {
+        return dosage;
+    }
+
+    public void setDosage(String dosage) {
+        this.dosage = dosage;
+    }
+
     @Id
     @Column(name = "medicationId", nullable = false)
     public int getMedicationId() {
@@ -83,7 +86,6 @@ public class Medication {
         Medication that = (Medication) o;
 
         if (medicationId != that.medicationId) return false;
-        if (productid != null ? !productid.equals(that.productid) : that.productid != null) return false;
         if (frequency != null ? !frequency.equals(that.frequency) : that.frequency != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
         if (collection != null ? !collection.equals(that.collection) : that.collection != null) return false;
@@ -94,12 +96,11 @@ public class Medication {
 
     @Override
     public int hashCode() {
-        int result = productid != null ? productid.hashCode() : 0;
+        int result = medicationId;
         result = 31 * result + (frequency != null ? frequency.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         result = 31 * result + (collection != null ? collection.hashCode() : 0);
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
-        result = 31 * result + medicationId;
         return result;
     }
 
@@ -112,4 +113,16 @@ public class Medication {
     public void setConsultationrecordByConsultationid(ConsultationRecord consultationrecordByConsultationid) {
         this.consultationrecordByConsultationid = consultationrecordByConsultationid;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "productid", referencedColumnName = "productId")
+    public Product getProductByProductId() {
+        return productByProductId;
+    }
+
+    public void setProductByProductId(Product productByProductId) {
+        this.productByProductId = productByProductId;
+    }
+
+
 }

@@ -17,7 +17,7 @@ public class Patient extends Person{
     private String address;
     private String gender;
     private Timestamp dateOfBirth;
-    private Double phoneNumber;
+    private String phoneNumber;
     private String email;
     private String race;
     private String citizenship;
@@ -27,7 +27,7 @@ public class Patient extends Person{
     private String bloodType;
     private Timestamp registrationDate;
     private String nokName;
-    private Double nokPhoneNumber;
+    private String nokPhoneNumber;
     private String nokRelation;
     private String nokEmail;
     private byte[] profileImage;
@@ -99,11 +99,11 @@ public class Patient extends Person{
 
     @Basic
     @Column(name = "phoneNumber", nullable = true, precision = 0)
-    public Double getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Double phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -199,11 +199,11 @@ public class Patient extends Person{
 
     @Basic
     @Column(name = "nokPhoneNumber", nullable = true, precision = 0)
-    public Double getNokPhoneNumber() {
+    public String getNokPhoneNumber() {
         return nokPhoneNumber;
     }
 
-    public void setNokPhoneNumber(Double nokPhoneNumber) {
+    public void setNokPhoneNumber(String nokPhoneNumber) {
         this.nokPhoneNumber = nokPhoneNumber;
     }
 
