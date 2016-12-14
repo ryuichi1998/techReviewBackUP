@@ -140,7 +140,7 @@
 
                                     <div class="form-group">
                                         <label>Product price</label>
-                                        <input type="text" class="form-control" placeholder="Enter price" name="supplierprice">
+                                        <input type="text" class="form-control" placeholder="Enter price" name="productprice">
                                     </div>
 
 
