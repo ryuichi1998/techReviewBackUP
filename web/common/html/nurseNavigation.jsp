@@ -208,7 +208,7 @@
             <!-- Second link -->
             <li class="treeview">
                 <a href="/medicationDashboard">
-                    <i class="fa fa-dashboard"></i><span>Medication</span>
+                    <i class="fa fa-medkit"></i><span>Medication</span>
                 <!-- sub menu for links -->
                 <ul class="treeview-menu">
                     <li><a href="/medicationDashboard.jsp">Dashboard</a></li>
