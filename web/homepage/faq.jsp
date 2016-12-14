@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Intensely : Home</title>
+    <title>Mi2 - Frequently Asked Questions</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <link rel="icon" type="image/png" href="common/images/favicon.png" />
     <!-- Font Awesome -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -189,6 +189,145 @@
 <!-- END MENU -->
 
 <!-- END OF NAVBAR, HEADER AND RESOURCES-->
+
+<!-- Start single page header -->
+<section id="single-page-header">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-page-header-left">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Search all question!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-page-header-right">
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">FAQ</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End single page header -->
+<!-- Start search section  -->
+<section id="error">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="errror-page-area">
+                    <h1 class="error-title" style="font-size: 50px;"><span class="fa fa-search"></span></h1>
+                   <br />
+                    <div class="title-area">
+                        <h2 class="title">Have any Questions?</h2>
+                        <span class="line"></span>
+                        <p>Do ask if you have them!</p>
+
+                        <form action="" class="subscrib-form">
+                            <input type="text" id="searchBox" placeholder="Ask me!">
+                            <button class="subscribe-btn" type="submit">Search</button>
+                        </form>
+
+                        <script type="text/javascript">
+
+
+                            function CallBtnclick(e) {
+                                var code = e.keyCode ? e.keyCode : e.which;
+                                if (code === 13) {
+                                    //event.preventDefault ? event.preventDefault() : event.returnValue = false;
+
+                                    $('#subscribe-btn').click();
+                                }
+                            }
+                            function RedirectToSearch() {
+
+                                var TextVal = document.getElementById('searchBox').value;
+                                if (TextVal.length > 0) {
+                                    var url = "/search?q=" + TextVal
+                                    location.href = url;
+                                }
+                            }
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End search section  -->
+
+
+
+<!-- Start latest news -->
+<section id="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="latest-news-content">
+                    <div class="row">
+                        <!-- start single latest news -->
+                        <div class="col-md-4">
+                            <article class="blog-news-single">
+                                <div class="blog-news-img">
+                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-1.jpg" alt="image"></a>
+                                </div>
+                                <div class="blog-news-title">
+                                    <h2><a href="blog-single-with-right-sidebar.html">Hand, Foot and Mouth Disease</a></h2>
+                                    <p>By <a class="blog-author" href="#">Daryl Tan</a> <span class="blog-date">|14 December 2016</span></p>
+                                </div>
+                                <div class="blog-news-details">
+                                    <p>Hand, Foot and Mouth Disease sounds like it should be more common among livestock than humans, but in recent years the virus has been very prevalent in Singapore;</p>
+                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- start single latest news -->
+                        <div class="col-md-4">
+                            <article class="blog-news-single">
+                                <div class="blog-news-img">
+                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-2.jpg" alt="image"></a>
+                                </div>
+                                <div class="blog-news-title">
+                                    <h2><a href="blog-single-with-right-sidebar.html">Type 2 Diabetes</a></h2>
+                                    <p>By <a class="blog-author" href="#">Daryl Tan</a> <span class="blog-date">|14 December 2016</span></p>
+                                </div>
+                                <div class="blog-news-details">
+                                    <p>Diabetes is epidemic in Singapore with estimates running as high as 10% of the adult population being affected.</p>
+                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- start single latest news -->
+                        <div class="col-md-4">
+                            <article class="blog-news-single">
+                                <div class="blog-news-img">
+                                    <a href="blog-single-with-right-sidebar.html"><img src="assets/images/blog-img-3.jpg" alt="image"></a>
+                                </div>
+                                <div class="blog-news-title">
+                                    <h2><a href="blog-single-with-right-sidebar.html">Influenza (Common Flu)</a></h2>
+                                    <p>By <a class="blog-author" href="#">Daryl Tan</a> <span class="blog-date">|14 December 2016</span></p>
+                                </div>
+                                <div class="blog-news-details">
+                                    <p>As an international business hub, Singapore’s millions of annual visitors do their best to ensure that the country doesn’t get left out when flu season rolls around. </p>
+                                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End latest news -->
+
+
 
 <!-- Start footer -->
 <footer id="footer">
