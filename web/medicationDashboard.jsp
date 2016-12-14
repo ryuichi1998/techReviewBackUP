@@ -40,6 +40,60 @@
         <section class="content">
             <div class="row">
 
+
+                <!--
+
+                NEW ORDER BOX
+
+                -->
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>150</h3>
+
+                            <p>New Orders</p>
+                        </div>
+                        <div class="icon" style="top:5px;">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!--
+
+                UNIQUE VISTORS
+
+                -->
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Low Stocks</p>
+                        </div>
+                        <div class="icon" style="top:5px;">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!--
+
+                 LOW ON STOCKS TABLE
+
+                 -->
                 <div class="col col-md-6 pull-right">
                     <!-- TABLE: PRODUCT ON LOW STOCKS -->
                         <div class="box box-info">
@@ -47,7 +101,6 @@
                                 <h3 class="box-title">Low Stocks</h3>
                                 <!-- TABLE: BUTTONS -->
                                     <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                                     </div>
                                 <!-- TABLE: BODY -->

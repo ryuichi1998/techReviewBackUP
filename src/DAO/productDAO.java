@@ -23,20 +23,16 @@ public class productDAO {
     }
 
 
-    public Boolean addNewMedications(String name, String type, String unit, int quantity, double price, String details, String sname, int spartno, double sprice, Date importDate, String productcode) {
-           boolean isCreated = false;
+    public Product addNewMedications(String name, String type, String unit, int quantity, double price, String details, String sname, int spartno, double sprice, Date importDate, String productcode) {
 
-        try {
                 Product product = new Product(name, type, unit ,quantity, price, details, sname, spartno, sprice, importDate, productcode);
+
+                em.getTransaction().begin();
                 em.persist(product);
+                em.flush();
                 em.getTransaction().commit();
-                isCreated = true;
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-            return isCreated;
+            return product;
     }
 
     public Product retrieveMedications() {
@@ -67,6 +63,18 @@ public class productDAO {
         try {
             Query query = em.createQuery("SELECT p from Product p where p.productCode = '" + productcode + "'");
             p = (Product)query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return p;
+    }
+
+    public Product retrieveProductCode() {
+        Product p = null;
+
+        try {
+            Query query = em.createQuery("SELECT p from Product p where p.productCode = '" + p + "'");
         } catch (Exception e) {
             e.printStackTrace();
         }

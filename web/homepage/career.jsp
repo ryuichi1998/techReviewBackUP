@@ -170,7 +170,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href ="aboutus.jsp">About us</a></li>
                     <li><a href="doctors.jsp">Our Doctors</a></li>
                     <li class="dropdown">
@@ -180,7 +180,7 @@
                             <li><a href="cliniclocations.jsp">Locations of Clinics</a></li>
                         </ul>
                     </li>
-                    <li><a href="career.jsp">Career Opportunities</a></li>
+                    <li  class="active" ><a href="career.jsp" >Career Opportunities</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

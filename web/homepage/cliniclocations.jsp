@@ -170,14 +170,14 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href ="aboutus.jsp">About us</a></li>
                     <li><a href="doctors.jsp">Our Doctors</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clinics<span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="aboutclinics.jsp">Our Clinics</a></li>
-                            <li><a href="cliniclocations.jsp">Locations of Clinics</a></li>
+                            <li class="active"><a href="cliniclocations.jsp">Locations of Clinics</a></li>
                         </ul>
                     </li>
                     <li><a href="career.jsp">Career Opportunities</a></li>
@@ -189,6 +189,68 @@
 <!-- END MENU -->
 
 <!-- END OF NAVBAR, HEADER AND RESOURCES-->
+<section id="latest-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-area">
+                    <h2 class="title">Our Clinics</h2>
+                    <span class="line"></span>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                    <div class="col-md-12">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-female feature-icon"></i>
+                                        <h4 class="feat-title"><a href="cliniclocations.jsp">Female Block</a></h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-child feature-icon"></i>
+                                        <h4 class="feat-title"><a href="cliniclocations.jsp">Children Block</a></h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-ambulance feature-icon"></i>
+                                        <h4 class="feat-title"><a href="cliniclocations.jsp">A&E</a></h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-thumbs-up feature-icon"></i>
+                                        <h4 class="feat-title">General Block</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-wrench feature-icon"></i>
+                                        <h4 class="feat-title">Dental Block</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="single-feature wow zoomIn">
+                                        <i class="fa fa-heartbeat feature-icon"></i>
+                                        <h4 class="feat-title">Intensive Care</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Start footer -->
 <footer id="footer">
