@@ -170,9 +170,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href ="aboutus.jsp">About us</a></li>
-                    <li><a href="doctors.jsp">Our Doctors</a></li>
+                    <li  class="active"><a href="doctors.jsp">Our Doctors</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clinics<span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu" role="menu">
