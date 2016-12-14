@@ -23,26 +23,25 @@ public class NewMedicationServlet extends HttpServlet {
         productDAO medication = new productDAO();
 
 
-        String productName = request.getParameter("productname");
-        String productType = request.getParameter("producttype");
-        String productUnit = request.getParameter("productunit");
-        int productQuantity = Integer.valueOf(request.getParameter("productquantity"));
-        Double productPrice = Double.valueOf(request.getParameter("productprice"));
-        String productDetails = request.getParameter("productdetails");
-        String supplierName = request.getParameter("suppliername");
-        int supplierPartNo = Integer.valueOf(request.getParameter("supplierpartno"));
-        Double supplierPrice = Double.valueOf(request.getParameter("supplierprice"));
-        Date importedDate = Date.valueOf(request.getParameter("importeddate"));
-        String productCode = request.getParameter("productcode");
+        try {
+            String productName = request.getParameter("productname");
+            String productType = request.getParameter("producttype");
+            String productUnit = request.getParameter("productunit");
+            int productQuantity = Integer.parseInt(request.getParameter("productquantity"));
+            Double productPrice = Double.parseDouble(request.getParameter("productprice"));
+            String productDetails = request.getParameter("productdetails");
+            String supplierName = request.getParameter("suppliername");
+            int supplierPartNo = Integer.parseInt(request.getParameter("supplierpartno"));
+            Double supplierPrice = Double.parseDouble(request.getParameter("supplierprice"));
+            Date importedDate = Date.valueOf(request.getParameter("importeddate"));
+            String productCode = request.getParameter("productcode");
 
-        boolean isCreated = medication.addNewMedications(productName, productType, productUnit, productQuantity, productPrice, productDetails, supplierName, supplierPartNo, supplierPrice, importedDate, productCode);
-        //request.setAttribute("products" , p);
+            Product prod = medication.addNewMedications(productName, productType, productUnit, productQuantity, productPrice, productDetails, supplierName, supplierPartNo, supplierPrice, importedDate, productCode);
 
-        if(isCreated == true) {
+            request.setAttribute("products", prod);
             getServletContext().getRequestDispatcher("/viewMedication.jsp").forward(request, response);
-
-        } else {
-            getServletContext().getRequestDispatcher("/addMedications.jsp").forward(request,response);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
 
 
