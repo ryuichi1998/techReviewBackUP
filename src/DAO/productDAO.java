@@ -13,12 +13,12 @@ import java.util.Random;
 /**
  * Created by qingyutan on 13/12/16.
  */
-public class medicationDAO {
+public class productDAO {
 
     private EntityManager em;
     private Random random = new Random();
 
-    public medicationDAO() {
+    public productDAO() {
         em = EMF.getInstance().createEntityManager();
     }
 

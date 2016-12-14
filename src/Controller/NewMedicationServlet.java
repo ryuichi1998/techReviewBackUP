@@ -1,7 +1,8 @@
 package Controller;
 
 
-import DAO.medicationDAO;
+
+import DAO.productDAO;
 import Entity.Product;
 
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ import java.sql.Date;
 public class NewMedicationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        medicationDAO medication = new medicationDAO();
+        productDAO medication = new productDAO();
 
 
         String productName = request.getParameter("productname");
