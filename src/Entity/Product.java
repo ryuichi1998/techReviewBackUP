@@ -1,10 +1,8 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 
 /**
  * Created by liyun on 10/12/16.
@@ -23,24 +21,7 @@ public class Product {
     private Double supplierPrice;
     private Date importedDate;
     private String productCode;
-
-
-    public Product() {
-    }
-
-    public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
-        this.productName = productName;
-        this.productType = productType;
-        this.productUnit = productUnit;
-        this.productQuantity = productQuantity;
-        this.productPrice = productPrice;
-        this.productDetails = productDetails;
-        this.supplierName = supplierName;
-        this.supplierPartNo = supplierPartNo;
-        this.supplierPrice = supplierPrice;
-        this.importedDate = importedDate;
-        this.productCode = productCode;
-    }
+    private Collection<Medication> medicationListByProductList;
 
     @Id
     @Column(name = "productId", nullable = false)
@@ -207,5 +188,14 @@ public class Product {
         result = 31 * result + (importedDate != null ? importedDate.hashCode() : 0);
         result = 31 * result + (productCode != null ? productCode.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "productByProductId")
+    public Collection<Medication> getMedicationListByProductList() {
+        return medicationListByProductList;
+    }
+
+    public void setMedicationListByProductList(Collection<Medication> medicationListByProductList) {
+        this.medicationListByProductList = medicationListByProductList;
     }
 }
