@@ -600,7 +600,7 @@ img{
 	border: 1px solid #fff;
 	display: inline-block;
 	padding: 12px 22px;
-	font-weight: 700px;
+	font-weight: 700;
 	font-size: 16px;	
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
@@ -1791,9 +1791,7 @@ display: flex;
 	margin-left: 0;
 }
 
-#map{
-    paddi
-}
+
 
 
 .portfolio-popup-inner img{
