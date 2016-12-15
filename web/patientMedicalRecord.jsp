@@ -18,14 +18,14 @@
 <%--<%@ page import="java.util.List" %>--%>
 <%@ page import="Utils.DateFormatter" %>
 <%--<%--%>
-    <%--Staff doctor = (Staff) session.getAttribute("person");--%>
-    <%--Patient patient = (Patient) request.getAttribute("patient");--%>
+<%--Staff doctor = (Staff) session.getAttribute("person");--%>
+<%--Patient patient = (Patient) request.getAttribute("patient");--%>
 
-    <%--List<ConsultationRecord> consultationRecordList = (List<ConsultationRecord>) request.getAttribute("consultationList");--%>
-    <%--ConsultationRecord latestConsulationRecord = consultationRecordList.get(consultationRecordList.size() - 1);--%>
-    <%--List<Medication> medicationList = (List<Medication>) latestConsulationRecord.getMedicationsByConsultationId();--%>
+<%--List<ConsultationRecord> consultationRecordList = (List<ConsultationRecord>) request.getAttribute("consultationList");--%>
+<%--ConsultationRecord latestConsulationRecord = consultationRecordList.get(consultationRecordList.size() - 1);--%>
+<%--List<Medication> medicationList = (List<Medication>) latestConsulationRecord.getMedicationsByConsultationId();--%>
 
-    <%--List<Medication> currentMedicationList = (List<Medication>) request.getAttribute("currentMedicationList");--%>
+<%--List<Medication> currentMedicationList = (List<Medication>) request.getAttribute("currentMedicationList");--%>
 <%--%>--%>
 
 <%@include file="common/html/scripts.html" %>
@@ -62,14 +62,13 @@
         <section class="content">
 
 
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active box-title"><a href="#consultationTab" data-toggle="tab">Consultation
                                 Record</a></li>
-                            <li class="box-title"><a href="#currentMedicationTab" data-toggle="tab">Family Medical
+                            <li class="box-title"><a href="#familyMedicalBackgroundTab" data-toggle="tab">Family Medical
                                 Background</a></li>
                         </ul>
                         <%--tab nav--%>
@@ -93,7 +92,7 @@
                                                      
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <span class="pull-right">By <%--<em>Dr <%=doctor.getName()%></em> on <em><%=DateFormatter.convertToDisplayDate(latestConsulationRecord.getDateTime())%></em>--%></span> 
+                                                    <span class="pull-right">By <em>Dr Cindy <Chia></Chia></em> on <em>03 Oct 2016 21:46:00</em></span> 
                                                       
                                                 </div>
                                             </div>
@@ -146,10 +145,11 @@
                                                         <div class="box-body">
                                                             <dl>
                                                                 <dt>Diagnosis:</dt>
-                                                                <dd><%--<%=latestConsulationRecord.getDiagnosis()%>--%>
+                                                                <dd>Coronary Artery Disease
                                                                 </dd>
                                                                 <dt>Comments:</dt>
-                                                                <dd><%--<%=latestConsulationRecord.getComment()%>--%>
+                                                                <dd>Electrocardiograph test, exercise stress test.
+                                                                    Follow up with 3 months
                                                                 </dd>
                                                             </dl>
                                                         </div>
@@ -181,29 +181,38 @@
                                                                     </th>
                                                                     </thead>
                                                                     <tbody>
-                                                                  <%--  <%
-                                                                        for (Medication medication : medicationList) {
-                                                                    %>
                                                                     <tr>
-                                                                        <td>
-                                                                            <%=medication.getProductByProductId().getProductName()%>
-                                                                        </td>
-                                                                        <td>
-                                                                            <%=medication.getDosage()%> <%=medication.getProductByProductId().getProductUnit()%>
-                                                                        </td>
-                                                                        <td>
-                                                                            <%=medication.getFrequency()%>
-                                                                        </td>
-                                                                        <td>
-                                                                            <%=medication.getQuantity()%>
-                                                                        </td>
-                                                                        <td>
-                                                                            <%=medication.getRemarks()%>
+                                                                        <td>Panadol</td>
+                                                                        <td>2 Grams (gm)</td>
+                                                                        <td>every day</td>
+                                                                        <td>3 Month</td>
+                                                                        <td>Not to eat panadol when having the
+                                                                            medication
                                                                         </td>
                                                                     </tr>
-                                                                    <%
-                                                                        }
-                                                                    %>--%>
+                                                                    <%--  <%
+                                                                          for (Medication medication : medicationList) {
+                                                                      %>
+                                                                      <tr>
+                                                                          <td>
+                                                                              <%=medication.getProductByProductId().getProductName()%>
+                                                                          </td>
+                                                                          <td>
+                                                                              <%=medication.getDosage()%> <%=medication.getProductByProductId().getProductUnit()%>
+                                                                          </td>
+                                                                          <td>
+                                                                              <%=medication.getFrequency()%>
+                                                                          </td>
+                                                                          <td>
+                                                                              <%=medication.getQuantity()%>
+                                                                          </td>
+                                                                          <td>
+                                                                              <%=medication.getRemarks()%>
+                                                                          </td>
+                                                                      </tr>
+                                                                      <%
+                                                                          }
+                                                                      %>--%>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -230,6 +239,16 @@
                                                             </th>
                                                             </thead>
                                                             <tbody>
+                                                            <tr>
+                                                                <td><a>Hypertension</a>
+                                                                    <br>
+                                                                    <small><em>Dr Cindy Chia</em></small>
+                                                                </td>
+                                                                <td>
+                                                                    <i class="fa fa-fw fa-clock-o"></i>
+                                                                    <small>14 May 2016 22:03:20</small>
+                                                                </td>
+                                                            </tr>
                                                             <%--<%
                                                                 for (ConsultationRecord consultationRecord : consultationRecordList) {
                                                             %>
@@ -263,21 +282,30 @@
                                 </div>
                             </div>
                             <%--/.consultationTab--%>
-                            <div class="tab-pane" id="currentMedicationTab">
+                            <div class="tab-pane" id="familyMedicalBackgroundTab">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
-                                        <th>Medications</th>
-                                        <th>Dose</th>
-                                        <th>Frequency</th>
-                                        <th>Quantity</th>
+                                        <th>No.</th>
+                                        <th>Relative</th>
                                         <th>Condition</th>
-                                        <th>Doctor-In-Charge</th>
-                                        <th>Date</th>
-                                        <th>Further Instruction</th>
                                         </thead>
                                         <tbody>
-
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Paternal Uncle</td>
+                                            <td>Hemophilia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Father</td>
+                                            <td>Hepatitis B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Materal Auntie</td>
+                                            <td>Familial Hypercholesterolemia</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                     <%--currentMedicationTable--%>

@@ -201,7 +201,7 @@
                 </a>
             </li>
 
-            <li><a href="/profile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
+            <li><a href="/patientProfile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
 
             <li>
                 <a href="/patientMedicalRecord">
