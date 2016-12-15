@@ -13,11 +13,10 @@
     <title>Title</title>
 </head>
 <%
-    ServiceDAO db = new ServiceDAO();
-    db.updateInvoiceId(21, "P001");
-    db.updateStatus("P001");
+  List<Service> serList = (List<Service>) request.getAttribute("services");
+    Service ser = serList.get(0);
 %>
 <body>
-
+<%=ser.getServiceDesc() %>
 </body>
 </html>

@@ -3,7 +3,6 @@ package Model;
 import DAO.ConsultationRecordDAO;
 import Entity.ConsultationRecord;
 import Entity.Medication;
-import com.google.gson.Gson;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -24,7 +23,7 @@ public class BookResource {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public String getResource(@PathParam("id") String id){
-        Gson gson = new Gson();
+
 
         ConsultationRecord consultationRecord = new ConsultationRecord();
         ConsultationRecordDAO consultationRecordDAO = new ConsultationRecordDAO();

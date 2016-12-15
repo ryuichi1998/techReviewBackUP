@@ -99,7 +99,7 @@
                 <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Login</h4>
             </div>
             <div class="modal-body">
-                <form action="${pageContext.request.contextPath}/login" method="post">
+                <form action="/profile.jsp">
                     <div class="form-group">
                         <input type="text" placeholder="Patient ID" class="form-control" name="name">
                     </div>
@@ -107,9 +107,9 @@
                         <input type="password" placeholder="Password" class="form-control" name="nric">
                     </div>
                     <div class="loginbox">
-                        <button class="btn signin-btn" type="submit">Patient</button>
-                        <button class="btn signin-btn" type="submit">Doctor</button>
-                        <button class="btn signin-btn" type="submit">Nurse</button>
+                        <a href="/viewInvoices.jsp" class="btn signin-btn" >Patient</a>
+                        <a href="/doctorDashboard" class="btn signin-btn">Doctor</a>
+                        <a href="/medicationDashboard.jsp" class="btn signin-btn">Nurse</a>
                     </div>
                 </form>
             </div>

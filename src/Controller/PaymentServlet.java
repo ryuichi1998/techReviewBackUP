@@ -24,6 +24,7 @@ public class PaymentServlet extends HttpServlet {
         try {
             ServiceDAO db = new ServiceDAO();
             List<Service> list = db.retrieveAllService("P001");
+            System.out.println(list.get(0).getServiceFee() + "  test");
             request.setAttribute("services", list);
             getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
         } catch (Exception e) {
