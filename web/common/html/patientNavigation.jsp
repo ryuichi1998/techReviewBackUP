@@ -10,7 +10,7 @@
 
 <%@page import="Entity.*" %>
 <%
-    //    Staff staff = (Staff) session.getAttribute("person");
+    Patient patient = (Patient) session.getAttribute("person");
 %>
 
 <header class="main-header">
@@ -45,7 +45,8 @@
                                     <!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
+                                            <img src="../common/images/classprofile.png" class="img-circle"
+                                                 alt="User Image">
                                         </div>
                                         <h4>
                                             Support Team
@@ -100,7 +101,9 @@
                                             <small class="pull-right">20%</small>
                                         </h3>
                                         <div class="progress xs">
-                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                 role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                 aria-valuemax="100">
                                                 <span class="sr-only">20% Complete</span>
                                             </div>
                                         </div>
@@ -118,7 +121,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="../common/images/classprofile.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">staff.getName()</span>
+                        <span class="hidden-xs"><%=patient.getName()%></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -126,8 +129,7 @@
                             <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
 
                             <p>
-                                staff.getName() - staff.getType()
-                                <small>staff.getType()</small>
+                                <%=patient.getName()%>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -174,7 +176,7 @@
                 <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <Strong>staff.getName()%></Strong>
+                <Strong><%=patient.getName()%></Strong>
             </div>
         </div>
         <!-- search form -->
@@ -193,7 +195,24 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <!-- First link -->
+            <li class="treeview">
+                <a href="/patientDashboard">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+
             <li><a href="/profile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
+
+            <li>
+                <a href="/patientMedicalRecord">
+                    <i class="fa fa-bed"></i> <span>My Medical Records</span>
+                    <%--<span class="pull-right-container">--%>
+                    <%--<small class="label pull-right bg-yellow">3</small>--%>
+                    <%--<small class="label pull-right bg-red">5</small>--%>
+                    <%--<small class="label pull-right bg-green">10</small>--%>
+                    <%--</span>--%>
+                </a>
+            </li>
 
             <!-- Second link -->
             <li class="treeview">

@@ -17,13 +17,6 @@
 <%@page import="Entity.*" %>
 <%
     Person person = (Person) session.getAttribute("person");
-    Character personType = ((String) session.getAttribute("id")).charAt(0);
-    Boolean isPatient = false;
-    if (personType == 'P') {
-        isPatient = true;
-    } else {
-        isPatient = false;
-    }
 %>
 
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
@@ -31,7 +24,7 @@
 <div class="wrapper">
 
     <%--Navigation - please copy paste this file and edit to ur content--%>
-    <%@include file="common/html/doctorNavigation.jsp" %>
+    <%@include file="common/html/patientNavigation.jsp" %>
 
     <%--Content Wrapper    --%>
     <div class="content-wrapper">
@@ -83,15 +76,6 @@
                                             }
                                         %>
                                     </strong></td>
-                                    <td><%
-                                        if (!isPatient) {
-                                    %>
-                                        <strong>
-                                            <span><%=staff.getType()%></span>
-                                        </strong>
-                                        <%
-                                            }
-                                        %></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -180,7 +164,6 @@
 
     </section>
     <%--/.Content--%>
-
 
 </div>
 <%--/.Content Wrapper--%>
