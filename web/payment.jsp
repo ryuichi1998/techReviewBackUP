@@ -36,7 +36,7 @@
     double tPayable = Double.valueOf(formatter.format(total+tax-sub));
     String text = "";
     InvoiceDAO invoiceDb = new InvoiceDAO();
-    Invoice inv = new Invoice("P001",sqlDate, "PayPal", tPayable, sub, tax, sub, "false");
+    Invoice inv = new Invoice("P001",sqlDate, "Pending Payment", tPayable, sub, tax, sub, "false");
     if(serviceList.size() > 0) {
         db.updateInvoiceId(inv.getInvoiceId(), "P001");
         invoiceDb.createInvoice(inv);

@@ -223,7 +223,7 @@
                 <ul class="treeview-menu">
                     <li><a href="/billDashboard.jsp">Billing Dashboard</a></li>
                     <li><a href="/viewInvoices.jsp">Invoices</a></li>
-                    <li><a href="/payment">Payment</a></li>
+                    <li><a href="/payment.jsp">Payment</a></li>
                 </ul>
             </li>
 
