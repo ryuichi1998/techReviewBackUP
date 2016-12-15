@@ -10,8 +10,11 @@
 <html lang="en">
 
 <%@page import="Entity.*" %>
+<%@ page import="DAO.StaffDAO" %>
 <%
-//    Staff staff = (Staff) session.getAttribute("person");
+    StaffDAO staffDAO = new StaffDAO();
+
+    Staff staff = (Staff) staffDAO.getStaffByStaffId("S003");
 %>
 
 <header class="main-header">
@@ -119,7 +122,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="../common/images/classprofile.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">staff.getName()</span>
+                        <span class="hidden-xs"><%= staff.getName() %></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -127,8 +130,9 @@
                             <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
 
                             <p>
-                                staff.getName() - staff.getType()
-                                <small>staff.getType()</small>
+
+                                <%=staff.getName()%> - <%= staff.getType()%>
+                                <small><%=staff.getType() %></small>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -175,7 +179,7 @@
                 <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <Strong>staff.getName()%></Strong>
+                <Strong><%= staff.getName()%></Strong>
             </div>
         </div>
         <!-- search form -->
@@ -194,18 +198,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <!-- First link -->
-            <li class="treeview">
-                <a href="/nurseDashboard">
-                    <i class="fa fa-dashboard"></i> <span>Nurse Dashboard</span>
-                </a>
-                <!-- sub menu for links -->
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-            </li>
 
-            <!-- Second link -->
             <li class="treeview">
                 <a href="/medicationDashboard">
                     <i class="fa fa-medkit"></i><span>Medication</span>
@@ -217,16 +210,6 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="/patientOverview">
-                    <i class="fa fa-bed"></i> <span>Patients</span>
-                    <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">3</small>
-              <small class="label pull-right bg-red">5</small>
-              <small class="label pull-right bg-green">10</small>
-            </span>
-                </a>
-            </li>
 
             <li><a href="/profile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
 

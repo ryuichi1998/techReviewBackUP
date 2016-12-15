@@ -612,6 +612,10 @@
                                                     <h3 class="box-title">Other Consultation Records</h3>
                                                 </div>
                                                 <div class="box-body">
+                                                    <div class="input-group col-md-12">
+                                                        <input type="text" class="form-control input-sm" placeholder="Search...">
+                                                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                                    </div>
                                                     <div class="table-responsive">
                                                         <table class="table table-hover"
                                                                id="consultationListTable">
@@ -625,7 +629,8 @@
                                                             </thead>
                                                             <tbody>
                                                             <%
-                                                                for (ConsultationRecord consultationRecord : consultationRecordList) {
+                                                                for (int i =(consultationRecordList.size()-1); i>=0; i--) {
+                                                                    ConsultationRecord consultationRecord = consultationRecordList.get(i);
                                                             %>
                                                             <tr>
                                                                 <td>

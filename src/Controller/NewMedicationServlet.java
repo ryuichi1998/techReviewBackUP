@@ -2,7 +2,7 @@ package Controller;
 
 
 
-import DAO.productDAO;
+import DAO.ProductDAO;
 import Entity.Product;
 
 import javax.servlet.ServletException;
@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Created by qingyutan on 13/12/16.
@@ -20,25 +23,34 @@ import java.sql.Date;
 public class NewMedicationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        productDAO medication = new productDAO();
+        ProductDAO medication = new ProductDAO();
+        SimpleDateFormat dtf = new SimpleDateFormat("dd/MM/yyyy");
+        java.util.Date currentDate = new java.util.Date();
+        String newProductCode = "";
+
 
 
         try {
-            String productName = request.getParameter("productname");
-            String productType = request.getParameter("producttype");
-            String productUnit = request.getParameter("productunit");
-            int productQuantity = Integer.parseInt(request.getParameter("productquantity"));
-            Double productPrice = Double.parseDouble(request.getParameter("productprice"));
-            String productDetails = request.getParameter("productdetails");
-            String supplierName = request.getParameter("suppliername");
-            int supplierPartNo = Integer.parseInt(request.getParameter("supplierpartno"));
-            Double supplierPrice = Double.parseDouble(request.getParameter("supplierprice"));
-            Date importedDate = Date.valueOf(request.getParameter("importeddate"));
-            String productCode = request.getParameter("productcode");
 
-            Product prod = medication.addNewMedications(productName, productType, productUnit, productQuantity, productPrice, productDetails, supplierName, supplierPartNo, supplierPrice, importedDate, productCode);
 
-            request.setAttribute("products", prod);
+            newProductCode = medication.createProductCode().getProductCode();
+
+            String pname = request.getParameter("productname");
+            String ptype = request.getParameter("producttype");
+            String punit = request.getParameter("productunit");
+            int pquantity = Integer.parseInt(request.getParameter("productquantity"));
+            double pprice = Double.parseDouble(request.getParameter("productprice"));
+            String pdetails = request.getParameter("productdetails");
+            String sname = request.getParameter("suppliername");
+            int spartno = Integer.parseInt(request.getParameter("supplierpartno"));
+            double sprice = Double.parseDouble(request.getParameter("supplierprice"));
+            //product.setImportedDate(Date.valueOf(request.getParameter("importeddate")));
+            //product.setProductCode("E" + Integer.parseInt(newProductCode)+1);
+
+            Product product = new Product(pname, ptype, punit, pquantity, pprice, pdetails, sname, spartno, sprice, newProductCode);
+            medication.addNewMedications(product);
+
+            //request.setAttribute("products", product);
             getServletContext().getRequestDispatcher("/viewMedication.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             e.printStackTrace();

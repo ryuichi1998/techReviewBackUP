@@ -71,24 +71,14 @@
                                 <!--/ 1.2 Left col md 6-->
                                 <div class="col col-md-6">
 
-                                    <div class="form-group">
-                                        <label>Import date</label>
-                                         <div class="input-group date">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                             <input type="text" class="form-control pull-right" id="datepicker">
-                                         </div>
-                                    </div>
-
                                         <div class="form-group">
                                             <label>Product name</label>
-                                            <input type="text" class="form-control" placeholder="Enter name" name="productname">
+                                            <input type="text" class="form-control" placeholder="Enter name" id="productname" name="productname">
                                         </div>
 
                                         <div class="form-group">
                                             <label>Product type</label>
-                                            <select class="form-control" name="producttype">
+                                            <select class="form-control" name="producttype" id="producttype">
                                                 <option>Capsule</option>
                                                 <option>Liquid</option>
                                                 <option>Ointment</option>
@@ -97,7 +87,7 @@
 
                                         <div class="form-group">
                                             <label>Product unit</label>
-                                            <select class="form-control" name="productunit">
+                                            <select class="form-control" name="productunit" id="productunit">
                                                 <option>Grams (gm)</option>
                                                 <option>Piece (pc)</option>
                                                 <option>Litres (l®®®¡)</option>
@@ -106,12 +96,12 @@
 
                                     <div class="form-group">
                                         <label>Product quantity</label>
-                                        <input type="text" class="form-control" placeholder="Enter quantity" name="productquantity">
+                                        <input type="text" class="form-control" placeholder="Enter quantity" name="productquantity" id="productquantity">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Product details</label>
-                                        <textarea class="form-control" placeholder="Enter details" name="productdetails"></textarea>
+                                        <textarea class="form-control" placeholder="Enter details" name="productdetails" id="productdetails"></textarea>
                                     </div>
 
 
@@ -122,25 +112,20 @@
                                 <div class="col col-md-6">
                                     <div class="form-group">
                                         <label>Supplier name</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier name" name="suppliername">
+                                        <input type="text" class="form-control" placeholder="Enter supplier name" name="suppliername" id="suppliername">
                                     </div>
                                     <div class="form-group">
                                         <label>Supplier part number</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier part no" name="supplierpartno">
+                                        <input type="text" class="form-control" placeholder="Enter supplier part no" name="supplierpartno" id="supplierpartno">
                                     </div>
                                     <div class="form-group">
                                         <label>Supplier Price</label>
-                                        <input type="text" class="form-control" placeholder="Enter supplier price" name="supplierprice">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Product code</label>
-                                        <input type="text" class="form-control" placeholder="Enter product code" name="productcode">
+                                        <input type="text" class="form-control" placeholder="Enter supplier price" name="supplierprice" id="supplierprice">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Product price</label>
-                                        <input type="text" class="form-control" placeholder="Enter price" name="productprice">
+                                        <input type="text" class="form-control" placeholder="Enter price" name="productprice" id="productprice">
                                     </div>
 
 
@@ -154,7 +139,7 @@
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Add new</button>
+                                <button type="submit" id="addMedication" class="btn btn-primary pull-right">Add new</button>
                             </div>
                         </form>
                     </div>
@@ -187,8 +172,35 @@
                 $('#datepicker').datepicker({
                     autoclose: true
                 });
-                    }
-                );
+
+            });
+
+            $("#addMedication").on('click', click, function(e) {
+
+                var medication = {};
+
+                medication['productname'] = $('#productname').val();
+                medication['producttype'] = $('#producttype').val();
+                medication['productunit'] = $('#productunit').val();
+                medication['productquantity'] = parseInt($('#productquantity').val());
+                medication['productprice'] = parseFloat($('#productprice').val());
+                medication['productdetails'] = $('#productdetails').val();
+                medication['suppliername'] = $('#suppliername').val();
+                medication['supplierpartno'] = parseInt($('#supplierpartno').val());
+                medication['supplierprice'] = parseFloat($('#supplierprice').val());
+                medication['productcode'] = parseInt($('#productcode').val());
+               // medication['importedDate'] = $('#datepicker').val();
+
+                .ajax({
+                    type: "POST",
+                    url: "/",
+                    data: medication,
+                    success: ""
+
+                });
+
+            });
+
 
         </script>
 

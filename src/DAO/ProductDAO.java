@@ -13,23 +13,20 @@ import java.util.Random;
 /**
  * Created by qingyutan on 13/12/16.
  */
-public class productDAO {
+public class ProductDAO {
 
     private EntityManager em;
     private Random random = new Random();
 
-    public productDAO() {
+    public ProductDAO() {
         em = EMF.getInstance().createEntityManager();
     }
 
 
-    public Product addNewMedications(String name, String type, String unit, int quantity, double price, String details, String sname, int spartno, double sprice, Date importDate, String productcode) {
-
-                Product product = new Product(name, type, unit ,quantity, price, details, sname, spartno, sprice, importDate, productcode);
+    public Product addNewMedications(Product product) {
 
                 em.getTransaction().begin();
                 em.persist(product);
-                em.flush();
                 em.getTransaction().commit();
 
             return product;
@@ -80,6 +77,19 @@ public class productDAO {
         }
 
         return p;
+    }
+
+    public Product createProductCode() {
+        Product code = null;
+
+        try {
+            Query query = em.createQuery("SELECT p.productCode FROM Product p ORDER BY p.productCode DESC").setMaxResults(1);
+            code = (Product) query.getSingleResult();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return code;
     }
 
 

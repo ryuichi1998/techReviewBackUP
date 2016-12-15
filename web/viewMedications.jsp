@@ -12,10 +12,10 @@
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
-<%@ page import="DAO.productDAO" %>
+<%@ page import="DAO.ProductDAO" %>
 <%@ page import="java.util.List" %>
 <%
-    productDAO db = new productDAO();
+    ProductDAO db = new ProductDAO();
     //Product medications =  db.retrieveMedications();
     List<Product> products = db.retrieveAllMedications();
 
