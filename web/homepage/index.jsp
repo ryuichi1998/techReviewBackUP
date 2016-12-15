@@ -107,7 +107,7 @@
                         <input type="password" placeholder="Password" class="form-control" name="nric">
                     </div>
                     <div class="loginbox">
-                        <a href="/viewInvoices.jsp" class="btn signin-btn" >Patient</a>
+                        <a href="/patientDashboard" class="btn signin-btn" >Patient</a>
                         <a href="/doctorDashboard" class="btn signin-btn">Doctor</a>
                         <a href="/medicationDashboard.jsp" class="btn signin-btn">Nurse</a>
                     </div>
