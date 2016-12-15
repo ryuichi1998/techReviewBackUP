@@ -14,8 +14,8 @@ import java.io.IOException;
 /**
  * Created by liyun on 10/12/16.
  */
-@WebServlet(name = "ProfileServlet", urlPatterns = "/profile")
-public class ProfileServlet extends HttpServlet {
+@WebServlet(name = "ProfilePatientServlet", urlPatterns = "/patientProfile")
+public class ProfilePatientServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -32,6 +32,6 @@ public class ProfileServlet extends HttpServlet {
         age = DateFormatter.getAge(person.getDateOfBirth());
 
         request.setAttribute("age", age);
-        getServletContext().getRequestDispatcher("/profile.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/patientProfile.jsp").forward(request, response);
     }
 }

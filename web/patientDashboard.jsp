@@ -18,14 +18,14 @@
 <%--<%@ page import="java.util.List" %>--%>
 <%@ page import="Utils.DateFormatter" %>
 <%--<%--%>
-    <%--Staff doctor = (Staff) session.getAttribute("person");--%>
-    <%--Patient patient = (Patient) request.getAttribute("patient");--%>
+<%--Staff doctor = (Staff) session.getAttribute("person");--%>
+<%--Patient patient = (Patient) request.getAttribute("patient");--%>
 
-    <%--List<ConsultationRecord> consultationRecordList = (List<ConsultationRecord>) request.getAttribute("consultationList");--%>
-    <%--ConsultationRecord latestConsulationRecord = consultationRecordList.get(consultationRecordList.size() - 1);--%>
-    <%--List<Medication> medicationList = (List<Medication>) latestConsulationRecord.getMedicationsByConsultationId();--%>
+<%--List<ConsultationRecord> consultationRecordList = (List<ConsultationRecord>) request.getAttribute("consultationList");--%>
+<%--ConsultationRecord latestConsulationRecord = consultationRecordList.get(consultationRecordList.size() - 1);--%>
+<%--List<Medication> medicationList = (List<Medication>) latestConsulationRecord.getMedicationsByConsultationId();--%>
 
-    <%--List<Medication> currentMedicationList = (List<Medication>) request.getAttribute("currentMedicationList");--%>
+<%--List<Medication> currentMedicationList = (List<Medication>) request.getAttribute("currentMedicationList");--%>
 <%--%>--%>
 
 <%@include file="common/html/scripts.html" %>
@@ -59,13 +59,13 @@
             xkey: 'y',
             ykeys: ['a', 'b'],
             labels: ['Actual', 'Average'],
-            xLabelFormat: function(x){
+            xLabelFormat: function (x) {
                 var datef = x.toDateString();
-                datef = datef.substring(0, datef.length-4);
+                datef = datef.substring(0, datef.length - 4);
                 return datef;
             },
             hoverCallback: function (index, options, content) {
-                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) +"</div>";
+                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) + "</div>";
                 var middle = "<div class='morris-hover-point' style='color: #0b62a4'>" + "Actual: " + options.data[index].a + "</div>";
                 var bottom = "<div class='morris-hover-point' style='color: #7A92A3'>" + "Average: " + options.data[index].b + "</div>";
                 return top + middle + bottom;
@@ -86,13 +86,13 @@
             xkey: 'y',
             ykeys: ['a', 'b'],
             labels: ['Actual', 'Average'],
-            xLabelFormat: function(x){
+            xLabelFormat: function (x) {
                 var datef = x.toDateString();
-                datef = datef.substring(0, datef.length-4);
+                datef = datef.substring(0, datef.length - 4);
                 return datef;
             },
             hoverCallback: function (index, options, content) {
-                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) +"</div>";
+                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) + "</div>";
                 var middle = "<div class='morris-hover-point' style='color: #0b62a4'>" + "Actual: " + options.data[index].a + "</div>";
                 var bottom = "<div class='morris-hover-point' style='color: #7A92A3'>" + "Average: " + options.data[index].b + "</div>";
                 return top + middle + bottom;
@@ -113,13 +113,13 @@
             xkey: 'y',
             ykeys: ['a', 'b'],
             labels: ['Actual', 'Average'],
-            xLabelFormat: function(x){
+            xLabelFormat: function (x) {
                 var datef = x.toDateString();
-                datef = datef.substring(0, datef.length-4);
+                datef = datef.substring(0, datef.length - 4);
                 return datef;
             },
             hoverCallback: function (index, options, content) {
-                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) +"</div>";
+                var top = "<div class='morris-hover-row-label'>" + options.data[index].y.substring(5) + "</div>";
                 var middle = "<div class='morris-hover-point' style='color: #0b62a4'>" + "Actual: " + options.data[index].a + "</div>";
                 var bottom = "<div class='morris-hover-point' style='color: #7A92A3'>" + "Average: " + options.data[index].b + "</div>";
                 return top + middle + bottom;
@@ -150,8 +150,6 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#"><i class="fa fa-dashboard"></i> Patients</a></li>
-                <li class="active">Patient Details</li>
             </ol>
         </section>
         <%--/.content-header--%>
@@ -304,7 +302,11 @@
                                     <th>Location</th>
                                     </thead>
                                     <tbody>
-
+                                    <tr>
+                                        <td>03 Oct 2016 21:46</td>
+                                        <td>Check up</td>
+                                        <td>Blk N239</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                                 <%--currentMedicationTable--%>
@@ -332,7 +334,32 @@
                                     <th>Further Instruction</th>
                                     </thead>
                                     <tbody>
-
+                                    <tr>
+                                        <td>Panadol</td>
+                                        <td>2 Grams (gm)</td>
+                                        <td>every day</td>
+                                        <td>3 Month</td>
+                                        <td>Coronary Artery Disease</td>
+                                        <td>Dr John Lee</td>
+                                        <td>Since
+                                            <em>03 Oct 2016 21:46:00</em></td>
+                                        <td>Not to eat panadol when having the
+                                            medication
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspirin</td>
+                                        <td>1 Grams (gm)</td>
+                                        <td>as needed</td>
+                                        <td>6 Month</td>
+                                        <td>Coronary Artery Disease</td>
+                                        <td>Dr John Lee</td>
+                                        <td>Since
+                                            <em>03 Oct 2016 21:46:00</em></td>
+                                        <td>Not to eat panadol when having the
+                                            medication
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                                 <%--currentMedicationTable--%>
