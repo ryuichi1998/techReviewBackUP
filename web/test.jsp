@@ -13,10 +13,10 @@
     <title>Title</title>
 </head>
 <%
-    List<Service> services = (List<Service>)request.getAttribute("services");
-    Service s = services.get(0);
+  List<Service> serList = (List<Service>) request.getAttribute("services");
+    Service ser = serList.get(0);
 %>
 <body>
-
+<%=ser.getServiceDesc() %>
 </body>
 </html>

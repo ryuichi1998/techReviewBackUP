@@ -4,6 +4,9 @@
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.text.DecimalFormat" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -14,11 +17,34 @@
 <%
     ServiceDAO db = new ServiceDAO();
 //    List<Service> serviceList = (List<Service>) request.getAttribute("services");
-    List<Service> serviceList = db.retrieveAllService("P001", "false");
+    List<Service> serviceList = db.retrieveAllService("P001");
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     Date date = new Date();
+    Date dueDate = new Date();
+    Calendar myCal = Calendar.getInstance();
+    myCal.setTime(dueDate);
+    myCal.add(Calendar.MONTH, +1);
+    dueDate = myCal.getTime();
+    NumberFormat formatter = new DecimalFormat("#0.00");
+    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+    double total = 0;
+    for (Service service : serviceList) {
+        total = Math.round(total + service.getServiceFee() * service.getServiceQty());
+    }
+    double tax = Double.valueOf(formatter.format(total*0.07));
+    double sub = Double.valueOf(formatter.format(total*0.04));
+    double tPayable = Double.valueOf(formatter.format(total+tax-sub));
+    String text = "";
+    InvoiceDAO invoiceDb = new InvoiceDAO();
+    Invoice inv = new Invoice("P001",sqlDate, "PayPal", tPayable, sub, tax, sub, "false");
+    if(serviceList.size() > 0) {
+        db.updateInvoiceId(inv.getInvoiceId(), "P001");
+        invoiceDb.createInvoice(inv);
+        db.updateStatus("P001");
+    } else {
+        text = "All outstanding payment have be made! Thank you!";
+    }
 
-    System.out.println(dateFormat.format(date));
 %>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
 
@@ -47,7 +73,7 @@
         <div class="pad margin no-print">
             <div class="callout callout-info" style="margin-bottom: 0!important;">
                 <h4><i class="fa fa-info"></i> Note:</h4>
-                This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                <%= text%>
             </div>
         </div>
 
@@ -59,7 +85,7 @@
                         <div class="col-xs-12">
                             <h2 class="page-header">
                                 <i class="fa fa-globe"></i> AdminLTE, Inc.
-                                <small class="pull-right">Date: 2/10/2014</small>
+                                <small class="pull-right">Date: <%=dateFormat.format(date)%></small>
                             </h2>
                         </div>
                         <!-- /.col -->
@@ -69,8 +95,8 @@
                         <div class="col-sm-4 invoice-col">
                             <address>
                                 <strong>Billing Information</strong><br>
-                                Invoice Number: <br>
-                                Patient Number: <br>
+                                Invoice Number: <%=inv.getInvoiceId()%>><br>
+                                Patient Number: <%=inv.getPatientId()%><br>
                                 Admission Date: <br>
                                 Discharged Date:
                             </address>
@@ -93,9 +119,7 @@
                                 </thead>
                                 <tbody>
                                 <%
-                                    double total = 0;
                                     for (Service service : serviceList) {
-                                        total = total + service.getServiceFee();
                                 %>
                                 <tr>
                                     <td><%= service.getServiceDate()%></td>
@@ -120,28 +144,25 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-6">
-                            <p class="lead">Amount Due 2/22/2014</p>
+                            <p class="lead">Amount Due <%=dateFormat.format(dueDate)%></p>
 
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
                                         <th style="width:50%">Subtotal:</th>
-                                        <td><%=total%></td>
+                                        <td><%= total%></td>
                                     </tr>
                                     <tr>
                                         <th>Tax (7%)</th>
-                                        <% double tax = total*0.07; %>
-                                        <td><%=  tax %></td>
+                                        <td><%= tax%></td>
                                     </tr>
                                     <tr>
                                         <th>Subsidy</th>
-                                        <%  double sub = total * 0.4; %>
-                                        <td><%=sub%></td>
+                                        <td><%= sub%></td>
                                     </tr>
                                     <tr>
                                         <th>Total Payable</th>
-                                        <% double tPayable = total + tax - sub; %>
-                                        <td><%=tPayable%></td>
+                                        <td><%= tPayable%></td>
                                     </tr>
                                 </table>
                             </div>

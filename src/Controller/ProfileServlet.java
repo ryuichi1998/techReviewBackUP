@@ -27,9 +27,11 @@ public class ProfileServlet extends HttpServlet {
         Person person = (Person) session.getAttribute("person");
         int age = 0;
 
+        System.out.println(request.getSession().getAttribute("id") + " is my id");
+
         age = DateFormatter.getAge(person.getDateOfBirth());
 
         request.setAttribute("age", age);
-        getServletContext().getRequestDispatcher("/profile.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/patientProfile.jsp").forward(request, response);
     }
 }

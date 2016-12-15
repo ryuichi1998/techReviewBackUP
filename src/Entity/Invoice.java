@@ -21,6 +21,20 @@ public class Invoice {
     private Double subtotal;
     private String status;
 
+    public Invoice(String patientId, Date billingDate, String paymentMethod, Double totalPayable, Double subsidy, Double tax, Double subtotal, String status) {
+        this.patientId = patientId;
+        this.billingDate = billingDate;
+        this.paymentMethod = paymentMethod;
+        this.totalPayable = totalPayable;
+        this.subsidy = subsidy;
+        this.tax = tax;
+        this.subtotal = subtotal;
+        this.status = status;
+    }
+
+    public Invoice() {
+    }
+
     @Id
     @Column(name = "invoiceId", nullable = false)
     public int getInvoiceId() {

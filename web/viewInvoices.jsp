@@ -1,17 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: liyun
-  Date: 10/12/16
-  Time: 3:43 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="DAO.InvoiceDAO" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <%@include file="common/html/commonLinks.html" %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.document.location = $(this).data("href");
+            });
+        });
+    </script>
 </head>
 <%@include file="common/html/scripts.html" %>
-
+<%
+    InvoiceDAO invoiceDb = new InvoiceDAO();
+    List<Invoice> invoiceList = invoiceDb.retrieveAllService("P001");
+%>
 <body class="hold-transition skin-blue layout-boxed sidebar-mini">
 
 <div class="wrapper">
@@ -46,27 +52,38 @@
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Date</th>
+                                        <th>Billing Date</th>
                                         <th>Invoice Number</th>
+                                        <th>Payment Method</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>15/01/2016</td>
-                                        <td>IN001</td>
-                                        <td><span class="label label-default">Pending</span></td>
+                                    <%
+                                        for (Invoice invoices : invoiceList) {
+                                    %>
+                                    <tr class="clickable-row" data-href='/payment.jsp'>
+                                        <td><%= invoices.getBillingDate()%></td>
+                                        <td><%= invoices.getInvoiceId()%></td>
+                                        <td><%= invoices.getPaymentMethod()%></td>
+
+                                        <td>
+                                            <%
+                                                String status;
+                                                String label;
+                                                if (invoices.getStatus().equalsIgnoreCase("false")) {
+                                                 status = "Pending";
+                                                 label = "<span class=\"label label-default\">";
+                                                } else {
+                                                 status = "Paid";
+                                                 label = "<span class=\"label label-success\">";
+                                            }
+                                            %>
+                                            <%=label%><%=status%></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>15/01/2016</td>
-                                        <td>IN002</td>
-                                        <td><span class="label label-success">Paid</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>15/01/2016</td>
-                                        <td>IN003</td>
-                                        <td> <span class="label label-success">Paid</span></td>
-                                    </tr>
+                                    <%
+                                        }
+                                    %>
                                     </tbody>
                                 </table>
                             </div>

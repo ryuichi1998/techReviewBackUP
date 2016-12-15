@@ -20,11 +20,12 @@ public class InvoiceDAO {
         em = EMF.getInstance().createEntityManager();
     }
 
-    public List<Invoice> retrieveAllService(String status) {
+    public List<Invoice> retrieveAllService(String patientId) {
         List<Invoice> invoiceList = null;
 
         try {
-            Query query = em.createQuery("SELECT i from Invoice i");
+            Query query = em.createQuery("SELECT i from Invoice i where i.patientId=:patientId");
+            query.setParameter("patientId", patientId);
             invoiceList = query.getResultList();
 
         } catch(Exception e) {
