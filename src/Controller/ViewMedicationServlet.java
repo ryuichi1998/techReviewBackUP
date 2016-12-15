@@ -1,7 +1,7 @@
 package Controller;
 
 
-import DAO.productDAO;
+import DAO.ProductDAO;
 import Entity.Product;
 
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class ViewMedicationServlet extends HttpServlet {
                 String productCode = request.getParameter("productcode");
 
                 if(productCode != null) {
-                    productDAO db = new productDAO();
+                    ProductDAO db = new ProductDAO();
                     Product medications = db.retrieveMedicationDetails(productCode);
 
                     request.setAttribute("product", medications);
