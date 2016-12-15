@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Intensely : Home</title>
+    <title>Mi2 About</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
     <!-- Font Awesome -->
@@ -195,7 +195,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title-area">
-                    <h2 class="title">Features</h2>
+                    <h2 class="title">About Us</h2>
                     <span class="line"></span>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
                     <div class="col-md-12">
@@ -217,7 +217,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-6">
                                     <div class="single-feature wow zoomIn">
-                                        <i class="fa fa-thumbs-o-up feature-icon"></i>
+                                        <i class="fa fa-heartbeat feature-icon"></i>
                                         <h4 class="feat-title">Health Monitoring</h4>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                                     </div>
@@ -231,14 +231,14 @@
                                 </div>
                                 <div class="col-md-4 col-sm-6">
                                     <div class="single-feature wow zoomIn">
-                                        <i class="fa fa-code feature-icon"></i>
+                                        <i class="fa fa-car feature-icon"></i>
                                         <h4 class="feat-title">Easily Accesible</h4>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6">
                                     <div class="single-feature wow zoomIn">
-                                        <i class="fa fa-smile-o feature-icon"></i>
+                                        <i class="fa fa-thumbs-up feature-icon"></i>
                                         <h4 class="feat-title">Awesome Support</h4>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                                     </div>
