@@ -17,7 +17,7 @@
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
           <factory-entry name="NewPersistenceUnit" value="12d3b31e-9af6-4072-9e01-3d2f5827b610" />
-          <factory-entry name="mi2" value="833ca536-e261-40d0-916a-72e89d1e0406" />
+          <factory-entry name="mi2" value="12d3b31e-9af6-4072-9e01-3d2f5827b610" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
