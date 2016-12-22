@@ -116,10 +116,10 @@
 
                 <div class="col-md-4">
                     <div class="info-box bg-blue">
-                        <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                        <span class="info-box-icon"><i class="fa fa-calendar-o"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Likes</span>
-                            <span class="info-box-number">41,410</span>
+                            <span class="info-box-text">Appointments Today</span>
+                            <span class="info-box-number">8</span>
                             <!-- The progress section is optional -->
                             <%--<div class="progress">--%>
                                 <%--<div class="progress-bar" style="width: 70%"></div>--%>
@@ -136,8 +136,8 @@
                     <div class="info-box bg-yellow">
                         <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Likes</span>
-                            <span class="info-box-number">41,410</span>
+                            <span class="info-box-text">---</span>
+                            <span class="info-box-number">---</span>
                             <!-- The progress section is optional -->
                             <%--<div class="progress">--%>
                                 <%--<div class="progress-bar" style="width: 70%"></div>--%>

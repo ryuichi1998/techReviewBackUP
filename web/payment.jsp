@@ -84,7 +84,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h2 class="page-header">
-                                <i class="fa fa-globe"></i> AdminLTE, Inc.
+                                <span class="logo-lg"><b>Mi²</b> HealthCare</span>
                                 <small class="pull-right">Date: <%=dateFormat.format(date)%></small>
                             </h2>
                         </div>
