@@ -2,6 +2,7 @@ package Entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -20,7 +21,7 @@ public class Staff extends Person{
     private String citizenship;
     private String language;
     private String type;
-    private Integer profileImage;
+    private byte[] profileImage;
     private Collection<ConsultationRecord> consultationrecordsByStaffId;
     private Collection<Appointment> appointmentByStaffId;
 
@@ -136,11 +137,11 @@ public class Staff extends Person{
 
     @Basic
     @Column(name = "profileImage", nullable = true)
-    public Integer getProfileImage() {
+    public byte[] getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(Integer profileImage) {
+    public void setProfileImage(byte[] profileImage) {
         this.profileImage = profileImage;
     }
 
@@ -162,7 +163,7 @@ public class Staff extends Person{
         if (citizenship != null ? !citizenship.equals(staff.citizenship) : staff.citizenship != null) return false;
         if (language != null ? !language.equals(staff.language) : staff.language != null) return false;
         if (type != null ? !type.equals(staff.type) : staff.type != null) return false;
-        if (profileImage != null ? !profileImage.equals(staff.profileImage) : staff.profileImage != null) return false;
+        if (!Arrays.equals(profileImage, staff.profileImage)) return false;
 
         return true;
     }
@@ -180,7 +181,7 @@ public class Staff extends Person{
         result = 31 * result + (citizenship != null ? citizenship.hashCode() : 0);
         result = 31 * result + (language != null ? language.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (profileImage != null ? profileImage.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(profileImage);
         return result;
     }
 
