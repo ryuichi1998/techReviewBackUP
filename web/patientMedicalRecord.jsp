@@ -264,7 +264,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <i class="fa fa-fw fa-clock-o"></i>
-                                                                    <small class=""><%=DateFormatter.convertToDisplayDate(consultationRecord.getDateTime())%>
+                                                                    <small class=""><%=DateFormatter.convertToDisplayDateTime(consultationRecord.getDateTime())%>
                                                                     </small>
                                                                 </td>
                                                             </tr>

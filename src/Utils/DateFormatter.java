@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class DateFormatter {
     private static SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd MMM yyyy HH:mm:ss");
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
 
     public static int getAge(Date dateOfBirth) {
         int age = 0;
@@ -23,10 +24,18 @@ public class DateFormatter {
         return age;
     }
 
-    public static String convertToDisplayDate(Date date) {
+    public static String convertToDisplayDateTime(Date date) {
         String formattedDate = null;
 
         formattedDate = dateTimeFormat.format(date);
+
+        return formattedDate;
+    }
+
+    public static String convertToDisplayDate(Date date) {
+        String formattedDate = null;
+
+        formattedDate = dateFormat.format(date);
 
         return formattedDate;
     }

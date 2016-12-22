@@ -487,7 +487,7 @@
                                                      
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <span class="pull-right">By <em>Dr <%=doctor.getName()%></em> on <em><%=DateFormatter.convertToDisplayDate(latestConsulationRecord.getDateTime())%></em></span> 
+                                                    <span class="pull-right">By <em>Dr <%=doctor.getName()%></em> on <em><%=DateFormatter.convertToDisplayDateTime(latestConsulationRecord.getDateTime())%></em></span> 
                                                       
                                                 </div>
                                             </div>
@@ -613,7 +613,8 @@
                                                 </div>
                                                 <div class="box-body">
                                                     <div class="input-group col-md-12">
-                                                        <input type="text" class="form-control input-sm" placeholder="Search...">
+                                                        <input type="text" class="form-control input-sm"
+                                                               placeholder="Search...">
                                                         <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                                     </div>
                                                     <div class="table-responsive">
@@ -629,7 +630,7 @@
                                                             </thead>
                                                             <tbody>
                                                             <%
-                                                                for (int i =(consultationRecordList.size()-1); i>=0; i--) {
+                                                                for (int i = (consultationRecordList.size() - 1); i >= 0; i--) {
                                                                     ConsultationRecord consultationRecord = consultationRecordList.get(i);
                                                             %>
                                                             <tr>
@@ -645,7 +646,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <i class="fa fa-fw fa-clock-o"></i>
-                                                                    <small class=""><%=DateFormatter.convertToDisplayDate(consultationRecord.getDateTime())%>
+                                                                    <small class=""><%=DateFormatter.convertToDisplayDateTime(consultationRecord.getDateTime())%>
                                                                     </small>
                                                                 </td>
                                                             </tr>
@@ -700,7 +701,7 @@
                                                 Dr <%=currentMedication.getConsultationrecordByConsultationid().getStaffByDoctorInCharge().getName()%>
                                             </td>
                                             <td>Since
-                                                <br><em><%=DateFormatter.convertToDisplayDate(currentMedication.getConsultationrecordByConsultationid().getDateTime())%>
+                                                <br><em><%=DateFormatter.convertToDisplayDateTime(currentMedication.getConsultationrecordByConsultationid().getDateTime())%>
                                                 </em></td>
                                             <td>
                                                 <%=currentMedication.getRemarks()%>
