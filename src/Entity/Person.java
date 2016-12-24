@@ -19,6 +19,7 @@ public class Person {
     private String citizenship;
     private String language;
     private String type;
+    private byte[] profileImage;
 
     public Person() {
     }
@@ -101,5 +102,13 @@ public class Person {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public byte[] getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(byte[] profileImage) {
+        this.profileImage = profileImage;
     }
 }

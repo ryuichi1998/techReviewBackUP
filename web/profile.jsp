@@ -10,6 +10,8 @@
 <html>
 <%@page import="Entity.*" %>
 <%@ page import="Utils.DateFormatter" %>
+<%@ page import="java.io.OutputStream" %>
+<%@ page import="java.util.Base64" %>
 
 <head>
     <title>My Profile</title>
@@ -20,12 +22,14 @@
 <%
     Person person = (Person) session.getAttribute("person");
     Character personType = ((String) session.getAttribute("id")).charAt(0);
+
     Boolean isPatient = false;
     if (personType == 'P') {
         isPatient = true;
     } else {
         isPatient = false;
     }
+
 %>
 <style>
     .nav-pills > li.active > a {
@@ -135,7 +139,9 @@
                             <img class="profile-bg-image" src="common/images/images.jpeg">
                             <div class="profile-avatar">
                                 <div class="profile-avatar-placeholder">
-                                    <img class="profile-avatar-image" src="common/images/defaultIcon.png">
+                                    <%--<img class="profile-avatar-image" src="common/images/defaultIcon.png">--%>
+                                    <%--<img class="profile-avatar-image" src="<%=person.getProfileImage()%>">--%>
+                                    <img class="profile-avatar-image" src="<%=(String) request.getAttribute("imageSrcURL")%>">
                                 </div>
                             </div>
                         </div>
