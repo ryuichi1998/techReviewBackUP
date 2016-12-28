@@ -39,11 +39,14 @@ public class DoctorDashboardServlet extends HttpServlet {
         //  Get today appointment
         todayAppointmentList = appointmentDAO.getTodayAppointmentListByDoctorId(staffId);
 
+        //  Set Session Attributes
         request.getSession().setAttribute("person", staff);
         request.getSession().setAttribute("id", staff.getStaffId());
         request.getSession().setAttribute("name", staff.getName());
 
+        //  Set request attributes
         request.setAttribute("appointmentList", appointmentList);
+        request.setAttribute("todayAppointmentList", todayAppointmentList);
 
         getServletContext().getRequestDispatcher("/doctorDashboard.jsp").forward(request, response);
     }

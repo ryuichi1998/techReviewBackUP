@@ -44,29 +44,28 @@ public class AppointmentDAO {
         List<Appointment> todayAppointmentList = new ArrayList<Appointment>();
 
         Calendar todayDate = Calendar.getInstance();
+        Calendar tmrDate = Calendar.getInstance();
+
         todayDate.set(Calendar.HOUR_OF_DAY, 0);
         todayDate.set(Calendar.MINUTE, 0);
         todayDate.set(Calendar.SECOND, 0);
         todayDate.set(Calendar.MILLISECOND, 0);
-        Calendar tmrDate = todayDate;
+
+        tmrDate.set(Calendar.HOUR_OF_DAY, 0);
+        tmrDate.set(Calendar.MINUTE, 0);
+        tmrDate.set(Calendar.SECOND, 0);
+        tmrDate.set(Calendar.MILLISECOND, 0);
         tmrDate.add(Calendar.DATE, 1);
 
         try {
             Query query = em.createQuery("SELECT appointment FROM Appointment appointment WHERE appointment.doctorByStaffId.staffId=:doctorId AND (appointment.dateTime >= :todayDate AND appointment.dateTime < :tmrDate)");
             query.setParameter("doctorId", doctorId);
-//            query.setParameter("todayDate", new Date(), TemporalType.DATE);
-            query.setParameter("todayDate", todayDate);
-            query.setParameter("tmrDate", tmrDate);
+            query.setParameter("todayDate", todayDate.getTime());
+            query.setParameter("tmrDate", tmrDate.getTime());
 
             todayAppointmentList = (List<Appointment>) query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        System.out.println(new Date() + " is the date");
-        System.out.println(todayAppointmentList.size() + " size");
-        for(Appointment appointment: todayAppointmentList){
-            System.out.println(appointment.getAppointmentId() + " today la");
         }
 
         return todayAppointmentList;
