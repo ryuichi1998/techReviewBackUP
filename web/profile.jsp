@@ -10,69 +10,19 @@
 <html>
 <%@page import="Entity.*" %>
 <%@ page import="Utils.DateFormatter" %>
-<%@ page import="java.io.OutputStream" %>
-<%@ page import="java.util.Base64" %>
 
 <head>
     <title>My Profile</title>
     <%@include file="common/html/commonLinks.html" %>
-    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <%@include file="common/html/scripts.html" %>
 <%
     Person person = (Person) session.getAttribute("person");
-    Character personType = ((String) session.getAttribute("id")).charAt(0);
-
-    Boolean isPatient = false;
-    if (personType == 'P') {
-        isPatient = true;
-    } else {
-        isPatient = false;
-    }
-
+    Boolean isPatient = (Boolean) request.getAttribute("isPatient");
+    Patient patient = null;
 %>
-<style>
-    .nav-pills > li.active > a {
-        border-radius: 4px;
-    }
 
-    .profile-header {
-        max-height: 20%;
-        max-width: 100%;
-    }
-
-    .profile-header .profile-bg .profile-bg-image {
-        object-fit: contain;
-        width: 100%;
-        height: 100%;
-    }
-
-    .profile-avatar {
-        max-width: 28%;
-        max-height: 28%;
-        z-index: 2;
-        top: 20%;
-        left: 6%;
-        position: absolute;
-        transition: bottom .3s;
-    }
-
-    .profile-avatar .profile-avatar-placeholder {
-        background: #ffffff;
-        border: 4px solid #d2d6de;
-        border-radius: 50%;
-        box-shadow: 0 1px 1px rgba(136, 153, 166, 0.15);
-    }
-
-    .profile-avatar .profile-avatar-placeholder .profile-avatar-image {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .profile-nav {
-        padding-top: 2%;
-    }
-</style>
 <script>
     $(document).ready(function () {
         $("#edit-profile-btn").click(function () {
@@ -112,7 +62,26 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
+    <%--<c:choose>--%>
+    <%--<c:when test="${!isPatient}">--%>
+    <%--<c:import url="common/html/doctorNavigation.jsp"></c:import>--%>
+    <%--</c:when>--%>
+    <%--<c:otherwise>--%>
+    <%--<c:import url="common/html/patientNavigation.jsp"></c:import>--%>
+    <%--</c:otherwise>--%>
+    <%--</c:choose>--%>
+    <%
+        if (!isPatient) {
+    %>
     <%@include file="common/html/doctorNavigation.jsp" %>
+    <%
+    } else {
+        patient = (Patient) session.getAttribute("person");
+    %>
+    <%@include file="common/html/patientNavigation.jsp" %>
+    <%
+        }
+    %>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -141,7 +110,8 @@
                                 <div class="profile-avatar-placeholder">
                                     <%--<img class="profile-avatar-image" src="common/images/defaultIcon.png">--%>
                                     <%--<img class="profile-avatar-image" src="<%=person.getProfileImage()%>">--%>
-                                    <img class="profile-avatar-image" src="<%=(String) request.getAttribute("imageSrcURL")%>">
+                                    <img class="profile-avatar-image"
+                                         src="<%=(String) request.getAttribute("imageSrcURL")%>">
                                 </div>
                             </div>
                         </div>
@@ -169,7 +139,6 @@
             <%--/.name and edit row--%>
 
             <div class="row">
-
                 <div class="col-md-12">
                     <div class="box" id="profile-details-box">
                         <div class="box-header with-border">
@@ -276,6 +245,83 @@
 
             </div>
             <%--/.details row--%>
+
+            <%
+                if (isPatient) {
+            %>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header with-border"> 
+                            <h3 class="box-title">Next-Of-Kin</h3> 
+                        </div>
+                        <div class="box-body"> 
+                            <div class="col-md-6 col-xs-12">
+                                <div class="row">
+                                    <span class="info-box-icon bg-blue"><i class="ion ion-ios-person"></i></span>
+                                    <div class="info-box-content">
+                                        <span>Name</span>
+                                        <br>
+                                        <strong><%=patient.getNokName()%>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <%--/.row1--%>
+
+                                <hr>
+
+                                <div class="row">
+                                    <span class="info-box-icon bg-blue"><i class="ion ion-android-call"></i></span>
+                                    <div class="info-box-content">
+                                        <span>Phone Number</span>
+                                        <br>
+                                        <strong><%=patient.getPhoneNumber()%>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <%--/.row2--%>
+                            </div>
+                            <%--/.left--%>
+
+                            <div class="col-md-6 col-xs-12">
+                                <div class="row">
+                                    <span class="info-box-icon bg-blue"><i class="ion ion-android-people"></i></span>
+                                    <div class="info-box-content">
+                                        <span>Relationship</span>
+                                        <br>
+                                        <strong><%=patient.getNokRelation()%>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <%--/.row1--%>
+
+                                <hr>
+
+                                <div class="row">
+                                    <span class="info-box-icon bg-blue"><i class="ion ion-ios-person"></i></span>
+                                    <div class="info-box-content">
+                                        <span>Email</span>
+                                        <br>
+                                        <strong><%=patient.getNokEmail()%>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <%--/.row2--%>
+                            </div>
+                            <%--/.right--%>
+
+                        </div>
+                        <%--/.box-body--%>
+                    </div>
+                    <%--/.box--%>
+                </div>
+                <%--/.col-md-12--%>
+            </div>
+            <%--/.row--%>
+
+            <%
+                }
+            %>
 
         </section>
 

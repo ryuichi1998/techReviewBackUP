@@ -26,7 +26,7 @@
     String glucoseLevel = "-";
 %>
 
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 
 <div class="wrapper">
 

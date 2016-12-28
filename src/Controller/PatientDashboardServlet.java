@@ -54,6 +54,7 @@ public class PatientDashboardServlet extends HttpServlet {
 
         request.getSession().setAttribute("person", patient);
         request.getSession().setAttribute("id", patientId);
+        request.getSession().setAttribute("name", patient.getName());
 
         //  Forward request to patientDetails.jsp
         getServletContext().getRequestDispatcher("/patientDashboard.jsp").forward(request, response);
