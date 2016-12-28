@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <%@page import="Entity.*" %>
+<%@ page import="java.util.List" %>
 
 <head>
     <title>Dashboard</title>
@@ -22,48 +23,13 @@
 <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 
-<script type="text/javascript">
+<script src="javascripts/doctorDashboard.js"></script>
 
-    $(document).ready(function () {
 
-            var monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"];
-
-            $(window).resize(function () {
-//            to resize the chart
-                heartBeatChart.redraw();
-            })
-
-            var heartBeatChart = Morris.Line({
-                element: 'heart-beat-chart',
-                data: [
-                    {y: '2012-02-24 15:00:00', a: 87, b: 90},
-                    {y: '2012-02-25 15:00:00', a: 75, b: 65},
-                    {y: '2012-02-26 15:00:00', a: 50, b: 40},
-                    {y: '2012-02-27 15:00:00', a: 75, b: 65},
-                    {y: '2012-02-28 15:00:00', a: 50, b: 40},
-                    {y: '2012-02-29 15:00:00', a: 75, b: 65},
-                    {y: '2012-03-01 15:00:00', a: 67, b: 71}
-                ],
-                xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['Actual', 'Average'],
-                xLabelFormat: function (x) {
-                    var datef = x.toDateString();
-                    datef = datef.substring(0, datef.length - 4);
-                    return datef;
-                },
-                hoverCallback: function (index, options, content) {
-                    var top = "<div class='morris-hover-row-label'>" + monthNames[options.data[index].y.substring(6, 7)] + " " + options.data[index].y.substring(8, 10) + "</div>";
-                    var middle = "<div class='morris-hover-point' style='color: #0b62a4'>" + "Actual: " + options.data[index].a + "</div>";
-                    var bottom = "<div class='morris-hover-point' style='color: #7A92A3'>" + "Average: " + options.data[index].b + "</div>";
-                    return top + middle + bottom;
-
-                }
-            });
-
-        });
-</script>
+<%
+    List<Appointment> appointmentList = (List<Appointment>) request.getAttribute("appointmentList");
+    List<Appointment> todayAppointmentList = (List<Appointment>) request.getAttribute("todayAppointmentList");
+%>
 
 <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
 <body class="hold-transition skin-blue fixed sidebar-mini">
@@ -119,7 +85,7 @@
                         <span class="info-box-icon"><i class="fa fa-calendar-o"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Appointments Today</span>
-                            <span class="info-box-number">8</span>
+                            <span class="info-box-number"><%=todayAppointmentList.size()%></span>
                             <!-- The progress section is optional -->
                             <%--<div class="progress">--%>
                                 <%--<div class="progress-bar" style="width: 70%"></div>--%>
@@ -221,6 +187,7 @@
                         <div class="box-body">
                             Critical Status
                             <div id="heart-beat-chart"></div>
+
                             <%--<div class="demo-container">--%>
                                 <%--<div id="placeholder" class="demo-placeholder" style="padding: 0; position: relative;">--%>
                                     <%--<canvas class="flot-base" width="200" height="200"></canvas>--%>
