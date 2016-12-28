@@ -34,7 +34,7 @@
 <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 
 <div class="wrapper">
 

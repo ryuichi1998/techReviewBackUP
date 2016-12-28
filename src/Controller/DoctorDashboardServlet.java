@@ -1,6 +1,8 @@
 package Controller;
 
+import DAO.AppointmentDAO;
 import DAO.StaffDAO;
+import Entity.Appointment;
 import Entity.Staff;
 
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by liyun on 11/16/2016.
@@ -23,12 +26,24 @@ public class DoctorDashboardServlet extends HttpServlet {
         String staffId = "S001";
         System.out.print(staffId);
 
+        List<Appointment> appointmentList, todayAppointmentList;
+        Staff staff;
+
         StaffDAO staffDAO = new StaffDAO();
-        Staff staff = staffDAO.getStaffByStaffId(staffId);
+        AppointmentDAO appointmentDAO = new AppointmentDAO();
+
+        //  Get staff
+        staff = staffDAO.getStaffByStaffId(staffId);
+        //  Get all appointment
+        appointmentList = appointmentDAO.getAppointmentListByDoctorId(staffId);
+        //  Get today appointment
+        todayAppointmentList = appointmentDAO.getTodayAppointmentListByDoctorId(staffId);
 
         request.getSession().setAttribute("person", staff);
         request.getSession().setAttribute("id", staff.getStaffId());
-        System.out.println("thisis my f fsd " + staff.getAddress());
+        request.getSession().setAttribute("name", staff.getName());
+
+        request.setAttribute("appointmentList", appointmentList);
 
         getServletContext().getRequestDispatcher("/doctorDashboard.jsp").forward(request, response);
     }

@@ -7,10 +7,10 @@
 --%>
 <!DOCTYPE html>
 <html lang="en">
-
 <%@page import="Entity.*" %>
+
 <%
-    Patient patient = (Patient) session.getAttribute("person");
+    String name = (String) session.getAttribute("name");
 %>
 
 <header class="main-header">
@@ -121,7 +121,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="../common/images/classprofile.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><%=patient.getName()%></span>
+                        <span class="hidden-xs"><%=name%></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -129,7 +129,7 @@
                             <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
 
                             <p>
-                                <%=patient.getName()%>
+                                <%=name%>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -176,7 +176,7 @@
                 <img src="../common/images/classprofile.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <Strong><%=patient.getName()%></Strong>
+                <Strong><%=name%></Strong>
             </div>
         </div>
         <!-- search form -->
@@ -201,7 +201,8 @@
                 </a>
             </li>
 
-            <li><a href="/patientProfile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
+            <%--<li><a href="/patientProfile"><i class="fa fa-book"></i> <span>Profile</span></a></li>--%>
+            <li><a href="/profile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
 
             <li>
                 <a href="/patientMedicalRecord">
