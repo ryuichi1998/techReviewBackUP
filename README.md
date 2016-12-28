@@ -11,8 +11,8 @@ Therefore we aim to help improve online e-services for patients to have a quick 
 2. Dashboards
 3. Online Payment
 4. Remote Monitoring
-5. FAQ
-6. ...
+5. Medical Dispensing System
+6. FAQ 
 
 ## Requirements:
 - [Tomcat Server 8.0.28](https://drive.google.com/a/sit.nyp.edu.sg/file/d/0B-4YH3KnvOTKRmk1QXBrYndjOFE/view?usp=sharing)
