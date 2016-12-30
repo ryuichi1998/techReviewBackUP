@@ -23,24 +23,34 @@ public class ProductDAO {
     }
 
 
-    public Product addNewMedications(Product product) {
+    public Boolean addNewProduct(Product product) {
+        boolean isCreated = false;
 
-                em.getTransaction().begin();
-                em.persist(product);
-                em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.persist(product);
+            em.flush();
+            em.getTransaction().commit();
+            isCreated = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            isCreated = false;
+        }
 
-            return product;
+
+        return isCreated;
+
     }
 
-    public Product retrieveMedications() {
-        List<Product> list = retrieveAllMedications();
+    public Product retrieveProduct() {
+        List<Product> list = retrieveAllProduct();
         int i = random.nextInt(list.size());
         return list.get(i);
     }
 
 
 
-    public List<Product> retrieveAllMedications() {
+    public List<Product> retrieveAllProduct() {
             List<Product> product = null;
 
                 try {
@@ -54,7 +64,7 @@ public class ProductDAO {
     }
 
 
-    public Product retrieveMedicationDetails(String productcode) {
+    public Product retrieveProductDetails(String productcode) {
         Product p = null;
 
         try {
@@ -79,18 +89,44 @@ public class ProductDAO {
         return p;
     }
 
-    public Product createProductCode() {
-        Product code = null;
+    public String createProductCode() {
+        String code = null;
 
         try {
             Query query = em.createQuery("SELECT p.productCode FROM Product p ORDER BY p.productCode DESC").setMaxResults(1);
-            code = (Product) query.getSingleResult();
+            code = (String) query.getSingleResult();
         } catch(Exception e) {
             e.printStackTrace();
         }
 
         return code;
     }
+
+
+
+    // Check is field blank
+    public  Boolean isFieldBlank(String field) {
+        if(field != null)  { return true; } else { return false;}
+    }
+
+    public  Boolean isProductExisted(String productName) {
+
+            Query query = em.createQuery("SELECT COUNT(p.productName) FROM Product p WHERE p.productName=:productname");
+            query.setParameter("productname", productName);
+
+            // if exist
+            long ifExist = 0;
+            // get result
+            ifExist = (long) query.getSingleResult();
+            // check result
+            if (ifExist > 0) { return true; } else { return false;}
+
+
+
+
+    }
+
+
 
 
 
