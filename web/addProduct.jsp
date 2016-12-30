@@ -14,7 +14,7 @@
 </head>
 <%@include file="common/html/scripts.html" %>
 
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 
 <div class="wrapper">
 
@@ -53,7 +53,7 @@
                     <%--/. Box  --%>
                 </div>
 
-        <form action="/addNewMedication" method="post">
+        <form action="/newProduct" method="post" name="newProduct">
                 <%--/.1.1 Start col md 12  --%>
                 <div class="col col-md-12">
 
@@ -90,7 +90,7 @@
                                             <select class="form-control" name="productunit" id="productunit">
                                                 <option>Grams (gm)</option>
                                                 <option>Piece (pc)</option>
-                                                <option>Litres (l®®®¡)</option>
+                                                <option>Litres (l)</option>
                                             </select>
                                         </div>
 
@@ -173,6 +173,52 @@
                     autoclose: true
                 });
 
+
+
+                $("form[name='newProduct']").validate({
+
+                // specifiy the rules
+                    rules : {
+                        productname: "required",
+                        producttype: "required",
+                        productunit: "required",
+                        productquantity: "required",
+                        productdetails: "required",
+                        suppliername: "required",
+                        supplierpartno: {
+                            maxlength: 8,
+                            required: true
+                        },
+                        supplierprice: "required",
+                        productprice: "required"
+
+
+                    },
+                    // error messages
+
+                    messages: {
+                        productname: "Please enter a product name",
+                        producttype: "Please choose one product type",
+                        productunit: "Please choose one product unit",
+                        productquantity: "Please enter a quantity",
+                        productdetails: "Please enter the product details",
+                        suppliername: "Please enter the supplier name",
+                        supplierpartno: {
+                            maxlength: "The supplier part number is 8 maximum characters long",
+                            required: "Please enter the supplier part number"
+                        },
+                        supplierprice: "Please enter the supplier price",
+                        productprice: "Please enter the product price"
+
+                    },
+
+                    submitHandler: function(form) {
+                        form.submit();
+                    }
+
+
+                });
+
             });
 
             $("#addMedication").on('click', click, function(e) {
@@ -200,6 +246,10 @@
                 });
 
             });
+
+
+
+
 
 
         </script>
