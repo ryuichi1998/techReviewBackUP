@@ -38,6 +38,16 @@
 
     $(document).ready(function () {
 
+        $("#authorise").click(
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/services/fitbit",
+                success: function (data) {
+                    alert("success");
+                }
+            })
+        )
+
         $(window).resize(function () {
 //            to resize the chart
             heartBeatChart.redraw();
@@ -158,6 +168,8 @@
 
 
             <div class="row">
+
+                <button id="authorise">Authorise</button>
 
                 <div class="col-md-4 col-xs-12">
                     <div class="box box-primary">

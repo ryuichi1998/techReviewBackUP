@@ -1,7 +1,7 @@
 package Logic;
 
 import Entity.VitalSigns;
-import Model.ConstantValues;
+import Utils.ConstantValues;
 
 import java.util.ArrayList;
 import java.util.List;

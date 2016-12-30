@@ -20,6 +20,10 @@
     text-align: center;
 }
 
+.dataTables_filter{
+    width:100%;
+}
+
 /*table*/
 .table {
     border-collapse: separate;

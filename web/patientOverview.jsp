@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="css/patientOverview.css">
 </head>
 <%@include file="common/html/scripts.html" %>
+<script src="javascripts/patientOverview.js"></script>
+
 <%@page import="Entity.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="Model.ConstantValues" %>
+<%@ page import="Utils.ConstantValues" %>
 <%
     List<Patient> patientList = (List<Patient>) session.getAttribute("patientList");
     HashMap<String, List<VitalSigns>> avgPatientVitalSignMap = (HashMap<String, List<VitalSigns>>) session.getAttribute("avgPatientVitalSignMap");
@@ -51,16 +53,29 @@
 
         <section class="content">
 
-            <div class="row">
-
-            </div>
-            <%--/.row - search--%>
+            <%--<div class="row">--%>
+                <%--<div class="col-md-12">--%>
+                    <%--<div class="box box-solid">--%>
+                        <%--<div class="box-body">--%>
+                            <%--<div class="input-group col-md-6">--%>
+                                <%--<input type="text" class="form-control input-sm"--%>
+                                       <%--placeholder="Search...">--%>
+                                <%--<span class="glyphicon glyphicon-search form-control-feedback"></span>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--&lt;%&ndash;/.box body&ndash;%&gt;--%>
+                    <%--</div>--%>
+                    <%--&lt;%&ndash;/.box&ndash;%&gt;--%>
+                <%--</div>--%>
+                <%--&lt;%&ndash;/.col-md-12&ndash;%&gt;--%>
+            <%--</div>--%>
+            <%--&lt;%&ndash;/.row - search&ndash;%&gt;--%>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="box">
-                        <div class="box-body">
-                            <table class="table table-hover patient-list">
+                        <div class="box-body table-responsive">
+                            <table class="table table-hover table-striped patient-list" id="patientList">
                                 <thead>
                                 <th>
                                     <span>Patient</span>
@@ -97,11 +112,11 @@
                                 <tr>
                                     <td>
                                         <div class="row">
-                                            <div class="col-md-4 col-xs-12">
+                                            <div class="col-md-3 col-sm-5 col-xs-12">
                                                 <img src="common/images/defaultIcon.png" alt="Name">
                                             </div>
-                                            <div class="col-md-8 col-xs-12">
-                                                <a href="/patientDetails?patientId=<%=patient.getPatientId()%>" class="user-link"><%=patient.getName()%></a>
+                                            <div class="col-md-9 col-sm-7 col-xs-12">
+                                                <h4><a href="/patientDetails?patientId=<%=patient.getPatientId()%>" class="user-link"><%=patient.getName()%></a></h4>
                                                 <span>Blood Type: <%=patient.getBloodType()%></span><br>
                                                 <span>Weight: <%=patient.getWeight()%></span><br>
                                                 <span>Height: <%=patient.getHeight()%></span>
@@ -110,18 +125,17 @@
                                     </td>
                                     <%--/.name col--%>
                                     <td class="data">
-                                        <%=heartBeatRate%><br>
+                                        <h4><strong><%=heartBeatRate%><br></strong></h4>
                                         <span class="unit">bpm</span>
                                     </td>
                                     <%--/.heart beat col--%>
                                     <td class="data">
-                                        <%=bloodPressure%><br>
+                                        <h4><strong><%=bloodPressure%><br></strong></h4>
                                         <span class="unit">mmHg</span>
                                     </td>
                                     <%--/.blood pressure col--%>
                                     <td class="data">
-                                        <%=glucoseLevel%>
-                                        <br>
+                                        <h4><strong><%=glucoseLevel%><br></strong></h4>
                                         <span class="unit">mmol/L</span>
                                     </td>
                                     <%--/.glucose level col--%>
