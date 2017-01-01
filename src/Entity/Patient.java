@@ -1,7 +1,6 @@
 package Entity;
 
 import javax.persistence.*;
-import java.awt.geom.Path2D;
 import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,7 +34,7 @@ public class Patient extends Person{
     private Collection<Device> devicesByPatientId;
     private Collection<FamilyMedicalBackground> familyMedicalBackgroundListByPatientId;
     private Collection<Appointment> appointmentListByPatientId;
-    private Collection<VitalSigns> vitalSignListByPatientId;
+    private Collection<VitalSigns> vitalSignsListByPatientId;
 
     @Id
     @Column(name = "patientId", nullable = false, length = 10)
@@ -332,11 +331,11 @@ public class Patient extends Person{
     }
 
     @OneToMany(mappedBy = "patientByPatientId")
-    public Collection<VitalSigns> getVitalSignListByPatientId() {
-        return vitalSignListByPatientId;
+    public Collection<VitalSigns> getVitalSignsListByPatientId() {
+        return vitalSignsListByPatientId;
     }
 
-    public void setVitalSignListByPatientId(Collection<VitalSigns> vitalSignListByPatientId) {
-        this.vitalSignListByPatientId = vitalSignListByPatientId;
+    public void setVitalSignsListByPatientId(Collection<VitalSigns> vitalSignsListByPatientId) {
+        this.vitalSignsListByPatientId = vitalSignsListByPatientId;
     }
 }
