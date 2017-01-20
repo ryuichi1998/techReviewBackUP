@@ -204,6 +204,10 @@
             <%--<li><a href="/patientProfile"><i class="fa fa-book"></i> <span>Profile</span></a></li>--%>
             <li><a href="/profile"><i class="fa fa-book"></i> <span>Profile</span></a></li>
 
+            <li><a href="/log"><i class="ion ion-compose"></i> <span>Log</span></a></li>
+
+            <li><a href="/profile"><i class="fa fa-heart"></i> <span>My Vital Signs</span></a></li>
+
             <li>
                 <a href="/patientMedicalRecord">
                     <i class="fa fa-bed"></i> <span>My Medical Records</span>

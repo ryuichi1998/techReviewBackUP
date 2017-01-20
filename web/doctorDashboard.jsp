@@ -16,6 +16,7 @@
     <%--morris chart--%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <%@include file="common/html/commonLinks.html" %>
+    <link rel="stylesheet" href="css/doctorDashboard.css">
 </head>
 
 <%@include file="common/html/scripts.html" %>

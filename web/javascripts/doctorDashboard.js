@@ -61,13 +61,50 @@ $(document).ready(function () {
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,basicWeek,basicDay'
+                right: 'month,basicWeek,basicDay,listWeek'
             },
-            defaultDate: '2016-12-12',
+            defaultDate: new Date(),
             navLinks: true, // can click day/week names to navigate views
             editable: true,
+            selectable: true,
             eventLimit: true, // allow "more" link when too many events
-            events: data
+            events: data,
+            eventRender: function(event, element) {
+                if(event.icon){
+                    element.find(".fc-title").prepend("<i class='fa fa-stethoscope'></i>");
+                    element.find(".fc-list-item-title").prepend("<i class='fa fa-stethoscope'></i>");
+                }
+            },
+            eventDrop: function(event, delta, revertFunc) {
+
+                alert(event.title + " was dropped on " + event.start.format());
+
+                if (!confirm("Are you sure about changing the appointment to " + event.start.format())) {
+                    revertFunc();
+                }
+            },
+            eventResize: function(event, delta, revertFunc) {
+
+                alert(event.title + " end is now " + event.end.format());
+
+                if (!confirm("is this okay?")) {
+                    revertFunc();
+                }
+            },
+            eventMouseover: function(calEvent,jsEvent) {
+                alert("hi");
+                xOffset = 10;
+                yOffset = 30;
+                $("body").append("<p>hi</p>");
+                $("#tooltip")
+                    .css("top",(jsEvent.clientY - xOffset) + "px")
+                    .css("left",(jsEvent.clientX + yOffset) + "px")
+                    .fadeIn("fast");
+            },
+            eventMouseout: function(calEvent,jsEvent) {
+                $("#tooltip").remove();
+            }
+
         });
     }
 

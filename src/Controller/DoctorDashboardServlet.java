@@ -48,6 +48,10 @@ public class DoctorDashboardServlet extends HttpServlet {
         request.setAttribute("appointmentList", appointmentList);
         request.setAttribute("todayAppointmentList", todayAppointmentList);
 
+        System.out.println("access token " + request.getParameter("code"));
+        System.out.println("1: " + request.getRequestURI());
+        System.out.println("2: " + request.getQueryString());
+
         getServletContext().getRequestDispatcher("/doctorDashboard.jsp").forward(request, response);
     }
 }

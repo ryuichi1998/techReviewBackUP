@@ -16,12 +16,12 @@
         <class>Entity.Product</class>
         <class>Entity.ProductRecord</class>
         <class>Entity.Staff</class>
-        <class>Entity.VitalSigns</class>
         <class>Entity.Ward</class>
         <class>Entity.HospitalLocation</class>
         <class>Entity.FaqrecordEntity</class>
         <class>Entity.Invoice</class>
         <class>Entity.Service</class>
+        <class>Entity.VitalSigns</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mi2"/>

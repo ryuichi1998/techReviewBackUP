@@ -38,6 +38,19 @@
 
     $(document).ready(function () {
 
+        $("#authorise").on("click", function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/services/fitbit",
+                success: function () {
+                    alert("success ");
+                },
+                error: function () {
+                    alert("Error");
+                }
+            })
+        });
+
         $(window).resize(function () {
 //            to resize the chart
             heartBeatChart.redraw();
@@ -156,6 +169,15 @@
 
         <section class="content">
 
+
+            <div class="row">
+                <div class="col-md-4 pull-right">
+                    <a class="pull-right btn btn-block btn-primary"
+                       href="http://localhost:8080/services/fitbit">Click</a>
+                <%--<a class="pull-right btn btn-block btn-primary"--%>
+                       <%--href="https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=2287JM&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fservices%2Ffitbit%2Fcallback&scope=heartrate&expires_in=604800">Click</a>--%>
+                </div>
+            </div>
 
             <div class="row">
 

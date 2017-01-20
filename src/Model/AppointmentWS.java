@@ -33,19 +33,18 @@ public class AppointmentWS {
         try {
             for (Appointment appointment : appointmentList) {
                 JSONObject apptObject = new JSONObject();
-//                apptObject.put("apptId", appointment.getAppointmentId());
-                apptObject.put("title", appointment.getAppointmentId());
-//                apptObject.put("start", "2016-12-28");
+                apptObject.put("id", appointment.getAppointmentId());
+                apptObject.put("title", "  " + appointment.getPatientByPatientId().getName());
                 apptObject.put("start", appointment.getDateTime());
-//                apptObject.put("dateTime", appointment.getDateTime());
-//                apptObject.put("doctorInCharge", appointment.getDoctorByStaffId().getName());
+                apptObject.put("url", "http://localhost:8080/patientDetails?patientId="+appointment.getPatientByPatientId().getPatientId());
+                apptObject.put("icon", "icon");
+                apptObject.put("color", "#448AFF");
                 jsonArray.put(apptObject);
             }
             jsonObject.put("appointments", jsonArray);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
         System.out.println(jsonObject.toString() + " is the json atring");
 
