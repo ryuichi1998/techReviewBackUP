@@ -10,11 +10,9 @@
 <html lang="en">
 
 <%@page import="Entity.*" %>
-<%@ page import="DAO.StaffDAO" %>
-<%
-    StaffDAO staffDAO = new StaffDAO();
 
-    Staff staff = (Staff) staffDAO.getStaffByStaffId("S003");
+<%
+    Staff staff = (Staff) session.getAttribute("person");
 %>
 
 <header class="main-header">
@@ -200,13 +198,13 @@
             <!-- First link -->
 
             <li class="treeview">
-                <a href="/medicationDashboard">
-                    <i class="fa fa-medkit"></i><span>Medication</span>
+                <a href="/products">
+                    <i class="fa fa-medkit"></i><span>Products</span>
                 <!-- sub menu for links -->
                 <ul class="treeview-menu">
                     <li><a href="/medicationDashboard.jsp">Dashboard</a></li>
-                    <li><a href="/addMedications.jsp">Add new products</a></li>
-                    <li><a href="/viewMedications.jsp">View all products</a></li>
+                    <li><a href="/addProduct.jsp">Add new products</a></li>
+                    <li><a href="/viewProduct.jsp">View all products</a></li>
                 </ul>
             </li>
 

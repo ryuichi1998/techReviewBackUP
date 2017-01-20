@@ -44,8 +44,7 @@ public class Product {
         this.productCode = productCode;
     }
 
-    public Product(int productId, String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
-        this.productId = productId;
+    public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, Date importedDate, String productCode) {
         this.productName = productName;
         this.productType = productType;
         this.productUnit = productUnit;

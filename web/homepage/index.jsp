@@ -109,7 +109,7 @@
                     <div class="loginbox">
                         <a href="/patientDashboard" class="btn signin-btn" >Patient</a>
                         <a href="/doctorDashboard" class="btn signin-btn">Doctor</a>
-                        <a href="/medicationDashboard.jsp" class="btn signin-btn">Nurse</a>
+                        <a href="/nurseDashboard" class="btn signin-btn">Nurse</a>
                     </div>
                 </form>
             </div>

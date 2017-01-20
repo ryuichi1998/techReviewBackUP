@@ -27,7 +27,7 @@ public class ViewMedicationServlet extends HttpServlet {
 
                 if(productCode != null) {
                     ProductDAO db = new ProductDAO();
-                    Product medications = db.retrieveMedicationDetails(productCode);
+                    Product medications = db.retrieveProductDetails(productCode);
 
                     request.setAttribute("product", medications);
                     getServletContext().getRequestDispatcher("/productDetails.jsp").forward(request,response);

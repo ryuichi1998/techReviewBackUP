@@ -17,7 +17,7 @@
 <%
     ProductDAO db = new ProductDAO();
     //Product medications =  db.retrieveMedications();
-    List<Product> products = db.retrieveAllMedications();
+    List<Product> products = db.retrieveAllProduct();
 
 
 %>
