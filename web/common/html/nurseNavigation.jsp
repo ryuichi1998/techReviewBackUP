@@ -202,9 +202,9 @@
                     <i class="fa fa-medkit"></i><span>Products</span>
                 <!-- sub menu for links -->
                 <ul class="treeview-menu">
-                    <li><a href="/medicationDashboard.jsp">Dashboard</a></li>
+                    <li><a href="/productDashboard">Dashboard</a></li>
                     <li><a href="/addProduct.jsp">Add new products</a></li>
-                    <li><a href="/viewProduct.jsp">View all products</a></li>
+                    <li><a href="/viewProducts">View all products</a></li>
                 </ul>
             </li>
 

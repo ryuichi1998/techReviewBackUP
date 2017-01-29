@@ -23,6 +23,15 @@ public class ProductDAO {
     }
 
 
+    /* ===================
+
+    Name: addNewProduct
+    For: Create Products
+    Parameters: object product
+    Return type: Boolean
+
+    ===================== */
+
     public Boolean addNewProduct(Product product) {
         boolean isCreated = false;
 
@@ -41,6 +50,60 @@ public class ProductDAO {
         return isCreated;
 
     }
+
+
+    /* ===================
+
+    Name: updateProducts
+    For: products Products
+    Parameters: object product
+    Return type: Boolean
+
+    ===================== */
+
+    public Boolean updateProduct(Product product) {
+
+        // check if product is updated
+        boolean isUpdated = false;
+
+        // query string
+
+        String queryString = "UPDATE Product SET productName = :pname, productType = :ptype, productUnit = :punit, productQuantity = :pquantity, supplierName = :sname, supplierPartNo = :spartno, supplierPrice = :sprice, productPrice = :pprice, productDetails = :pdetails " +
+                "WHERE productCode = :pcode";
+
+        try {
+
+
+
+            Query query = em.createQuery(queryString)
+                    .setParameter("pname", product.getProductName())
+                    .setParameter("punit", product.getProductUnit())
+                    .setParameter("pquantity",product.getProductQuantity())
+                    .setParameter("ptype", product.getProductType())
+                    .setParameter("sname", product.getSupplierName())
+                    .setParameter("spartno", product.getSupplierPartNo())
+                    .setParameter("sprice", product.getSupplierPrice())
+                    .setParameter("pprice", product.getProductPrice())
+                    .setParameter("pdetails", product.getProductDetails())
+                    ;
+
+            int updateCount = query.executeUpdate();
+
+            if(updateCount >= 9) {
+                isUpdated =  true;
+            }
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+
+        return isUpdated;
+    }
+
+
 
     public Product retrieveProduct() {
         List<Product> list = retrieveAllProduct();
@@ -76,6 +139,10 @@ public class ProductDAO {
 
         return p;
     }
+
+
+
+
 
     public Product retrieveProductCode() {
         Product p = null;

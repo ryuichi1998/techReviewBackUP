@@ -8,23 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Mi2 - View all medications</title>
+    <title>View all Products</title>
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
-<%@ page import="DAO.ProductDAO" %>
 <%@ page import="java.util.List" %>
 <%
-    ProductDAO db = new ProductDAO();
-    //Product medications =  db.retrieveMedications();
-    List<Product> products = db.retrieveAllProduct();
-
-
+    Staff nurse = (Staff) session.getAttribute("person");
+    List<Product> products = (List<Product>) request.getAttribute("products");
 %>
 
 
 
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 
 <div class="wrapper">
 
@@ -37,8 +33,8 @@
         <%--Content Header--%>
         <section class="content-header">
             <h1>
-                Medications
-                <small>view all medications</small>
+                Products
+                <small>view all products</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -85,7 +81,7 @@
                                     for(Product medications : products) {
                                 %>
                                 <tr>
-                                    <td><a href="viewMedications?productcode=<%= medications.getProductCode() %>"><%= medications.getProductCode() %></a></td>
+                                    <td><a href="viewProduct?productcode=<%= medications.getProductCode() %>"><%= medications.getProductCode() %></a></td>
                                     <td><%= medications.getProductName() %></td>
                                     <td><%= medications.getProductType() %></td>
                                     <td><%= medications.getProductUnit() %></td>

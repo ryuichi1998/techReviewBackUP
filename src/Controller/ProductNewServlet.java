@@ -98,8 +98,7 @@ public class ProductNewServlet extends HttpServlet {
 
 
 
-                if (isCreated == true) { getServletContext().getRequestDispatcher("/viewProduct.jsp").forward(request, response); } else { response.sendRedirect("/viewProduct.jsp"); }
-                }
+                if (isCreated == true) { getServletContext().getRequestDispatcher("/viewProducts").forward(request, response); } else { response.sendRedirect("/viewProduct.jsp"); }}
 
             } catch(NumberFormatException e){ e.printStackTrace(); }
 

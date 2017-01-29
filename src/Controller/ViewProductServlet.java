@@ -14,8 +14,8 @@ import java.io.IOException;
 /**
  * Created by qingyutan on 14/12/16.
  */
-@WebServlet(name = "ViewMedicationServlet", urlPatterns = "/viewMedications")
-public class ViewMedicationServlet extends HttpServlet {
+@WebServlet(name = "ViewProductServlet", urlPatterns = "/viewProduct")
+public class ViewProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -30,6 +30,7 @@ public class ViewMedicationServlet extends HttpServlet {
                     Product medications = db.retrieveProductDetails(productCode);
 
                     request.setAttribute("product", medications);
+                    request.setAttribute("productCode", productCode);
                     getServletContext().getRequestDispatcher("/productDetails.jsp").forward(request,response);
                 }
 

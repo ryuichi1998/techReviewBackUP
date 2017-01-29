@@ -31,6 +31,18 @@ public class Product {
     }
 
 
+    public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice) {
+        this.productName = productName;
+        this.productType = productType;
+        this.productUnit = productUnit;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+        this.productDetails = productDetails;
+        this.supplierName = supplierName;
+        this.supplierPartNo = supplierPartNo;
+        this.supplierPrice = supplierPrice;
+    }
+
     public Product(String productName, String productType, String productUnit, Integer productQuantity, Double productPrice, String productDetails, String supplierName, Integer supplierPartNo, Double supplierPrice, String productCode) {
         this.productName = productName;
         this.productType = productType;

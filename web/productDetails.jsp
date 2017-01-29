@@ -11,17 +11,18 @@
 <%@ page import="DAO.ProductDAO" %>
 <%
     Product medications = (Product) request.getAttribute("product");
+
 %>
 
 <head>
-    <title>Mi2 - <%= medications.getProductName() %> Details</title>
+    <title><%= medications.getProductName() %> Details</title>
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
 
 
 
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 
 <div class="wrapper">
 
@@ -126,7 +127,7 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-            <button type="submit" class="btn btn-success pull-right">Update Details</button>
+            <a href="updateProduct?productcode=<%= medications.getProductCode() %>" class="btn btn-success pull-right">Update Details</a>
         </div>
     </div>
 </section>
