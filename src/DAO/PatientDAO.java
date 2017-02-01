@@ -4,6 +4,8 @@ import Entity.Patient;
 import Model.EMF;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by liyun on 11/12/16.
@@ -28,6 +30,19 @@ public class PatientDAO {
 
         return patient;
 
+    }
+
+    public List<Patient> retrieveAllPatient() {
+        List<Patient> patientList = null;
+
+        try {
+            Query query = em.createQuery("SELECT p from Patient p");
+            patientList = query.getResultList();
+
+        } catch(Exception e) {
+
+        }
+        return patientList;
     }
 
 }
