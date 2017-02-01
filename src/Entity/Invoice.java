@@ -4,36 +4,22 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Date;
+import java.math.BigDecimal;
 
 /**
- * Created by Ryuichi on 14/12/2016.
+ * Created by Ryuichi on 1/2/2017.
  */
 @Entity
 public class Invoice {
     private int invoiceId;
-    private String patientId;
-    private Date billingDate;
+    private String billingDate;
+    private String dueDate;
     private String paymentMethod;
-    private Double totalPayable;
-    private Double subsidy;
-    private Double tax;
-    private Double subtotal;
+    private BigDecimal totalPay;
+    private BigDecimal subTotal;
+    private BigDecimal tax;
+    private BigDecimal subsidy;
     private String status;
-
-    public Invoice(String patientId, Date billingDate, String paymentMethod, Double totalPayable, Double subsidy, Double tax, Double subtotal, String status) {
-        this.patientId = patientId;
-        this.billingDate = billingDate;
-        this.paymentMethod = paymentMethod;
-        this.totalPayable = totalPayable;
-        this.subsidy = subsidy;
-        this.tax = tax;
-        this.subtotal = subtotal;
-        this.status = status;
-    }
-
-    public Invoice() {
-    }
 
     @Id
     @Column(name = "invoiceId", nullable = false)
@@ -46,23 +32,23 @@ public class Invoice {
     }
 
     @Basic
-    @Column(name = "patientId", nullable = true, length = 10)
-    public String getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
-
-    @Basic
-    @Column(name = "billingDate", nullable = true)
-    public Date getBillingDate() {
+    @Column(name = "billingDate", nullable = true, length = 45)
+    public String getBillingDate() {
         return billingDate;
     }
 
-    public void setBillingDate(Date billingDate) {
+    public void setBillingDate(String billingDate) {
         this.billingDate = billingDate;
+    }
+
+    @Basic
+    @Column(name = "dueDate", nullable = true, length = 45)
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     @Basic
@@ -76,47 +62,47 @@ public class Invoice {
     }
 
     @Basic
-    @Column(name = "totalPayable", nullable = true, precision = 0)
-    public Double getTotalPayable() {
-        return totalPayable;
+    @Column(name = "totalPay", nullable = true, precision = 2)
+    public BigDecimal getTotalPay() {
+        return totalPay;
     }
 
-    public void setTotalPayable(Double totalPayable) {
-        this.totalPayable = totalPayable;
-    }
-
-    @Basic
-    @Column(name = "subsidy", nullable = true, precision = 0)
-    public Double getSubsidy() {
-        return subsidy;
-    }
-
-    public void setSubsidy(Double subsidy) {
-        this.subsidy = subsidy;
+    public void setTotalPay(BigDecimal totalPay) {
+        this.totalPay = totalPay;
     }
 
     @Basic
-    @Column(name = "tax", nullable = true, precision = 0)
-    public Double getTax() {
+    @Column(name = "subTotal", nullable = true, precision = 2)
+    public BigDecimal getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(BigDecimal subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    @Basic
+    @Column(name = "tax", nullable = true, precision = 2)
+    public BigDecimal getTax() {
         return tax;
     }
 
-    public void setTax(Double tax) {
+    public void setTax(BigDecimal tax) {
         this.tax = tax;
     }
 
     @Basic
-    @Column(name = "subtotal", nullable = true, precision = 0)
-    public Double getSubtotal() {
-        return subtotal;
+    @Column(name = "subsidy", nullable = true, precision = 2)
+    public BigDecimal getSubsidy() {
+        return subsidy;
     }
 
-    public void setSubtotal(Double subtotal) {
-        this.subtotal = subtotal;
+    public void setSubsidy(BigDecimal subsidy) {
+        this.subsidy = subsidy;
     }
 
     @Basic
-    @Column(name = "status", nullable = true, length = 5)
+    @Column(name = "status", nullable = true, length = 45)
     public String getStatus() {
         return status;
     }
@@ -133,15 +119,14 @@ public class Invoice {
         Invoice invoice = (Invoice) o;
 
         if (invoiceId != invoice.invoiceId) return false;
-        if (patientId != null ? !patientId.equals(invoice.patientId) : invoice.patientId != null) return false;
         if (billingDate != null ? !billingDate.equals(invoice.billingDate) : invoice.billingDate != null) return false;
+        if (dueDate != null ? !dueDate.equals(invoice.dueDate) : invoice.dueDate != null) return false;
         if (paymentMethod != null ? !paymentMethod.equals(invoice.paymentMethod) : invoice.paymentMethod != null)
             return false;
-        if (totalPayable != null ? !totalPayable.equals(invoice.totalPayable) : invoice.totalPayable != null)
-            return false;
-        if (subsidy != null ? !subsidy.equals(invoice.subsidy) : invoice.subsidy != null) return false;
+        if (totalPay != null ? !totalPay.equals(invoice.totalPay) : invoice.totalPay != null) return false;
+        if (subTotal != null ? !subTotal.equals(invoice.subTotal) : invoice.subTotal != null) return false;
         if (tax != null ? !tax.equals(invoice.tax) : invoice.tax != null) return false;
-        if (subtotal != null ? !subtotal.equals(invoice.subtotal) : invoice.subtotal != null) return false;
+        if (subsidy != null ? !subsidy.equals(invoice.subsidy) : invoice.subsidy != null) return false;
         if (status != null ? !status.equals(invoice.status) : invoice.status != null) return false;
 
         return true;
@@ -150,13 +135,13 @@ public class Invoice {
     @Override
     public int hashCode() {
         int result = invoiceId;
-        result = 31 * result + (patientId != null ? patientId.hashCode() : 0);
         result = 31 * result + (billingDate != null ? billingDate.hashCode() : 0);
+        result = 31 * result + (dueDate != null ? dueDate.hashCode() : 0);
         result = 31 * result + (paymentMethod != null ? paymentMethod.hashCode() : 0);
-        result = 31 * result + (totalPayable != null ? totalPayable.hashCode() : 0);
-        result = 31 * result + (subsidy != null ? subsidy.hashCode() : 0);
+        result = 31 * result + (totalPay != null ? totalPay.hashCode() : 0);
+        result = 31 * result + (subTotal != null ? subTotal.hashCode() : 0);
         result = 31 * result + (tax != null ? tax.hashCode() : 0);
-        result = 31 * result + (subtotal != null ? subtotal.hashCode() : 0);
+        result = 31 * result + (subsidy != null ? subsidy.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
