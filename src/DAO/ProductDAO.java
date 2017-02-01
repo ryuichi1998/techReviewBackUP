@@ -5,7 +5,9 @@ import Model.EMF;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TransactionRequiredException;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -68,32 +70,48 @@ public class ProductDAO {
 
         // query string
 
-        String queryString = "UPDATE Product SET productName = :pname, productType = :ptype, productUnit = :punit, productQuantity = :pquantity, supplierName = :sname, supplierPartNo = :spartno, supplierPrice = :sprice, productPrice = :pprice, productDetails = :pdetails " +
-                "WHERE productCode = :pcode";
+        String queryString = "UPDATE Product p SET p.productName = :pname, p.productType = :ptype, p.productUnit = :punit, p.productQuantity = :pquantity, p.supplierName = :sname, p.supplierPartNo = :spartno, p.supplierPrice = :sprice, p.productPrice = :pprice, p.productDetails = :pdetails " +
+                "WHERE p.productCode = :pcode";
 
         try {
 
 
+//            System.out.println(product.getProductCode());
+//            System.out.println(product.getProductName());
+//            System.out.println(product.getProductUnit());
+//            System.out.println(product.getProductQuantity());
+//            System.out.println(product.getProductType());
+//            System.out.println(product.getSupplierName());
+//            System.out.println(product.getSupplierPartNo());
+//            System.out.println(product.getSupplierPrice());
+//            System.out.println(product.getProductPrice());
+//            System.out.println(product.getProductDetails());
 
-            Query query = em.createQuery(queryString)
-                    .setParameter("pname", product.getProductName())
-                    .setParameter("punit", product.getProductUnit())
-                    .setParameter("pquantity",product.getProductQuantity())
-                    .setParameter("ptype", product.getProductType())
-                    .setParameter("sname", product.getSupplierName())
-                    .setParameter("spartno", product.getSupplierPartNo())
-                    .setParameter("sprice", product.getSupplierPrice())
-                    .setParameter("pprice", product.getProductPrice())
-                    .setParameter("pdetails", product.getProductDetails())
-                    ;
 
+            Query query = em.createQuery(queryString);
+                    query.setParameter("pcode", product.getProductCode());
+                    query.setParameter("pname", product.getProductName());
+                    query.setParameter("punit", product.getProductUnit());
+                    query.setParameter("pquantity",product.getProductQuantity());
+                    query.setParameter("ptype", product.getProductType());
+                    query.setParameter("sname", product.getSupplierName());
+                    query.setParameter("spartno", product.getSupplierPartNo());
+                    query.setParameter("sprice", product.getSupplierPrice());
+                    query.setParameter("pprice", product.getProductPrice());
+                    query.setParameter("pdetails", product.getProductDetails());
+
+
+
+            em.getTransaction().begin();
             int updateCount = query.executeUpdate();
+            em.flush();
 
-            if(updateCount >= 9) {
-                isUpdated =  true;
-            }
 
-        } catch(Exception e) {
+            System.out.println(updateCount);
+            if(updateCount > 0) { isUpdated =  true; }
+            em.getTransaction().commit();
+
+        } catch(TransactionRequiredException e) {
 
             e.printStackTrace();
         }
@@ -191,6 +209,31 @@ public class ProductDAO {
 
 
 
+    }
+
+
+    /* ===================
+
+    Name: getLowStockProducts
+    For: products Products
+    Parameters: =
+    Return type: Boolean
+
+    ===================== */
+
+    public List<Product> getLowStockProducts() {
+        List<Product> lowStocks = new ArrayList<Product>();
+        String queryStr = "SELECT p.productCode, p.productQuantity, p.productName FROM Product p WHERE p.productQuantity < 100";
+
+        try {
+            Query query = em.createQuery(queryStr);
+            lowStocks = query.getResultList();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return lowStocks;
     }
 
 

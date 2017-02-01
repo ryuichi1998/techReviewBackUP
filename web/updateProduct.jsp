@@ -131,7 +131,7 @@
 
                 </div>
 
-                <form onsubmit="return validateForm()" action="/updateProducts" method="post">
+                <form onsubmit="return validateForm()" action="/updateProducts?productcode=<%= product.getProductCode()%>" method="post">
                     <%--/.1.1 Start col md 12  --%>
                     <div class="col col-md-12">
 
@@ -182,7 +182,7 @@
 
                                         <div class="form-group">
                                             <label>Product details</label>
-                                            <textarea class="form-control" value="<%= product.getProductDetails() %>" placeholder="Enter details" name="productdetails" id="productdetails" onblur="validateName(productDetails)"></textarea>
+                                            <textarea class="form-control" placeholder="Enter details" name="productdetails" id="productdetails" onblur="validateName(productDetails)"><%= product.getProductDetails() %></textarea>
                                             <span class="validateError" id="productDetailsError" style="display: none;">You must enter a product details</span>
                                         </div>
 
