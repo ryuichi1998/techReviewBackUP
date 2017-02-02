@@ -15,16 +15,11 @@
     <title>Title</title>
 </head>
 <%
-    ServiceDAO db = new ServiceDAO();
-    List<Service> serList = db.retrieveAllService();
-    Service ser = serList.get(1);
-
-//    PatientDAO db = new PatientDAO();
-//    List<Patient> serList = db.retrieveAllService();
-//    Patient ser = serList.get(1);
-
+    InvoiceDAO db = new InvoiceDAO();
+    Invoice invoice = new Invoice();
+    invoice = db.getLatestInvoiceId();
 %>
 <body>
-<%=ser.getSerDesc() %>
+<%=invoice.getInvoiceId() %>
 </body>
 </html>

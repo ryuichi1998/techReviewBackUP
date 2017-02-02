@@ -1,27 +1,27 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
- * Created by Ryuichi on 1/2/2017.
+ * Created by Ryuichi on 2/2/2017.
  */
 @Entity
 public class Invoice {
     private int invoiceId;
-    private String billingDate;
-    private String dueDate;
+    private Date billingDate;
+    private Date dueDate;
     private String paymentMethod;
     private BigDecimal totalPay;
     private BigDecimal subTotal;
     private BigDecimal tax;
     private BigDecimal subsidy;
     private String status;
+    private Patient patientByPatientId;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "invoiceId", nullable = false)
     public int getInvoiceId() {
         return invoiceId;
@@ -32,22 +32,22 @@ public class Invoice {
     }
 
     @Basic
-    @Column(name = "billingDate", nullable = true, length = 45)
-    public String getBillingDate() {
+    @Column(name = "billingDate", nullable = true)
+    public Date getBillingDate() {
         return billingDate;
     }
 
-    public void setBillingDate(String billingDate) {
+    public void setBillingDate(Date billingDate) {
         this.billingDate = billingDate;
     }
 
     @Basic
-    @Column(name = "dueDate", nullable = true, length = 45)
-    public String getDueDate() {
+    @Column(name = "dueDate", nullable = true)
+    public Date getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
 
@@ -145,4 +145,16 @@ public class Invoice {
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "patientId", referencedColumnName = "patientId")
+    public Patient getPatientByPatientId() {
+        return patientByPatientId;
+    }
+
+    public void setPatientByPatientId(Patient patientByPatientId) {
+        this.patientByPatientId = patientByPatientId;
+    }
+
+
 }

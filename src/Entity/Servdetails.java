@@ -1,17 +1,21 @@
 package Entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
- * Created by Ryuichi on 1/2/2017.
+ * Created by Ryuichi on 2/2/2017.
  */
 @Entity
 public class Servdetails {
     private int servDetailsId;
     private Integer qnty;
     private Date billingDate;
-    private Service serviceByServiceId;
+    private BigDecimal subtotal;
 
     @Id
     @Column(name = "servDetailsId", nullable = false)
@@ -43,6 +47,16 @@ public class Servdetails {
         this.billingDate = billingDate;
     }
 
+    @Basic
+    @Column(name = "subtotal", nullable = true, precision = 2)
+    public BigDecimal getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +67,7 @@ public class Servdetails {
         if (servDetailsId != that.servDetailsId) return false;
         if (qnty != null ? !qnty.equals(that.qnty) : that.qnty != null) return false;
         if (billingDate != null ? !billingDate.equals(that.billingDate) : that.billingDate != null) return false;
+        if (subtotal != null ? !subtotal.equals(that.subtotal) : that.subtotal != null) return false;
 
         return true;
     }
@@ -62,16 +77,7 @@ public class Servdetails {
         int result = servDetailsId;
         result = 31 * result + (qnty != null ? qnty.hashCode() : 0);
         result = 31 * result + (billingDate != null ? billingDate.hashCode() : 0);
+        result = 31 * result + (subtotal != null ? subtotal.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "serviceId", referencedColumnName = "serviceId")
-    public Service getServiceByServiceId() {
-        return serviceByServiceId;
-    }
-
-    public void setServiceByServiceId(Service serviceByServiceId) {
-        this.serviceByServiceId = serviceByServiceId;
     }
 }

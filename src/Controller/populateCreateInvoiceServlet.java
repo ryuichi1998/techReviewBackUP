@@ -1,7 +1,9 @@
 package Controller;
 
 import DAO.PatientDAO;
+import DAO.ServiceDAO;
 import Entity.Patient;
+import Entity.Service;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.servlet.ServletException;
@@ -18,20 +20,25 @@ import java.io.IOException;
 public class populateCreateInvoiceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String patientId = request.getParameter("patientId");
         boolean click = Boolean.parseBoolean(request.getParameter("clickPatientId"));
 
         if (click) {
+            String patientId = request.getParameter("patientId");
             PatientDAO db = new PatientDAO();
             Patient patient = db.getPatientByPatientId(patientId);
-            System.out.print(patient);
             ObjectMapper mapper = new ObjectMapper();
             response.setContentType("application/json");
             mapper.writeValue(response.getOutputStream(), patient);
         }
 
         else {
-
+            String serviceId = request.getParameter("serviceId");
+            System.out.print(serviceId);
+            ServiceDAO db = new ServiceDAO();
+            Service service = db.getService(serviceId);
+            ObjectMapper mapper = new ObjectMapper();
+            response.setContentType("application/json");
+            mapper.writeValue(response.getOutputStream(), service);
         }
     }
 

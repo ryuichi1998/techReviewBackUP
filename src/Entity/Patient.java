@@ -35,7 +35,7 @@ public class Patient extends Person{
     private Collection<FamilyMedicalBackground> familyMedicalBackgroundListByPatientId;
     private Collection<Appointment> appointmentListByPatientId;
     private Collection<VitalSigns> vitalSignsListByPatientId;
-//    private Collection<Invoice> invoiceListByPatientId;
+    private Collection<Invoice> invoiceListByPatientId;
 
     @Id
     @Column(name = "patientId", nullable = false, length = 10)
@@ -340,12 +340,12 @@ public class Patient extends Person{
         this.vitalSignsListByPatientId = vitalSignsListByPatientId;
     }
 
-//    @OneToMany(mappedBy = "patientByPatientId")
-//    public Collection<Invoice> getInvoiceListByPatientId() {
-//        return invoiceListByPatientId;
-//    }
-//
-//    public void setInvoiceListByPatientId(Collection<Invoice> invoiceListByPatientId) {
-//        this.invoiceListByPatientId = invoiceListByPatientId;
-//    }
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<Invoice> getInvoiceListByPatientId() {
+        return invoiceListByPatientId;
+    }
+
+    public void setInvoiceListByPatientId(Collection<Invoice> invoiceListByPatientId) {
+        this.invoiceListByPatientId = invoiceListByPatientId;
+    }
 }

@@ -6,6 +6,7 @@ import Model.EMF;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Ryuichi on 14/12/2016.
@@ -13,6 +14,7 @@ import java.util.List;
 public class ServiceDAO {
 
     private EntityManager em;
+    private Random random = new Random();
 
     public ServiceDAO() {
         em = EMF.getInstance().createEntityManager();
@@ -29,6 +31,18 @@ public class ServiceDAO {
 
         }
         return serviceList;
+    }
+
+    public Service getService(String serviceId) {
+        Service service = null;
+        try {
+            Query query = em.createQuery("select s from Service s where s.serviceId =:serviceId");
+            query.setParameter("serviceId", new Integer(serviceId));
+            service = (Service) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return service;
     }
 
 //    public List<Service> retrieveAllService(String patientId) {
