@@ -32,13 +32,13 @@ public class ProductNewServlet extends HttpServlet {
 
         */
 
-
+        boolean isCreated = false;
 
         try {
 
             // Instantiate DAO
             ProductDAO PDAO = new ProductDAO();
-            boolean isCreated = false;
+
 
             // Get form variables
             String pname = request.getParameter("productname");
@@ -64,15 +64,15 @@ public class ProductNewServlet extends HttpServlet {
             boolean isProductSupplierPartNoBlank = PDAO.isFieldBlank(String.valueOf(spartno));
             boolean isProductSupplierPriceBlank = PDAO.isFieldBlank(String.valueOf(sprice));
 
-            System.out.println("Product name is not empty: " + isProductNameBlank);
-            System.out.println("Product type is not  empty: " + isProductTypeBlank);
-            System.out.println("Product unit is not  empty: " + isProductUnitBlank);
-            System.out.println("Product quantity is not  empty: " + isProductQuantityBlank);
-            System.out.println("Product price is not  empty: " + isProductPriceBlank);
-            System.out.println("Product details is not empty: " + isProductDetailsBlank);
-            System.out.println("Product supplier name is not  empty: " + isProductSupplierNameBlank);
-            System.out.println("Product supplier part no is not empty: " + isProductSupplierPartNoBlank);
-            System.out.println("Product supplier price is not empty: " + isProductSupplierPriceBlank);
+//            System.out.println("Product name is not empty: " + isProductNameBlank);
+//            System.out.println("Product type is not  empty: " + isProductTypeBlank);
+//            System.out.println("Product unit is not  empty: " + isProductUnitBlank);
+//            System.out.println("Product quantity is not  empty: " + isProductQuantityBlank);
+//            System.out.println("Product price is not  empty: " + isProductPriceBlank);
+//            System.out.println("Product details is not empty: " + isProductDetailsBlank);
+//            System.out.println("Product supplier name is not  empty: " + isProductSupplierNameBlank);
+//            System.out.println("Product supplier part no is not empty: " + isProductSupplierPartNoBlank);
+//            System.out.println("Product supplier price is not empty: " + isProductSupplierPriceBlank);
 
 
 
@@ -98,10 +98,14 @@ public class ProductNewServlet extends HttpServlet {
 
 
 
-                if (isCreated == true) { getServletContext().getRequestDispatcher("/viewProducts").forward(request, response); } else { response.sendRedirect("/viewProduct.jsp"); }}
+                if (isCreated == true) {
+                    response.sendRedirect("/viewProducts?productcode=" + newProductCode);
+                } else {
+                    response.sendRedirect("/viewProduct?productcode=" + newProductCode);
+                }
+            }
 
             } catch(NumberFormatException e){ e.printStackTrace(); }
-
 
 
     }

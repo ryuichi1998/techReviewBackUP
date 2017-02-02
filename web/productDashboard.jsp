@@ -9,7 +9,7 @@
 <%@ page import="Model.*, java.util.*" %>
 <html>
 <head>
-    <title>Mi2 - Product Dashboard</title>
+    <title>Product Dashboard</title>
     <%@include file="common/html/commonLinks.html" %>
 </head>
 <%@include file="common/html/scripts.html" %>
@@ -54,12 +54,11 @@
         <%--Content Header--%>
         <section class="content-header">
             <h1>
-                Medication Management
-                <small>This is the dashboard</small>
+                Product Management
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active">Product Dashboard</li>
             </ol>
         </section>
         <%--/.content-header--%>

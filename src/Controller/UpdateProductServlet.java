@@ -5,6 +5,7 @@ import DAO.StaffDAO;
 import Entity.Product;
 import Entity.Staff;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,7 @@ public class UpdateProductServlet extends HttpServlet {
 
           /*
 
-            FROM updateProduct.jsp to /updateProduct
+            FROM updateProduct.jsp to /updateProducts
 
 
          */
@@ -41,7 +42,7 @@ public class UpdateProductServlet extends HttpServlet {
         List<Product> productList = new ArrayList<Product>();
         Product productUpdateObj = new Product();
         String productCode = request.getParameter("productcode");
-
+        boolean isUpdated = false;
         //  Get staff
         staff = staffDAO.getStaffByStaffId(staffId);
 
@@ -60,7 +61,7 @@ public class UpdateProductServlet extends HttpServlet {
 
         try {
 
-            boolean isUpdated = false;
+
 
             // Check if field is blank
             // and check if product is existed
@@ -74,15 +75,18 @@ public class UpdateProductServlet extends HttpServlet {
             boolean isProductSupplierPartNoBlank = PDAO.isFieldBlank(String.valueOf(spartno));
             boolean isProductSupplierPriceBlank = PDAO.isFieldBlank(String.valueOf(sprice));
 
-            System.out.println("Product name is not empty: " + isProductNameBlank);
-            System.out.println("Product type is not  empty: " + isProductTypeBlank);
-            System.out.println("Product unit is not  empty: " + isProductUnitBlank);
-            System.out.println("Product quantity is not  empty: " + isProductQuantityBlank);
-            System.out.println("Product price is not  empty: " + isProductPriceBlank);
-            System.out.println("Product details is not empty: " + isProductDetailsBlank);
-            System.out.println("Product supplier name is not  empty: " + isProductSupplierNameBlank);
-            System.out.println("Product supplier part no is not empty: " + isProductSupplierPartNoBlank);
-            System.out.println("Product supplier price is not empty: " + isProductSupplierPriceBlank);
+            // Internal check
+
+//            System.out.println("Product name is not empty: " + productCode);
+//            System.out.println("Product name is not empty: " + pname);
+//            System.out.println("Product type is not  empty: " + ptype);
+//            System.out.println("Product unit is not  empty: " + punit);
+//            System.out.println("Product quantity is not  empty: " + pquantity);
+//            System.out.println("Product price is not  empty: " + pprice);
+//            System.out.println("Product details is not empty: " + pdetails);
+//            System.out.println("Product supplier name is not  empty: " + sname);
+//            System.out.println("Product supplier part no is not empty: " + spartno);
+//            System.out.println("Product supplier price is not empty: " + sprice);
 
 
             if (!isProductNameBlank || !isProductTypeBlank || !isProductUnitBlank || !isProductPriceBlank
@@ -91,25 +95,29 @@ public class UpdateProductServlet extends HttpServlet {
                 response.sendRedirect("#");
             } else {
 
-                // UPDATE PRODUCT Unable work
+                // Working but unable to redirect
 
-               // Product product = new Product(pname, ptype, punit, pquantity, pprice, pdetails, sname, spartno, sprice);
-               // isUpdated = PDAO.updateProduct(product);
 
-                if(isUpdated == true) {
-                    getServletContext().getRequestDispatcher("/viewProducts?productcode=" + productCode).forward(request, response);
-                } else {
-                    getServletContext().getRequestDispatcher("/updateProduct?productcode=" + productCode).forward(request, response);
-                }
+                Product product = new Product(pname, ptype, punit, pquantity, pprice, pdetails, sname, spartno, sprice, productCode);
+                isUpdated = PDAO.updateProduct(product);
+
+                System.out.println(isUpdated);
 
             }
+
+            if(isUpdated == true) {
+                response.sendRedirect("/viewProduct?productcode=" + productCode);
+            } else {
+                response.sendRedirect("/updateProduct?productcode=" + productCode);
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-
-
+       // response.sendRedirect("/updateProduct?productcode=" + productCode);
 
     }
 

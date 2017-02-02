@@ -45,6 +45,14 @@
         <servlet-name>ProductDashboardServlet</servlet-name>
         <url-pattern>/productDashboard</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <url-pattern>/updateProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductNewServlet</servlet-name>
+        <url-pattern>/newProduct</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
