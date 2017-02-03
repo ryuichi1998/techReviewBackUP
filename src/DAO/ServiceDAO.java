@@ -1,5 +1,6 @@
 package DAO;
 
+import Entity.Invoice;
 import Entity.Service;
 import Model.EMF;
 
@@ -43,6 +44,20 @@ public class ServiceDAO {
             e.printStackTrace();
         }
         return service;
+    }
+
+    public Service getServiceByServiceId (int serviceId){
+
+        Service service = null;
+
+        try {
+            service = em.find(Service.class, serviceId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return service;
+
     }
 
 //    public List<Service> retrieveAllService(String patientId) {

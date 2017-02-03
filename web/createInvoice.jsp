@@ -102,6 +102,9 @@
 
     $(document).ready(function () {
 
+        var success = '<div class="callout callout-success" style="margin-bottom: 0!important;"><h3>Invoice Successfully Created!</h3></div>';
+        var successfulDiv = '<div class="alert alert-success">You have successfully log the data!</div>';
+
         $("#invoiceFormData").submit(function(event) {
             event.preventDefault();
             var invoiceFormData = $("#invoiceFormData").serialize();
@@ -110,9 +113,9 @@
                 data: invoiceFormData,
                 url: "/createInvoice",
                 success: function () {
-                    alert("success");
                     console.log(invoiceFormData);
-
+                    alert("Success");
+                    $('#messageGLLog').html(success).delay(10000).fadeOut();
                 },
                 error: function () {
 
@@ -124,6 +127,12 @@
     $( function() {
         $( "#datepicker" ).datepicker();
     } );
+
+    $(document).on('click', '#addBtn', function () {
+        var counter = 1;
+        var dupli =  $('#template');
+        dupli.clone().insertAfter("#template");
+    });
 
 </script>
 
@@ -149,6 +158,8 @@
             </ol>
         </section>
         <%--/.content-header--%>
+
+            <div id="messageGLLog" class="pad margin"></div>
 
             <!-- Main content -->
             <section class="content">
@@ -216,7 +227,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="template">
                         <div class="col-md-12">
                             <div class="box box-info">
                                 <div class="box-header with-border">
@@ -243,7 +254,7 @@
                                         <div class="col-md-10">
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <input type="text" name="servDateText" id="servDate" class="form-control" readonly >
+                                                <input type="text" id="servDate" class="form-control" readonly >
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -278,13 +289,13 @@
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-danger pull-right"><i class="fa fa-close"></i> Delete</button>
-                                    <button type="button" class="btn btn-success pull-right" style="margin-right: 5px;"><i class="fa fa-plus"></i> Add</button>
+                                    <button type="button" id="addBtn" class="btn btn-success pull-right" style="margin-right: 5px;"><i class="fa fa-plus"></i> Add</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="input" id="logGLBtn" class="btn btn-info pull-right">Save</button>
+                        <button type="input" id="logGLBtn" class="btn btn-success pull-right">Save</button>
                     </div>
                 </form>
             </section>

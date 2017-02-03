@@ -1,9 +1,6 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -16,6 +13,8 @@ public class Servdetails {
     private Integer qnty;
     private Date billingDate;
     private BigDecimal subtotal;
+    private Invoice invoiceByInvoiceId;
+    private Service serviceByServiceId;
 
     @Id
     @Column(name = "servDetailsId", nullable = false)
@@ -80,4 +79,26 @@ public class Servdetails {
         result = 31 * result + (subtotal != null ? subtotal.hashCode() : 0);
         return result;
     }
+
+
+    @ManyToOne
+    @JoinColumn(name = "invoiceId", referencedColumnName = "invoiceId")
+    public Invoice getInvoiceByInvoiceId() {
+        return invoiceByInvoiceId;
+    }
+
+    public void setInvoiceByInvoiceId(Invoice invoiceByInvoiceId) {
+        this.invoiceByInvoiceId = invoiceByInvoiceId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "serviceId", referencedColumnName = "serviceId")
+    public Service getServiceByServiceId() {
+        return serviceByServiceId;
+    }
+
+    public void setServiceByServiceId(Service serviceByServiceId) {
+        this.serviceByServiceId = serviceByServiceId;
+    }
+
 }

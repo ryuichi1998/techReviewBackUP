@@ -2,6 +2,7 @@ package DAO;
 
 import Entity.ConsultationRecord;
 import Entity.Invoice;
+import Entity.Patient;
 import Model.EMF;
 
 import javax.persistence.EntityManager;
@@ -42,6 +43,20 @@ public class InvoiceDAO {
         em.flush();
         em.getTransaction().commit();
         return inv;
+    }
+
+    public Invoice getInvoiceByInvoiceId (int invoiceId){
+
+        Invoice invoice = null;
+
+        try {
+            invoice = em.find(Invoice.class, invoiceId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return invoice;
+
     }
 
     public Invoice getLatest() {
