@@ -31,10 +31,7 @@
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="04323"/>
             <property name="eclipselink.allow-zero-id" value="true"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/mi2"/>
-            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="eclipselink.jdbc.user" value="root"/>
-            <property name="eclipselink.jdbc.password" value="root"/>
+
         </properties>
     </persistence-unit>
 </persistence>

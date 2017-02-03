@@ -120,6 +120,7 @@
                             <%
                                 for (Invoice invoice : invoiceList) {
                                 Collection<Servdetails> servdetailsList = invoice.getServdetailsListByInvoiceId();
+                                    System.out.println(invoice.getServdetailsListByInvoiceId().size());
                             %>
 
                             <div id="template">
@@ -127,7 +128,7 @@
                                     <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
                                         <strong><%="Invoice Number# " + invoice.getInvoiceId()%></strong><br>
                                         <span class="text-muted">Status: <%=invoice.getStatus()%></span><br>
-                                        <span class="text-muted">Billing Date: <%=invoice.getBillingDate()%></span>
+                                        <span class="text-muted">Billing Date: <%=invoice.getBillingDate()%></span><br>
                                         <span class="text-muted">Due Date: <%=invoice.getDueDate()%></span>
                                     </div>
                                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user pull-right" data-for=".<%=invoice.getInvoiceId()%>">

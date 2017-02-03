@@ -116,7 +116,6 @@
                     console.log(invoiceFormData);
                     alert("Success");
                     $('#messageInvoice').html(successfulDiv).delay(10000);
-                    document.getElementById("invoiceFormData").reset();
                 },
                 error: function () {
 

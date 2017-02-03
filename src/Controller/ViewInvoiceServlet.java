@@ -29,7 +29,7 @@ public class ViewInvoiceServlet extends HttpServlet {
         try{
 
             InvoiceDAO db = new InvoiceDAO();
-            List<Invoice> list = db.getInvoiceListByPatientId("P001");
+            List<Invoice> list = db.getInvoiceListByPatientId("P003");
             request.setAttribute("invoices", list);
 
             getServletContext().getRequestDispatcher("/viewInvoice.jsp").forward(request, response);
