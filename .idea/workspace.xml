@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e4df3f-079b-4791-99cd-3844174ecf3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/InvoiceServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ViewInvoiceServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/invoice.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/payment.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/viewInvoices.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Invoice.java" afterPath="$PROJECT_DIR$/src/Entity/Invoice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Service.java" afterPath="$PROJECT_DIR$/src/Entity/Service.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/createInvoice.jsp" afterPath="$PROJECT_DIR$/web/createInvoice.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/viewInvoice.jsp" afterPath="$PROJECT_DIR$/web/viewInvoice.jsp" />
     </list>
@@ -93,13 +86,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="createInvoice.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createInvoice.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/createInvoice.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="104" column="99" lean-forward="false" selection-start-line="104" selection-start-column="99" selection-end-line="104" selection-end-column="99" />
+            <state relative-caret-position="230">
+              <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
               <folding>
-                <marker date="1486100378042" expanded="true" signature="3629:3656" ph="..." />
+                <marker date="1486101430368" expanded="true" signature="3755:3762" ph="×" />
               </folding>
             </state>
           </provider>
@@ -115,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewInvoice.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="viewInvoice.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/viewInvoice.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-757">
-              <caret line="60" column="54" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="54" />
+            <state relative-caret-position="400">
+              <caret line="174" column="89" lean-forward="false" selection-start-line="174" selection-start-column="89" selection-end-line="174" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -128,7 +121,7 @@
       <file leaf-file-name="invoice.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/invoice.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="-338">
               <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#3;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -224,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/Entity/Service.java" />
         <option value="$PROJECT_DIR$/web/invoice.jsp" />
         <option value="$PROJECT_DIR$/src/Controller/InvoiceServlet.java" />
-        <option value="$PROJECT_DIR$/web/viewInvoice.jsp" />
         <option value="$PROJECT_DIR$/web/createInvoice.jsp" />
+        <option value="$PROJECT_DIR$/web/viewInvoice.jsp" />
       </list>
     </option>
   </component>
@@ -873,7 +866,7 @@
       <workItem from="1485911652230" duration="9212000" />
       <workItem from="1485921433941" duration="34535000" />
       <workItem from="1486026281483" duration="19035000" />
-      <workItem from="1486085688498" duration="14669000" />
+      <workItem from="1486085688498" duration="16169000" />
     </task>
     <task id="LOCAL-00001" summary="fix #46">
       <created>1481731958397</created>
@@ -931,11 +924,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486085842949</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1486100458440</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1486100458440</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318128000" />
+    <option name="totallyTimeSpent" value="319628000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1004,7 +1004,8 @@
     <MESSAGE value="Update on medicationDashboard.jsp UI" />
     <MESSAGE value="update to entity, dao, controller" />
     <MESSAGE value="delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1351,9 +1352,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/logVitalSigns.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="125" column="82" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/createInvoice.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+          <folding>
+            <marker date="1486101430368" expanded="true" signature="3755:3762" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/invoice.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="-338">
           <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#p#1;n#div#0;n#div#3;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1365,27 +1384,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/viewInvoice.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-757">
-          <caret line="60" column="54" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="54" />
+        <state relative-caret-position="400">
+          <caret line="174" column="89" lean-forward="false" selection-start-line="174" selection-start-column="89" selection-end-line="174" selection-end-column="89" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logVitalSigns.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="125" column="82" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/createInvoice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="104" column="99" lean-forward="false" selection-start-line="104" selection-start-column="99" selection-end-line="104" selection-end-column="99" />
-          <folding>
-            <marker date="1486100378042" expanded="true" signature="3629:3656" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

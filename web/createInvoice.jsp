@@ -102,8 +102,8 @@
 
     $(document).ready(function () {
 
-        var success = '<div class="callout callout-success" style="margin-bottom: 0!important;"><h3>Invoice Successfully Created!</h3></div>';
-        var successfulDiv = '<div class="alert alert-success">You have successfully log the data!</div>';
+        var successfulDiv =  '<div class="pad margin padding alert alert-success alert-dismissible"><button type="button" class="close" ' +
+            'data-dismiss="alert" aria-hidden="true">&times;</button> <h4><i class="icon fa fa-check"></i> Success!</h4>Invoice Successfully Created.</div>';
 
         $("#invoiceFormData").submit(function(event) {
             event.preventDefault();
@@ -115,7 +115,8 @@
                 success: function () {
                     console.log(invoiceFormData);
                     alert("Success");
-                    $('#messageGLLog').html(success).delay(10000).fadeOut();
+                    $('#messageInvoice').html(successfulDiv).delay(10000);
+                    document.getElementById("invoiceFormData").reset();
                 },
                 error: function () {
 
@@ -159,7 +160,7 @@
         </section>
         <%--/.content-header--%>
 
-            <div id="messageGLLog" class="pad margin"></div>
+            <div id="messageInvoice"></div>
 
             <!-- Main content -->
             <section class="content">

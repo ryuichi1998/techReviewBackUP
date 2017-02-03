@@ -172,9 +172,8 @@
                                                 </div>
                                             </div>
                                             <div class="box-footer">
-                                                <button class="btn btn-success pull-right" type="button" formaction="/invoice"
-                                                        data-toggle="tooltip"
-                                                        data-original-title="View this Invoice">View</button>
+                                                <a href="/invoice" class="btn btn-success pull-right" data-toggle="tooltip"
+                                                   data-original-title="View this Invoice">View</a>
                                             </div>
                                         </div>
                                     </div>
