@@ -3,6 +3,7 @@ package Entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.Collection;
 
 /**
  * Created by Ryuichi on 2/2/2017.
@@ -19,6 +20,8 @@ public class Invoice {
     private BigDecimal subsidy;
     private String status;
     private Patient patientByPatientId;
+    private Collection<Servdetails> servdetailsListByInvoiceId;
+
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -156,5 +159,14 @@ public class Invoice {
         this.patientByPatientId = patientByPatientId;
     }
 
+
+    @OneToMany(mappedBy = "invoiceByInvoiceId")
+    public Collection<Servdetails> getServdetailsListByInvoiceId() {
+        return servdetailsListByInvoiceId;
+    }
+
+    public void setServdetailsListByInvoiceId(Collection<Servdetails> servdetailsListByInvoiceId) {
+        this.servdetailsListByInvoiceId = servdetailsListByInvoiceId;
+    }
 
 }

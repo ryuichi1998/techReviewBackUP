@@ -2,9 +2,11 @@ package Controller;
 
 import DAO.InvoiceDAO;
 import DAO.PatientDAO;
+import DAO.ServDetailsDAO;
 import DAO.ServiceDAO;
 import Entity.Invoice;
 import Entity.Patient;
+import Entity.Servdetails;
 import Entity.Service;
 
 import javax.servlet.ServletException;
@@ -34,7 +36,7 @@ public class CreateInvoiceServlet extends HttpServlet {
         String patientId = request.getParameter("patientId");
         String code = request.getParameter("code");
         String price = request.getParameter("priceText");
-        String servDate = request.getParameter("servDateText");
+        String servDate = request.getParameter("servDate");
         String quantity = request.getParameter("quantity");
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -53,22 +55,16 @@ public class CreateInvoiceServlet extends HttpServlet {
         double sub = Double.valueOf(formatter.format(total*0.04));
         double tPayable = Double.valueOf(formatter.format(total+tax-sub));
 
-        System.out.println(patientId);
-        System.out.println(code);
-        System.out.println(price);
-        System.out.println(servDate);
-        System.out.println(quantity);
-        System.out.println(date);
-        System.out.println(dueDate);
-
         InvoiceDAO invoiceDb = new InvoiceDAO();
         Invoice invoice = new Invoice();
 
         PatientDAO patientDb = new PatientDAO();
         Patient patient = new Patient();
-        patient = patientDb.getPatientByPatientId(patientId);
 
-        invoice.setPatientByPatientId(patient);
+        ServiceDAO serviceDb = new ServiceDAO();
+        Service service = new Service();
+
+        invoice.setPatientByPatientId(patientDb.getPatientByPatientId(patientId));
         invoice.setBillingDate(sqlDate);
         invoice.setDueDate(sqlDueDate);
         invoice.setPaymentMethod("Payment Pending");
@@ -77,10 +73,19 @@ public class CreateInvoiceServlet extends HttpServlet {
         invoice.setTax(BigDecimal.valueOf(tax));
         invoice.setSubsidy(BigDecimal.valueOf(sub));
         invoice.setTotalPay(BigDecimal.valueOf(tPayable));
-        Invoice i = invoiceDb.createInvoice(invoice);
-        Invoice latestInvoice = new Invoice();
-        latestInvoice = invoiceDb.getLatest();
-        System.out.println(latestInvoice.getInvoiceId());
+        invoiceDb.createInvoice(invoice);
+
+        ServDetailsDAO servDetailsDb = new ServDetailsDAO();
+        Servdetails servDetails = new Servdetails();
+        Date dateServDate = dateFormat.parse(servDate);
+        java.sql.Date sqlServDate = new java.sql.Date(dateServDate.getTime());
+        servDetails.setBillingDate(sqlServDate);
+        servDetails.setInvoiceByInvoiceId(invoiceDb.getLatest());
+        servDetails.setQnty(Integer.parseInt(quantity));
+        servDetails.setSubtotal( BigDecimal.valueOf((  Double.parseDouble(price)* Integer.parseInt(quantity))));
+        servDetails.setServiceByServiceId(serviceDb.getService(code));
+        servDetailsDb.createServdetails(servDetails);
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new ServletException(e);

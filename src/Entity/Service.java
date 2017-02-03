@@ -1,10 +1,8 @@
 package Entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Collection;
 
 /**
  * Created by Ryuichi on 1/2/2017.
@@ -14,6 +12,7 @@ public class Service {
     private int serviceId;
     private BigDecimal price;
     private String serDesc;
+    private Collection<Servdetails> servdetailsListByInvoiceId;
 
     @Id
     @Column(name = "serviceId", nullable = false)
@@ -65,5 +64,14 @@ public class Service {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (serDesc != null ? serDesc.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "serviceByServiceId")
+    public Collection<Servdetails> getServicedetailsListByInvoiceId() {
+        return servdetailsListByInvoiceId;
+    }
+
+    public void setServicedetailsListByInvoiceId(Collection<Servdetails> servdetailsListByInvoiceId) {
+        this.servdetailsListByInvoiceId = servdetailsListByInvoiceId;
     }
 }

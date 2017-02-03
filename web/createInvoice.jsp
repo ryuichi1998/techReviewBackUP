@@ -243,7 +243,7 @@
                                         <div class="col-md-10">
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <input type="text" name="servDateText" id="servDate" class="form-control" readonly >
+                                                <input type="text" id="servDate" class="form-control" readonly >
                                             </div>
                                         </div>
                                         <div class="col-md-2">
