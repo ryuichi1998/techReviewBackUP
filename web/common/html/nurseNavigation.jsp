@@ -111,28 +111,26 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <!-- First link -->
-
-            <li class="treeview active">
+            <li><a href="/productDashboard"><i class="fa fa-circle-o"></i>Dashboard</a></li>
+            <li class="treeview">
                 <a href="/products">
                     <i class="fa fa-medkit"></i><span>Products</span>
                 <!-- sub menu for links -->
                 <ul class="treeview-menu">
-                    <li><a href="/productDashboard"><i class="fa fa-circle-o"></i>Dashboard</a></li>
                     <li><a href="/addProduct.jsp"><i class="fa fa-circle-o"></i>Add new products</a></li>
                     <li><a href="/viewProducts"><i class="fa fa-circle-o"></i>View all products</a></li>
                 </ul>
             </li>
-            <li class="treeview active">
+            <li class="treeview">
                 <a href="/products">
-                    <i class="fa fa-archive"></i><span>Inventory</span>
+                    <i class="fa fa-folder-open-o"></i><span>Knowledge Base</span>
                     <!-- sub menu for links -->
                     <ul class="treeview-menu">
-                        <li><a href="/#"><i class="fa fa-circle-o"></i>Requests</a></li>
-                        <li><a href="/#"><i class="fa fa-circle-o"></i>Items</a></li>
-                        <li><a href="/#"><i class="fa fa-circle-o"></i>Inventory Requests</a></li>
-                        <li><a href="/#"><i class="fa fa-circle-o"></i>Reports</a></li>
+                        <li><a href="/createArticle.jsp"><i class="fa fa-circle-o"></i>New Article</a></li>
+                        <li><a href="/viewAllArticle"><i class="fa fa-circle-o"></i>View all article</a></li>
                     </ul>
             </li>
+
 
 
         </ul>
