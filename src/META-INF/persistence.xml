@@ -23,6 +23,7 @@
         <class>Entity.Service</class>
         <class>Entity.VitalSigns</class>
         <class>Entity.Servdetails</class>
+        <class>Entity.Faq</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mi2"/>
@@ -32,6 +33,8 @@
             <property name="eclipselink.allow-zero-id" value="true"/>
             <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/mi2"/>
             <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user" value="root"/>
+            <property name="eclipselink.jdbc.password" value="root"/>
         </properties>
     </persistence-unit>
 </persistence>
