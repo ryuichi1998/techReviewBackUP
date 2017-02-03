@@ -66,7 +66,7 @@ public class Service {
         return result;
     }
 
-    @OneToMany(mappedBy = "serviceByServiceId")
+    @OneToMany(mappedBy = "serviceByServiceId", fetch=FetchType.EAGER)
     public Collection<Servdetails> getServicedetailsListByInvoiceId() {
         return servdetailsListByInvoiceId;
     }

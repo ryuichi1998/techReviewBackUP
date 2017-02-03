@@ -160,7 +160,7 @@ public class Invoice {
     }
 
 
-    @OneToMany(mappedBy = "invoiceByInvoiceId")
+    @OneToMany(mappedBy = "invoiceByInvoiceId" ,fetch=FetchType.EAGER)
     public Collection<Servdetails> getServdetailsListByInvoiceId() {
         return servdetailsListByInvoiceId;
     }
